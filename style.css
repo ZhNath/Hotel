@@ -208,48 +208,73 @@ header nav {
 }
 
 #menu:checked + .slide-panel > .booknow {
-  animation: buttonexplosion 2s;
+  animation: buttonexplosion 1s forwards;
 }
 
 @keyframes buttonexplosion {
   0% {
     transform: scale(0.01);
+
+    box-shadow: 0px 0px 0px var(--darkgold);
   }
 
-  80% {
-    transform: scale(1.2);
+  50% {
+    transform: scale(1.2) translateY(-20px);
+    box-shadow: 0px 0px 10px 4px var(--darkgold);
+  }
+
+  65% {
+    transform: scale(0.9);
+    box-shadow: inset 0px 0px 0px 0px var(--darkgold);
+  }
+
+  70% {
+    transform: scale(0.9);
+    box-shadow: inset 0px 0px 5px var(--darkgold);
+  }
+  73% {
+    transform: scale(0.9);
+  }
+
+  90% {
+    transform: scale(1.1) translateY(-7px);
+    box-shadow: 0px 0px 5px var(--darkgold);
   }
 
   100% {
-    transform: scale(1);
+    transform: scale(1) translateY(7px);
   }
 }
 
-@media (min-width: 1240px) {
+@media (min-width: 768px) {
   header {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    /* perspective: 5px; */
+    grid-template-columns: repeat(2, 1fr) 8rem repeat(2, 1fr);
+    grid-template-rows: repeat(3, 4rem);
+    grid-template-areas:
+      ".  house house house language"
+      ". . gerb . ."
+      ". casa gerb nostra .";
+  }
+
+  header > .booknow,
+  header .hamburger {
+    display: none;
+  }
+
+  header > img,
+  header span:nth-child(1) {
+    justify-self: center;
+    font-size: 4rem;
+  }
+  header span:nth-child(1) {
+    margin-left: 1em;
+  }
+
+  header span:nth-child(2),
+  header nav {
+    justify-self: end;
   }
 }
-
-/* header span {
-  position: relative;
-  padding-top: 2rem;
-  font-family: "PoiretOne", Arial, Helvetica, sans-serif;
-  color: var(--gold);
-  font-size: 5rem;
-  animation: header 5s forwards;
-} */
-
-/* .casa {
-  display: flex;
-  flex-direction: row;
-  font-weight: bold;
-  letter-spacing: 3px;
-} */
-
 main {
   margin-top: 16rem;
 }
@@ -257,7 +282,7 @@ main {
   position: relative;
   overflow: hidden;
   width: 90vw;
-  height: 40vh;
+  height: 30vh;
   margin: auto;
   z-index: -1;
 }
