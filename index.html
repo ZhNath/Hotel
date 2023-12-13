@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casa Nostra</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/5d5b6f96a0.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
       <span>APARTMENT HOUSE</span>
-      <div class="casa">
-        <span>CASA</span>
-        <img src="./images/logo.png" alt="" />
-        <span>NOSTRA</span>
-      </div>
+      <span class="casanostra">CASA</span>
+      <span class="casanostra">NOSTRA</span>
+      <img src="./images/logo.png" alt="" />
+      <button class="booknow">BOOK NOW</button>
+
       <nav>
-        <img src="./images/eng.png" alt="" />
-        <img src="./images/deutsch.png" alt="" />
-        <img src="./images/Croatia.png" alt="" />
+        <button class="language eng" id="eng"></button>
+        <button class="language deu" id="deu"></button>
+        <button class="language cro" id="cro"></button>
+
+        <div class="hamburger">
+          <input type="checkbox" id="menu" />
+          <div class="slide-panel">
+            <label class="close" for="menu"
+              ><i class="fa-solid fa-xmark"></i
+            ></label>
+            <button class="booknow">BOOK NOW</button>
+
+            <div class="hidenav">
+              <a href="#" target="_blank">ABOUT</a>
+              <a href="#" target="_blank">PLACE</a>
+              <a href="#" target="_blank">CONTACT</a>
+              <a href="#" target="_blank">ATTRACTION</a>
+              <a href="#" target="_blank">LOCATION</a>
+            </div>
+          </div>
+          <div class="slide-button">
+            <label for="menu"><i class="fa-solid fa-bars"></i></label>
+          </div>
+        </div>
       </nav>
     </header>
 
-    <div class="uber"></div>
-    <div class="shader">
-      <img src="./images/balkon_jakov_1 .jpg" alt="balkon" />
-      <div class="shader_layer specular">
-        <div class="shader_layer mask"></div>
+    <main>
+      <!-- <div class="uber"></div> -->
+      <div class="shader">
+        <img src="./images/balkon_jakov_1 .jpg" alt="balkon" />
+        <div class="shader_layer specular">
+          <div class="shader_layer mask"></div>
+        </div>
       </div>
-    </div>
-    <div class="nav"></div>
-    <div class="leer"></div>
+      <div class="leer"></div>
+    </main>
   </body>
 </html>
