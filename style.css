@@ -16,6 +16,9 @@
   --darkgold: #695c1d;
   --darkfield: #f3f0e3;
   --lightfield: #fefae7;
+  --leftright: 5vw;
+  --leftrightklein: 2vw;
+  --topbottom: 2rem;
   font-family: "PoiretOne", Arial, Helvetica, sans-serif;
 }
 
@@ -51,7 +54,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 5vw;
+  padding: var(--topbottom) var(--leftright);
 
   grid-template-columns: 1fr 0.5fr 2fr 1fr;
   grid-template-rows: 3rem 1rem repeat(2, 3rem);
@@ -169,7 +172,7 @@ header nav {
 .slide-panel .booknow {
   position: absolute;
   top: 9rem;
-  right: 5vw;
+  right: var(--leftright);
 }
 
 .slide-panel .hidenav {
@@ -178,8 +181,8 @@ header nav {
   flex-direction: column;
   justify-content: space-evenly;
   top: 15rem;
-  left: 2vw;
-  right: 2vw;
+  left: var(--leftrightklein);
+  right: var(--leftrightklein);
   height: 50vh;
   background-color: var(--lightfield);
 }
@@ -189,7 +192,7 @@ header nav {
   text-decoration: none;
   color: var(--darkgold);
   font-size: 2rem;
-  margin-left: 2rem;
+  margin-left: var(--leftright);
   padding: 1rem;
   width: fit-content;
 }
@@ -246,7 +249,7 @@ header nav {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   header {
     grid-template-columns: repeat(2, 1fr) 8rem repeat(2, 1fr);
     grid-template-rows: repeat(3, 4rem);
@@ -278,6 +281,7 @@ header nav {
 main {
   margin-top: 16rem;
 }
+
 .shader {
   position: relative;
   overflow: hidden;
@@ -286,7 +290,11 @@ main {
   margin: auto;
   z-index: -1;
 }
-
+@media (min-width: 769px) {
+  .shader {
+    height: 73vh;
+  }
+}
 img {
   width: 100%;
   height: 100%;
@@ -299,8 +307,8 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   background-size: 100%;
 }
 
@@ -345,4 +353,40 @@ img {
 
 .leer {
   height: 100vh;
+}
+
+footer.navigation {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  footer.navigation {
+    position: fixed;
+    bottom: var(--topbottom);
+    left: var(--leftright);
+    right: var(--leftright);
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  footer.navigation a,
+  footer.navigation a:visited {
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 10px;
+  }
+
+  footer.navigation a:active {
+    box-shadow: inset 0px 0px 5px var(--gold);
+    border-radius: 1rem;
+  }
+
+  /* footer.navigation button {
+    justify-self: center;
+  } */
 }
