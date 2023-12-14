@@ -251,7 +251,7 @@ header nav {
 
 @media (min-width: 769px) {
   header {
-    grid-template-columns: repeat(2, 1fr) 8rem repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
     grid-template-rows: repeat(3, 4rem);
     grid-template-areas:
       ".  house house house language"
@@ -290,6 +290,7 @@ main {
   margin: auto;
   z-index: -1;
 }
+
 @media (min-width: 769px) {
   .shader {
     height: 73vh;
@@ -367,7 +368,7 @@ footer.navigation {
     right: var(--leftright);
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2vw;
   }
 
   footer.navigation a,
@@ -375,7 +376,7 @@ footer.navigation {
     text-decoration: none;
     color: var(--gold);
     font-size: 1.5rem;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     font-weight: bold;
     width: fit-content;
     padding: 10px;
