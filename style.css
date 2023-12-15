@@ -9,8 +9,15 @@
   box-sizing: border-box;
 }
 
+.leer {
+  border: 1px solid red;
+  width: 100%;
+  height: 50vh;
+}
+
 :root {
   font-size: 62.5%;
+  font-family: "PoiretOne", Arial, Helvetica, sans-serif;
   --green: #0e4539;
   --gold: #cfb53c;
   --darkgold: #695c1d;
@@ -21,8 +28,6 @@
   --leftrightklein: 2vw;
   --topbottom: 2rem;
   --topbottombig: 7rem;
-  --offset: -65%;
-  font-family: "PoiretOne", Arial, Helvetica, sans-serif;
 }
 
 /* button booknow */
@@ -55,39 +60,26 @@
     box-shadow: inset 0px 0px 5px var(--darkgold);
   }
 }
-/* ---------------- */
-.line {
-  height: 2px;
-  width: 70%;
-  margin: auto;
-  background-image: linear-gradient(
-    to left,
-    var(--gold),
-    var(--darkgold),
-    var(--gold)
-  );
-  margin-top: var(--topbottom);
-  margin-bottom: var(--topbottom);
-}
+
 /* ----------------- */
+
 body {
-  margin: auto;
   background-color: var(--green);
   width: 100vw;
 }
 
 header {
   background-color: var(--green);
-  display: grid;
   position: fixed;
+  display: grid;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   padding: var(--topbottom) var(--leftright);
-  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-columns: 40% 5rem auto 0.5fr;
   grid-template-rows: 2rem 1rem repeat(2, 2rem) 1rem;
   grid-template-areas:
-    "house house house language"
+    "house house . language"
     ". gerb . ."
     "casa gerb . ."
     "nostra gerb . bookbutton"
@@ -391,16 +383,30 @@ button.language:active {
 }
 
 main {
-  margin-top: 8rem;
-  margin-bottom: 8rem;
   width: 90%;
   margin: auto;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 @media (min-width: 481px) {
   main {
-    margin-top: 16rem;
+    margin-top: 18rem;
   }
+}
+/* ---------------- */
+.line {
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  background-image: linear-gradient(
+    to left,
+    var(--gold),
+    var(--darkgold),
+    var(--gold)
+  );
+  margin-top: var(--topbottom);
+  margin-bottom: var(--topbottom);
 }
 
 .shader {
@@ -410,7 +416,6 @@ main {
   height: 30vh;
   margin: auto;
   z-index: -1;
-  margin-bottom: var(--topbottom);
 }
 
 img {
@@ -441,6 +446,8 @@ img {
     #f58308 80%,
     black
   );
+  width: 100%;
+  height: 100%;
 }
 
 .mask {
@@ -574,7 +581,6 @@ img {
   font-size: 1.5rem;
   background-color: var(--darkfield);
   color: var(--violet);
-
   padding: var(--leftright);
 }
 .wrapper {
@@ -626,57 +632,154 @@ h2.offers {
 
 /* ---------------------------------- */
 .carousel {
-  position: relative;
-  overflow: hidden;
   width: 100vw;
-  height: 40vh;
-  margin-left: 0;
-
-  border: 1px solid red;
+  text-align: center;
   font-size: 1.5rem;
-  color: var(--gold);
-}
-.car_img {
-  width: 60%;
-  height: 30vh;
-  margin: auto;
-}
-.car_img:nth-child(2) {
-  position: absolute;
-  left: -45%;
-  top: 0;
-}
-.car_img:nth-child(3) {
-  position: absolute;
-  left: 85%;
-  top: 0;
-}
-.car_img:nth-child(4) {
-  position: absolute;
-  left: 150%;
-  top: 0;
+  color: var(--darkgold);
+  text-align: left;
 }
 
-.radiobuttons {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.carousel input {
+  display: none;
 }
 
-#r3:checked + div.photo {
-  animation: links_slide 1s forwards;
+.carousel label {
+  cursor: pointer;
+  text-decoration: none;
+}
+.overflow {
+  width: 100%;
+  overflow: hidden;
 }
 
-@keyframes links_slide {
-  0% {
-    transform: translateX(0);
+.photo {
+  width: 400%;
+  height: 40vh;
+  z-index: 1;
+  transition: margin-left 1s linear;
+}
+
+.photo .slide {
+  width: 60vw;
+  height: 100%;
+  float: left;
+  background-color: var(--lightfield);
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+.photo .slide img {
+  height: 80%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* alle slides nach checked */
+#slider1:checked ~ .overflow .photo {
+  margin-left: -40%;
+}
+
+#slider2:checked ~ .overflow .photo {
+  margin-left: -100%;
+}
+
+#slider3:checked ~ .overflow .photo {
+  margin-left: -160%;
+}
+
+#slider4:checked ~ .overflow .photo {
+  margin-left: -220%;
+}
+
+.controls {
+  position: relative;
+  margin: -20vh 0 0 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 3;
+}
+.controls label {
+  transition: opacity 0.25s;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.4;
+}
+.controls label:hover {
+  opacity: 1;
+}
+
+#slider1:checked ~ .controls label:nth-child(2),
+#slider2:checked ~ .controls label:nth-child(3),
+#slider3:checked ~ .controls label:nth-child(4),
+#slider4:checked ~ .controls label:nth-child(1) {
+  background: url(./icons/chevron-right-solid.svg) no-repeat;
+  background-size: contain;
+  background-position: right;
+  float: right;
+  margin: 0 var(--leftrightklein) 0 0;
+  display: block;
+}
+
+#slider1:checked ~ .controls label:nth-last-child(1),
+#slider2:checked ~ .controls label:nth-last-child(4),
+#slider3:checked ~ .controls label:nth-last-child(3),
+#slider4:checked ~ .controls label:nth-last-child(2) {
+  background: url(./icons/chevron-left-solid.svg) no-repeat;
+  background-size: contain;
+
+  float: left;
+  margin: 0 0 0 var(--leftrightklein);
+  display: block;
+}
+/* ---------------- */
+.bullets {
+  margin: 17vh 0 0;
+  text-align: center;
+}
+
+.bullets label {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--darkgold);
+  margin: 0 10px;
+}
+
+#slider1:checked ~ .bullets label:nth-child(1),
+#slider2:checked ~ .bullets label:nth-child(2),
+#slider3:checked ~ .bullets label:nth-child(3),
+#slider4:checked ~ .bullets label:nth-child(4) {
+  background-color: var(--gold);
+}
+
+@media (min-width: 481px) {
+  .photo .slide p {
+    font-size: 2rem;
+    padding: 0 var(--leftright);
   }
-  100% {
-    transform: translateX(-65%);
+  .bullets label {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
-
+@media (min-width: 769px) {
+  .photo .slide p {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 1000px) {
+  .photo {
+    height: 50vh;
+  }
+  .photo .slide p {
+    font-size: 2.3rem;
+  }
+  .photo .slide img {
+    height: 90%;
+    object-position: 100% 80%;
+  }
+}
 /* -------------------------------- */
 footer.navigation {
   display: none;
@@ -685,9 +788,9 @@ footer.navigation {
 @media (min-width: 769px) {
   footer.navigation {
     position: fixed;
-    width: 100vw;
     height: 8rem;
     left: 0;
+    right: 0;
     bottom: 0;
     display: flex;
     justify-content: center;
