@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casa Nostra</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
     <script
       src="https://kit.fontawesome.com/5d5b6f96a0.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
+
   </head>
   <body>
     <header>
@@ -17,8 +22,15 @@
       <span class="casanostra">NOSTRA</span>
       <img src="./images/logo.png" alt="" />
       <button class="booknow">BOOK NOW</button>
+      <div class="line"></div>
 
       <nav>
+        <select id="lan" class="language">
+          <option value="eng">englisch</option>
+          <option value="deu">deutsch</option>
+          <option value="cro">croatian</option>
+        </select>
+
         <button class="language eng" id="eng" title="eng"></button>
         <button class="language deu" id="deu" title="deu"></button>
         <button class="language cro" id="cro" title="cro"></button>
@@ -44,18 +56,131 @@
           </div>
         </div>
       </nav>
+
     </header>
 
     <main>
       <!-- <div class="uber"></div> -->
-      <div class="shader">
+      <section class="shader">
         <img src="./images/balkon_jakov_1 .jpg" alt="balkon" />
         <div class="shader_layer specular">
           <div class="shader_layer mask"></div>
         </div>
+      </section>
+
+      <div class="line"></div>
+
+      <section class="room hor">
+        <img src="./images/house.webp" alt="house" />
+        <div class="text house">
+          <h2>apartment house</h2>
+          <p>
+            This newly built and modernly furnished 3 Bedroom apartment (120m2)
+            is located in the beautiful coastal town Rogoznica, between the
+            bigger cities of Split and Sibenik. Enjoy the quiet neighborhood
+            outside on the green patio in the private swimming pool, with sun
+            deck chairs and an outside sitting area.
+          </p>
+          <button><a href="#">show more</a></button>
+        </div>
+      </section>
+
+      <div class="line"></div>
+
+      <div class="room hor">
+        <img src="./images/sobe_jakov_7.jpg" alt="jakov apartment" />
+        <section class="text jakov">
+          <h2>apartment jakov</h2>
+          <p>
+            This newly built and modernly furnished 3 Bedroom apartment (120m2)
+            is located in the beautiful coastal town Rogoznica, between the
+            bigger cities of Split and Sibenik. Enjoy the quiet neighborhood
+            outside on the green patio in the private swimming pool, with sun
+            deck chairs and an outside sitting area.
+          </p>
+          <button><a href="#">show more</a></button>
+        </section>
       </div>
-      <div class="leer"></div>
+
+      <div class="line"></div>
+
+      <section class="room vert">
+        <img src="./images/sobe_ruza_2.jpg" alt="ruza apartment" />
+        <div class="text ruza">
+          <h2>apartment ruza</h2>
+          <p>
+            This newly built and modernly furnished 2 Bedroom apartment (90m2)
+            is located in the beautiful coastal town Rogoznica, between the
+            bigger cities of Split and Sibenik. Enjoy the quiet neighborhood
+            outside on the green patio in the private swimming pool.
+          </p>
+          <button><a href="#">show more</a></button>
+        </div>
+      </section>
+      <div class="line"></div>
+
+      <h2 class="offers">What this place offers</h2>
+      <section class="offers container">
+        <div class="wrapper">
+          <i class="fa-solid fa-kitchen-set"></i>
+          <span>Kitchen</span>
+          <span class="material-symbols-outlined"> table_lamp </span>
+          <span>Dedicated workspace</span>
+          <span class="material-symbols-outlined"> yard </span>
+          <span>Courtyard view</span>
+          <span class="material-symbols-outlined">
+            local_laundry_service        </span>
+          <span>Washer</span>
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <span>Beach access</span>
+        <span class="material-symbols-outlined"> pool </span></td>
+        <span>Private pool</span>
+        <span class="material-symbols-outlined"> connected_tv </span>
+          <span>TV</span>
+          <i class="fa-solid fa-wifi"></i></td>
+          <span>Wifi</span>
+          <i class="fa-solid fa-car"></i></td>
+          <span>Free parking on premises</span>
+        </div>
+      </section>
+      <div class="line"></div>
+
+      
     </main>
+
+    <section class="carousel">
+     
+       
+          <input class="radiobuttons" type="radio" name="r" id="r1">
+          <input class="radiobuttons" type="radio" name="r" id="r2">
+          <input class="radiobuttons" type="radio" name="r" id="r3">
+          <input class="radiobuttons" type="radio" name="r" id="r4">
+     
+
+     <div class="photo">
+          <div class="car_img">
+            <img src="./images/beach.jpg" alt="beach">
+            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, expedita.</span>
+          </div>
+          <div class="car_img">
+           <img src="./images/bike_karta.jpg" alt="bike kart">
+           <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, expedita.</span>
+          </div>
+          <div class="car_img">
+           <img src="./images/food.jpg" alt="food">
+           <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, expedita.</span>
+          </div>
+          <div class="car_img">
+           <img src="./images/NP-Krka-3.jpg" alt="natur">
+           <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, expedita.</span>
+     </div>
+        
+   </div>
+ 
+      
+    </section>
+
+    <div class="line"></div>
 
     <footer class="navigation">
       <a href="#" target="_blank">ABOUT</a>
@@ -65,5 +190,6 @@
       <a href="#" target="_blank">ATTRACTION</a>
       <a href="#" target="_blank">LOCATION</a>
     </footer>
+
   </body>
 </html>

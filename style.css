@@ -16,17 +16,21 @@
   --darkgold: #695c1d;
   --darkfield: #f3f0e3;
   --lightfield: #fefae7;
+  --violet: rgb(48, 2, 62);
   --leftright: 5vw;
   --leftrightklein: 2vw;
   --topbottom: 2rem;
+  --topbottombig: 7rem;
+  --offset: -65%;
   font-family: "PoiretOne", Arial, Helvetica, sans-serif;
 }
 
 /* button booknow */
 .booknow {
   border: none;
-  width: 9rem;
-  height: 3rem;
+  width: 6rem;
+  height: 2rem;
+  font-size: 1rem;
   background-color: var(--gold);
   color: var(--green);
   justify-self: end;
@@ -37,32 +41,57 @@
 }
 
 .booknow:active {
-  box-shadow: inset 0px 0px 5px var(--darkgold);
+  box-shadow: inset 0px 0px 3px var(--darkgold);
+}
+
+@media (min-width: 481px) {
+  .booknow {
+    width: 9rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .booknow:active {
+    box-shadow: inset 0px 0px 5px var(--darkgold);
+  }
 }
 /* ---------------- */
+.line {
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  background-image: linear-gradient(
+    to left,
+    var(--gold),
+    var(--darkgold),
+    var(--gold)
+  );
+  margin-top: var(--topbottom);
+  margin-bottom: var(--topbottom);
+}
+/* ----------------- */
 body {
-  width: 90vw;
   margin: auto;
   background-color: var(--green);
+  width: 100vw;
 }
 
 header {
   background-color: var(--green);
-
   display: grid;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   padding: var(--topbottom) var(--leftright);
-
-  grid-template-columns: 1fr 0.5fr 2fr 1fr;
-  grid-template-rows: 3rem 1rem repeat(2, 3rem);
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 2rem 1rem repeat(2, 2rem) 1rem;
   grid-template-areas:
     "house house house language"
     ". gerb . ."
     "casa gerb . ."
-    "nostra gerb . bookbutton";
+    "nostra gerb . bookbutton"
+    "linie linie linie linie";
 }
 
 header span {
@@ -71,25 +100,58 @@ header span {
 
 header > img {
   grid-area: gerb;
-  height: 6rem;
-  width: 6rem;
+  height: 4rem;
+  width: 4rem;
   align-self: end;
 }
 
 header span:nth-child(1) {
   grid-area: house;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 1em;
 }
 
 .casanostra {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
 }
 
 header span:nth-child(2) {
   grid-area: casa;
+}
+header .line {
+  grid-area: linie;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: self-end;
+}
+
+@media (min-width: 481px) {
+  header {
+    grid-template-columns: 1fr 0.5fr 1fr 1fr;
+    grid-template-rows: 3rem 1rem repeat(2, 3rem) 2rem;
+    grid-template-areas:
+      "house house house language"
+      ". gerb . ."
+      "casa gerb . ."
+      "nostra gerb . bookbutton"
+      "linie linie linie linie";
+  }
+
+  header > img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .casanostra {
+    font-size: 3rem;
+  }
+
+  header span:nth-child(1) {
+    font-size: 2.5rem;
+  }
 }
 
 header span:nth-child(3) {
@@ -107,38 +169,36 @@ header nav {
   gap: 1rem;
 }
 
-.language {
-  width: 1rem;
-  height: 1rem;
-  border: none;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
+button.language {
+  display: none;
 }
 
-.language:hover {
+select.language {
+  width: 3rem;
+  height: 1rem;
+  border: none;
+  font-size: 0.7rem;
+  border-radius: 0.5rem;
+  justify-self: center;
+  /* background-image: url(./images/eng.png);
+  background-position: center;
+  background-size: cover; */
+}
+
+select.language:hover,
+button.language:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
 
-.language:active {
+select.language:active,
+button.language:active {
   box-shadow: inset 0px 0px 4px var(--green);
-}
-
-.eng {
-  background-image: url(./images/eng.png);
-}
-.deu {
-  background-image: url(./images/deutsch.png);
-}
-.cro {
-  background-image: url(./images/Croatia.png);
-  margin-right: auto;
 }
 
 .hamburger .fa-bars {
   color: var(--gold);
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 .hamburger label:hover .fa-bars,
@@ -147,16 +207,53 @@ header nav {
   transform: scale(1.1);
 }
 
+@media (min-width: 481px) {
+  select.language {
+    display: none;
+  }
+
+  button.language {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  button.language:active {
+    box-shadow: inset 0px 0px 4px var(--green);
+  }
+
+  .eng {
+    background-image: url(./images/eng.png);
+  }
+
+  .deu {
+    background-image: url(./images/deutsch.png);
+  }
+
+  .cro {
+    background-image: url(./images/Croatia.png);
+    margin-right: auto;
+  }
+
+  .hamburger .fa-bars {
+    font-size: 3rem;
+  }
+}
+
 #menu {
   display: none;
 }
 
 .slide-panel {
   height: 100vh;
-  width: 45vw;
+  width: 100vw;
   position: fixed;
   top: 0;
-  right: -45vw;
+  right: -100vw;
   background: var(--darkfield);
   color: var(--darkgold);
 }
@@ -181,8 +278,8 @@ header nav {
   flex-direction: column;
   justify-content: space-evenly;
   top: 15rem;
-  left: var(--leftrightklein);
-  right: var(--leftrightklein);
+  left: var(--leftright);
+  right: var(--leftright);
   height: 50vh;
   background-color: var(--lightfield);
 }
@@ -212,6 +309,50 @@ header nav {
 
 #menu:checked + .slide-panel > .booknow {
   animation: buttonexplosion 1s forwards;
+}
+
+@media (min-width: 481px) {
+  .slide-panel {
+    width: 45vw;
+    top: 0;
+    right: -45vw;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
+    grid-template-rows: repeat(3, 4rem) 2rem;
+    grid-template-areas:
+      ".  house house house language"
+      ". . gerb . ."
+      ". casa gerb nostra ."
+      "linie linie linie linie linie";
+  }
+
+  header > img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  header > .booknow,
+  header .hamburger {
+    display: none;
+  }
+
+  header > img,
+  header span:nth-child(1) {
+    justify-self: center;
+    font-size: 4rem;
+  }
+  header span:nth-child(1) {
+    margin-left: 1em;
+  }
+
+  header span:nth-child(2),
+  header nav {
+    justify-self: end;
+  }
 }
 
 @keyframes buttonexplosion {
@@ -249,37 +390,17 @@ header nav {
   }
 }
 
-@media (min-width: 769px) {
-  header {
-    grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
-    grid-template-rows: repeat(3, 4rem);
-    grid-template-areas:
-      ".  house house house language"
-      ". . gerb . ."
-      ". casa gerb nostra .";
-  }
-
-  header > .booknow,
-  header .hamburger {
-    display: none;
-  }
-
-  header > img,
-  header span:nth-child(1) {
-    justify-self: center;
-    font-size: 4rem;
-  }
-  header span:nth-child(1) {
-    margin-left: 1em;
-  }
-
-  header span:nth-child(2),
-  header nav {
-    justify-self: end;
-  }
-}
 main {
-  margin-top: 16rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  width: 90%;
+  margin: auto;
+}
+
+@media (min-width: 481px) {
+  main {
+    margin-top: 16rem;
+  }
 }
 
 .shader {
@@ -289,13 +410,9 @@ main {
   height: 30vh;
   margin: auto;
   z-index: -1;
+  margin-bottom: var(--topbottom);
 }
 
-@media (min-width: 769px) {
-  .shader {
-    height: 73vh;
-  }
-}
 img {
   width: 100%;
   height: 100%;
@@ -316,7 +433,6 @@ img {
 .specular {
   background-attachment: fixed;
   mix-blend-mode: color-dodge;
-
   background-image: linear-gradient(
     180deg,
     black 5%,
@@ -333,29 +449,235 @@ img {
   background-size: contain;
 }
 
-.nav {
-  width: 100%;
-  height: 50rem;
-  border: 1px solid var(--gold);
+@media (min-width: 481px) {
+  .shader {
+    height: 73vh;
+  }
 }
 
-/* @keyframes header {
-  0% {
-    transform: translateY(0vh) translateZ(-13px);
-    opacity: 0;
+.room {
+  width: 100%;
+}
+
+.room img {
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--topbottom);
+
+  width: 100%;
+  height: fit-content;
+  padding: var(--leftright);
+
+  background-color: var(--darkfield);
+  color: var(--violet);
+  font-size: 1.5rem;
+}
+
+.text p {
+  text-align: justify;
+}
+
+.text h2 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.text button {
+  border: none;
+  width: fit-content;
+}
+.text button a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--darkgold);
+}
+.text button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+@media (min-width: 481px) {
+  .line {
+    height: 3px;
+    margin-top: var(--topbottombig);
+    margin-bottom: var(--topbottombig);
   }
-  30% {
-    z-index: 1;
+
+  .room {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 15vw);
+    grid-template-rows: repeat(5, 10vh) auto;
+  }
+
+  .room.hor img {
+    width: 75vw;
+    grid-area: 2/1/7/6;
+  }
+
+  .room.hor .text {
+    font-size: 1.5rem;
+    padding: var(--leftrightklein);
+    grid-area: 1/3/4/7;
+  }
+
+  .room.vert img {
+    width: 75vw;
+    grid-area: 1/1/7/3;
+  }
+
+  .room.vert .text {
+    font-size: 1.5rem;
+    padding: var(--leftrightklein);
+    grid-area: 2/3/4/7;
+  }
+}
+
+@media (min-width: 1000px) {
+  .room .text {
+    font-size: 2rem;
+  }
+  .room.hor img {
+    width: 60vw;
+    grid-area: 2/2/8/6;
+  }
+
+  .room.vert img {
+    width: 60vw;
+    grid-area: 1/2/7/6;
+  }
+
+  .room.hor .text {
+    max-width: 40vw;
+    grid-area: 1/-1/3/-5;
+    justify-self: end;
+  }
+
+  .room.vert .text {
+    max-width: 40vw;
+    grid-area: 2/-1/4/-5;
+    justify-self: end;
+  }
+}
+
+.offers.container {
+  width: 70vw;
+  height: auto;
+  margin: auto;
+  font-size: 1.5rem;
+  background-color: var(--darkfield);
+  color: var(--violet);
+
+  padding: var(--leftright);
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightfield);
+  border: 1px solid var(--gold);
+  display: grid;
+  grid-template-columns: 4rem auto;
+  gap: var(--topbottom);
+  align-items: center;
+  padding: var(--leftright);
+}
+
+h2.offers {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gold);
+  margin-bottom: var(--topbottom);
+  text-align: center;
+}
+
+.offers .material-symbols-outlined {
+  font-size: 3rem;
+  font-variation-settings: "opsz" 30;
+}
+@media (min-width: 481px) {
+  .offers.container {
+    font-size: 2rem;
+  }
+  h2.offers {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 769px) {
+  .offers.container {
+    padding: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  .wrapper {
+    grid-template-columns: 4rem 1fr 4rem 1fr;
+  }
+
+  h2.offers {
+    font-size: 3rem;
+  }
+}
+
+/* ---------------------------------- */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 40vh;
+  margin-left: 0;
+
+  border: 1px solid red;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+.car_img {
+  width: 60%;
+  height: 30vh;
+  margin: auto;
+}
+.car_img:nth-child(2) {
+  position: absolute;
+  left: -45%;
+  top: 0;
+}
+.car_img:nth-child(3) {
+  position: absolute;
+  left: 85%;
+  top: 0;
+}
+.car_img:nth-child(4) {
+  position: absolute;
+  left: 150%;
+  top: 0;
+}
+
+.radiobuttons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#r3:checked + div.photo {
+  animation: links_slide 1s forwards;
+}
+
+@keyframes links_slide {
+  0% {
+    transform: translateX(0);
   }
   100% {
-    z-index: 1;
+    transform: translateX(-65%);
   }
-} */
-
-.leer {
-  height: 100vh;
 }
 
+/* -------------------------------- */
 footer.navigation {
   display: none;
 }
@@ -363,12 +685,15 @@ footer.navigation {
 @media (min-width: 769px) {
   footer.navigation {
     position: fixed;
-    bottom: var(--topbottom);
-    left: var(--leftright);
-    right: var(--leftright);
+    width: 100vw;
+    height: 8rem;
+    left: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2vw;
+    background-color: var(--green);
   }
 
   footer.navigation a,
