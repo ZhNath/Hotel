@@ -409,6 +409,25 @@ main {
   margin-bottom: var(--topbottom);
 }
 
+h2.caption {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gold);
+  margin-bottom: var(--topbottom);
+  text-align: center;
+}
+@media (min-width: 481px) {
+  h2.caption {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  h2.caption {
+    font-size: 3rem;
+  }
+}
+/* --------------------------------- */
 .shader {
   position: relative;
   overflow: hidden;
@@ -595,14 +614,6 @@ img {
   padding: var(--leftright);
 }
 
-h2.offers {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--gold);
-  margin-bottom: var(--topbottom);
-  text-align: center;
-}
-
 .offers .material-symbols-outlined {
   font-size: 3rem;
   font-variation-settings: "opsz" 30;
@@ -610,9 +621,6 @@ h2.offers {
 @media (min-width: 481px) {
   .offers.container {
     font-size: 2rem;
-  }
-  h2.offers {
-    font-size: 2.5rem;
   }
 }
 @media (min-width: 769px) {
@@ -623,10 +631,6 @@ h2.offers {
 @media (min-width: 1000px) {
   .wrapper {
     grid-template-columns: 4rem 1fr 4rem 1fr;
-  }
-
-  h2.offers {
-    font-size: 3rem;
   }
 }
 
@@ -665,6 +669,7 @@ h2.offers {
   float: left;
   background-color: var(--lightfield);
   padding: 0.2rem;
+  padding-top: 2rem;
   margin: 0.2rem;
 }
 
@@ -779,6 +784,12 @@ h2.offers {
     height: 90%;
     object-position: 100% 80%;
   }
+}
+/* -----------map---------- */
+.map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 /* -------------------------------- */
 footer.navigation {
