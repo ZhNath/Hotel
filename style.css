@@ -757,9 +757,6 @@ footer.adress {
   margin: auto;
   margin-bottom: 8rem;
 }
-footer.adress:hover + footer.navigation {
-  opacity: 0;
-}
 
 footer .signup {
   position: relative;
@@ -1111,6 +1108,7 @@ input[name="bookbutton"] {
   left: 50%;
   transform: translateX(-50%);
   display: none;
+  z-index: 20;
 }
 
 .dialogpanel {
