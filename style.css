@@ -972,6 +972,9 @@ footer .signup {
   .contactus span {
     font-size: 2rem;
   }
+  .contactus.linkswrapper span {
+    font-size: 1.7rem;
+  }
 }
 @media (min-width: 768px) {
   .contactus span {
@@ -996,7 +999,9 @@ footer .signup {
     height: 7rem;
   }
 
-  .linkswrapper {
+  .contactus.linkswrapper {
+    position: relative;
+    left: 10%;
     height: 12rem;
     width: 100%;
   }
@@ -1011,12 +1016,23 @@ footer .signup {
     display: block;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 2000px) {
   footer.adress {
     width: 70vw;
   }
   footer .signup {
     width: 70vw;
+  }
+  .contactus.namen span {
+    font-size: 4rem;
+  }
+  .contactus.namen img {
+    width: 17rem;
+    height: 17rem;
+  }
+  .contactus.linkswrapper span,
+  .contactus.data span {
+    font-size: 2.5rem;
   }
 }
 /* -------------------------------- */
