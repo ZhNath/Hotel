@@ -800,13 +800,17 @@ footer.adress {
   margin: auto;
   margin-bottom: 8rem;
 }
+footer.adress:hover + footer.navigation {
+  opacity: 0;
+}
+
 footer .signup {
   position: relative;
   width: 90vw;
   height: 5rem;
   margin: auto;
   margin-bottom: 3rem;
-  transition: all 1s;
+  /* transition: all 1s; */
 }
 
 .signup .writeus {
@@ -818,7 +822,7 @@ footer .signup {
   font-weight: bold;
   font-size: 1.7rem;
   clip-path: polygon(0% 0%, 100% 0%, 100%5rem, 0%5rem);
-  transition: all 1s;
+  transition: clip-path 1s;
 }
 .writeus legend {
   height: 3rem;
@@ -836,13 +840,9 @@ footer .signup {
 }
 .writeus label.up {
   display: none;
-  transition: all;
-  transition-delay: 1s;
 }
 .writeus label.down {
   display: block;
-  transition: all;
-  transition-delay: 1s;
 }
 .writeus input,
 .writeus button {
