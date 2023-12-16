@@ -1107,14 +1107,15 @@ input[name="bookbutton"] {
   max-width: 600px;
   background: var(--darkfield);
   position: fixed;
-  top: 16rem;
-  left: 5vw;
+  top: 20rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
 }
 
 .dialogpanel {
-  width: 80vw;
-  height: 50vw;
+  width: 90%;
+  height: 90%;
   background: var(--lightfield);
   border: 3px solid var(--gold);
 
