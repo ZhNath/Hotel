@@ -31,61 +31,6 @@
   --topbottombig: 7rem;
 }
 
-/* button booknow */
-.booknow {
-  border: none;
-  width: 6rem;
-  height: 2rem;
-  font-size: 1rem;
-  background-color: var(--gold);
-  color: var(--green);
-  justify-self: end;
-}
-
-.booknow:hover {
-  cursor: pointer;
-}
-
-.booknow:active {
-  box-shadow: inset 0px 0px 3px var(--darkgold);
-}
-
-@media (min-width: 481px) {
-  .booknow {
-    width: 9rem;
-    height: 3rem;
-    font-size: 1.5rem;
-  }
-
-  .booknow:active {
-    box-shadow: inset 0px 0px 5px var(--darkgold);
-  }
-}
-/* --------dialog panel--------- */
-.dialog {
-  width: 70vw;
-  height: 70vw;
-  background: var(--darkfield);
-  position: absolute;
-  top: 16rem;
-  left: 15vw;
-  display: grid;
-  position: fixed;
-}
-
-.dialogpanel {
-  width: 90%;
-  height: 90%;
-  background: var(--lightfield);
-  border: 1px solid var(--darkgold);
-  place-self: center;
-}
-.booknow:active {
-  box-shadow: inset 0px 0px 3px var(--darkgold);
-}
-.booknow:active ~ aside.dialog {
-  background-color: #f3735c;
-}
 /* ----------------- */
 
 body {
@@ -167,7 +112,7 @@ header .line {
     font-size: 3rem;
   }
 
-  header span:nth-child(1) {
+  header span:nth-child(1):not(.bookbutton span) {
     font-size: 2.5rem;
   }
 }
@@ -176,8 +121,9 @@ header span:nth-child(3) {
   grid-area: nostra;
 }
 
-header > .booknow {
+header > .bookbutton {
   grid-area: bookbutton;
+  place-self: end;
 }
 
 header nav {
@@ -285,7 +231,7 @@ button.language:active {
   top: 5px;
 }
 
-.slide-panel .booknow {
+.slide-panel .bookbutton {
   position: absolute;
   top: 9rem;
   right: var(--leftright);
@@ -326,7 +272,7 @@ button.language:active {
   display: none;
 }
 
-#menu:checked + .slide-panel > .booknow {
+#menu:checked + .slide-panel > .bookbutton {
   animation: buttonexplosion 1s forwards;
 }
 
@@ -354,7 +300,7 @@ button.language:active {
     width: 6rem;
   }
 
-  header > .booknow,
+  header > .bookbutton,
   header .hamburger {
     display: none;
   }
@@ -422,19 +368,6 @@ main {
   }
 }
 /* ---------------- */
-.line {
-  height: 2px;
-  width: 70%;
-  margin: auto;
-  background-image: linear-gradient(
-    to left,
-    var(--gold),
-    var(--darkgold),
-    var(--gold)
-  );
-  margin-top: var(--topbottom);
-  margin-bottom: var(--topbottom);
-}
 
 h2.caption {
   font-size: 2rem;
@@ -922,9 +855,10 @@ footer .signup {
     margin-bottom: 10rem;
   }
 }
-
+/* --contact us------ */
 .contactus,
-.info {
+.info,
+.col3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1039,6 +973,9 @@ footer .signup {
   .namen span:nth-child(6) {
     display: block;
   }
+  .contactus.data span {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 2000px) {
   footer.adress {
@@ -1097,4 +1034,110 @@ footer.navigation {
   /* footer.navigation button {
     justify-self: center;
   } */
+}
+/* goldene linie */
+.line {
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  background-image: linear-gradient(
+    to left,
+    var(--gold),
+    var(--darkgold),
+    var(--gold)
+  );
+  margin-top: var(--topbottom);
+  margin-bottom: var(--topbottom);
+}
+
+.thinline {
+  height: 1px;
+  min-height: 1px;
+  width: 90%;
+  background-color: var(--gold);
+}
+
+/* bookbutton */
+.bookbutton {
+  width: 6rem;
+  height: 2rem;
+  min-height: 2rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--gold);
+}
+.bookbutton label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.bookbutton:hover {
+  cursor: pointer;
+}
+
+.bookbutton:active {
+  box-shadow: inset 0px 0px 3px var(--darkgold);
+}
+
+input[name="bookbutton"] {
+  display: none;
+}
+/* bookbutton responsiv */
+
+@media (min-width: 481px) {
+  .bookbutton {
+    height: 3rem;
+    width: 9rem;
+  }
+  .bookbutton {
+    font-size: 1.5rem;
+  }
+
+  .bookbutton:active {
+    box-shadow: inset 0px 0px 5px var(--darkgold);
+  }
+}
+/*bookbutton dialog panel */
+.dialog {
+  width: 90vw;
+  aspect-ratio: 3/2;
+  min-width: 250px;
+  max-width: 600px;
+  background: var(--darkfield);
+  position: fixed;
+  top: 16rem;
+  left: 5vw;
+  display: none;
+}
+
+.dialogpanel {
+  width: 80vw;
+  height: 50vw;
+  background: var(--lightfield);
+  border: 3px solid var(--gold);
+
+  place-self: center;
+  padding: 10vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: end;
+  text-align: end;
+  gap: 10px;
+}
+.dialogpanel span {
+  color: var(--green);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (min-width: 481) {
+  .dialogpanel span {
+    font-size: 2rem;
+  }
+}
+.bookbutton input:checked ~ .dialog {
+  display: grid;
 }
