@@ -1109,6 +1109,7 @@ input[name="bookbutton"] {
   transform: translateX(-50%);
   display: none;
   z-index: 20;
+  backdrop-filter: blur(10px);
 }
 
 .dialogpanel {
