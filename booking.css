@@ -114,6 +114,8 @@ button.language:active {
 aside img.meer {
   width: 100%;
   height: auto;
+  max-height: 40vh;
+  object-fit: cover;
   margin-bottom: var(--topbottom);
 }
 
@@ -129,16 +131,94 @@ main {
     "hause r2"
     "jakov r3"
     "ruza r4";
+  color: var(--darkgold);
+  font-weight: bold;
 }
 
 .container {
   background-color: var(--lightfield);
 }
 
-.container.chechout {
-  grid-area: kalender;
-  display: grid;
+main * {
+  border: 1px solid red;
 }
+
+.container.checkout {
+  grid-area: kalender;
+  padding: var(--leftrightklein);
+  display: flex;
+  flex-direction: column;
+}
+.guest {
+  position: relative;
+}
+.guestwrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -30vh;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 33%, 0% 33%);
+  transition: all.5s;
+  background-color: aqua;
+}
+
+#gpanel:checked + .guestwrapper {
+  background-color: aquamarine;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+label[for="gpanel"],
+.guest span {
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  margin-bottom: calc(var(--topbottom) / 2);
+}
+
+label[for="aguest"],
+label[for="chguest"] {
+  font-size: 1.5rem;
+}
+
+input[type="number"] {
+  width: 15px;
+  height: 15px;
+}
+
+.inputwrapper {
+  margin-bottom: var(--topbottom);
+}
+
+input[name="bigaguest"],
+input[name="bigchguest"] {
+  width: 30px;
+  height: 30px;
+  margin-bottom: var(--topbottom);
+}
+input[name="bigaguest"]::after,
+input[name="bigchguest"]::after {
+  content: "";
+  background-color: rebeccapurple;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+/* ------------------------------------- */
+.checkout .in {
+  width: 33%;
+}
+.checkout .out {
+  width: 33%;
+}
+.checkout .left {
+  width: 50%;
+}
+.checkout .right {
+  width: 50%;
+}
+
 .container.status {
   grid-area: status;
 }
