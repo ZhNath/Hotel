@@ -119,7 +119,7 @@ aside img.meer {
   margin-bottom: var(--topbottom);
 }
 
-main {
+/* main {
   width: 90%;
   margin: auto;
   display: grid;
@@ -133,61 +133,130 @@ main {
     "ruza r4";
   color: var(--darkgold);
   font-weight: bold;
+} */
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--darkgold);
+  font-weight: bold;
 }
 
 .container {
   background-color: var(--lightfield);
+  height: fit-content;
+  padding-bottom: 2rem;
 }
 
 main * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+.bookbtn {
+  width: 6rem;
+  height: 2rem;
+  min-height: 2rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--gold);
 }
 
+.bookbtn a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.bookbtn:hover {
+  cursor: pointer;
+}
+
+.bookbtn:active {
+  box-shadow: inset 0px 0px 3px var(--darkgold);
+}
+/* ------------ */
+button,
+input {
+  border: none;
+  text-align: center;
+  color: var(--darkgold);
+}
+
+input:focus {
+  outline: none;
+}
+
+.fa-solid,
+.fa-regular {
+  font-size: 1.7rem;
+  margin-right: var(--leftrightklein);
+}
+/* ------------------------ */
 .container.checkout {
-  grid-area: kalender;
-  padding: var(--leftrightklein);
   display: flex;
   flex-direction: column;
 }
+
+#gpanel {
+  display: none;
+}
+/* ---------------------------- */
+
 .guest {
   position: relative;
 }
+
 .guestwrapper {
   position: absolute;
+  padding-top: var(--leftrightklein);
+
   top: 0;
   left: 0;
   right: 0;
-  bottom: -30vh;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 33%, 0% 33%);
+  bottom: -40vh;
+  background-color: var(--lightfield);
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 0% 10%);
   transition: all.5s;
-  background-color: aqua;
+}
+
+.inputwrapper {
+  margin-bottom: var(--topbottom);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1.5rem;
 }
 
 #gpanel:checked + .guestwrapper {
-  background-color: aquamarine;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border: 1px solid var(--darkgold);
 }
 
 label[for="gpanel"],
-.guest span {
-  font-size: 2rem;
+label[for="in"],
+label[for="out"],
+label[for="aguest"],
+label[for="chguest"],
+.guest span,
+.status span {
+  font-size: 1.4rem;
   text-align: center;
   display: block;
   margin-bottom: calc(var(--topbottom) / 2);
 }
-
-label[for="aguest"],
-label[for="chguest"] {
-  font-size: 1.5rem;
+label[for="gpanel"] {
+  font-size: 1.6rem;
+}
+label[for="gpanel"]:hover {
+  cursor: pointer;
 }
 
 input[type="number"] {
   width: 15px;
   height: 15px;
-}
-
-.inputwrapper {
-  margin-bottom: var(--topbottom);
 }
 
 input[name="bigaguest"],
@@ -196,51 +265,146 @@ input[name="bigchguest"] {
   height: 30px;
   margin-bottom: var(--topbottom);
 }
-input[name="bigaguest"]::after,
-input[name="bigchguest"]::after {
-  content: "";
-  background-color: rebeccapurple;
-  background-size: cover;
+
+.buttonswrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button.plus,
+button.minus {
+  position: relative;
   width: 30px;
   height: 30px;
+  background-color: var(--darkgold);
+  color: var(--lightfield);
+}
+button.plus {
+  left: -10px;
+}
+button.minus {
+  left: 10px;
+}
+button.cancel,
+button.submit {
+  width: 80px;
+  height: 30px;
+  background-color: var(--darkgold);
+  color: var(--lightfield);
 }
 
 /* ------------------------------------- */
-.checkout .in {
-  width: 33%;
+.datawrapper {
+  display: flex;
+  justify-content: center;
+  gap: var(--leftright);
+  margin-top: 8vh;
 }
-.checkout .out {
-  width: 33%;
+.leftdatawrapper,
+.rightdatawrapper {
+  display: flex;
+  flex-direction: column;
 }
-.checkout .left {
-  width: 50%;
+.in {
 }
-.checkout .right {
-  width: 50%;
+.out {
+}
+.left {
+}
+.right {
 }
 
 .container.status {
-  grid-area: status;
+  padding: var(--leftrightklein);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr repeat(3, 2fr);
+  align-items: center;
+}
+.status span:nth-child(1) {
+  grid-area: 1/1/2/3;
+}
+.status span:nth-child(2) {
+  grid-area: 2/1/3/2;
+}
+.status span:nth-child(3) {
+  grid-area: 2/2/3/3;
+}
+.status span:nth-child(4) {
+  grid-area: 3/1/4/2;
+}
+.status span:nth-child(5) {
+  grid-area: 3/2/4/3;
+}
+.status span:nth-child(6) {
+  grid-area: 4/1/5/3;
+}
+.status span:nth-child(7) {
+  grid-area: 5/1/6/2;
+}
+.status span:nth-child(8) {
+  grid-area: 5/2/6/3;
+  color: var(--lightfield);
+  width: 13rem;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: var(--darkgold);
+  justify-self: center;
+}
+/* ---------------------------- */
+.container.room {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  padding: var(--leftrightklein);
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+.room img {
+  grid-area: 1/1/5/2;
+  width: 100%;
+}
+.room span:nth-child(2) {
+  grid-area: 1/2/3/4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+.room span:nth-child(3) {
+  grid-area: 3/2/4/4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.room.ruza span:nth-child(3) {
+  grid-area: 2/2/3/4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+.room span:nth-child(4) {
+  grid-area: 5/2/6/4;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  justify-self: end;
+}
+.room .bookbtn {
+  grid-area: 6/2/7/4;
+  justify-self: end;
 }
 
 .container.haus {
-  grid-area: hause;
 }
 .container.was1 {
-  grid-area: r2;
-  display: grid;
 }
 .container.jakov {
-  grid-area: jakov;
 }
 
 .container.was2 {
-  grid-area: r2;
 }
 .container.ruza {
-  grid-area: ruza;
 }
 
 .container.was3 {
-  grid-area: r3;
 }

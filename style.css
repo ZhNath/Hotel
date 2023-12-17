@@ -1071,7 +1071,7 @@ footer.navigation {
   font-weight: bold;
   color: var(--green);
 }
-.bookbutton a {
+.bookbtn a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;

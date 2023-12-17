@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="booking.css" />
     <title>Booking</title>
+    <script
+      src="https://kit.fontawesome.com/5d5b6f96a0.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -31,33 +35,105 @@
         <div class="form guest">
           <input type="checkbox" name="gpanel" id="gpanel" />
           <div class="guestwrapper">
-            <label for="gpanel">Guest </label>
             <div class="inputwrapper">
+              <label for="gpanel">
+                <i class="fa-solid fa-user-check"></i>Guest
+              </label>
               <label for="aguest">Adult</label>
               <input type="number" name="aguest" id="aguest" />
               <label for="chguest">Children</label>
               <input type="number" name="chguest" id="chguest" />
             </div>
             <span>Select Guests:</span>
-            <label for="aguest" name="bigaguest">Adult</label>
-            <input type="number" name="bigaguest" id="aguest" />
+            <div class="buttonswrapper">
+              <label for="aguest" name="bigaguest">Adult</label>
+              <button class="minus">-</button>
+              <input type="number" name="bigaguest" id="aguest" />
+              <button class="plus">+</button>
+            </div>
             <br />
-            <label for="chguest" name="bigchguest">Children</label>
-            <input type="number" name="bigchguest" id="chguest" />
+            <div class="buttonswrapper">
+              <label for="chguest" name="bigchguest">Children</label>
+              <button class="minus">-</button>
+              <input type="number" name="bigchguest" id="chguest" />
+              <button class="plus">+</button>
+            </div>
+            <div class="buttonswrapper">
+              <button class="cancel" type="reset">CANCEL</button>
+              <button class="submit" type="submit">APPLY</button>
+            </div>
           </div>
         </div>
 
-        <div class="form in"></div>
-        <div class="form out"></div>
-        <div class="kalender left"></div>
-        <div class="kalender right"></div>
+        <div class="datawrapper">
+          <div class="leftdatawrapper">
+            <div class="in">
+              <label for="in"
+                ><i class="fa-regular fa-calendar-days"></i>Check-in</label
+              >
+              <input type="date" name="datein" id="in" />
+            </div>
+            <div class="kalender left"></div>
+          </div>
+          <div class="rightdatawrapper">
+            <div class="out">
+              <label for="out"
+                ><i class="fa-regular fa-calendar-days"></i>Check-out</label
+              >
+              <input type="date" name="dateout" id="out" />
+            </div>
+            <div class="kalender right"></div>
+          </div>
+        </div>
       </div>
-      <div class="container status">status</div>
-      <div class="container haus">haus</div>
+      <div class="container status">
+        <span>Your Stay:</span>
+        <span>Check-in</span>
+        <span>Check-out</span>
+        <span>After 3:00 PM</span>
+        <span>Before 10:00 AM</span>
+        <span>Mon.Dec 18, 2023 - Mon.Dec 25, 2023</span>
+        <span>2 Ad, 4 Children</span>
+        <span>Total: 1000 Euro</span>
+      </div>
+
+      <div class="container room haus">
+        <img src="./images/house.webp" alt="house" />
+        <span
+          >apartment house <br />
+          casa nostra
+        </span>
+        <span>etwas ueber house</span>
+        <span
+          >150 Euro <br />
+          per Night</span
+        >
+        <div class="bookbtn"><a href="http://">BOOK</a></div>
+      </div>
+
       <div class="container was1">was1</div>
-      <div class="container jakov">jakov</div>
+      <div class="container room jakov">
+        <img src="./images/sobe_jakov_7.jpg" alt="jakov" />
+        <span>apartment jakov</span>
+        <span>3 bedroom | 120m2</span>
+        <span
+          >100 Euro <br />
+          per Night</span
+        >
+        <div class="bookbtn"><a href="http://">BOOK</a></div>
+      </div>
       <div class="container was2">was2</div>
-      <div class="container ruza">ruza</div>
+      <div class="container room ruza">
+        <img src="./images/sobe_ruza_2.jpg" alt="ruza" />
+        <span> apartment ruza</span>
+        <span>2 bedroom | 90m2</span>
+        <span
+          >90 Euro <br />
+          per Night</span
+        >
+      </div>
+      <div class="bookbtn"><a href="http://">BOOK</a></div>
+
       <div class="container was3">was3</div>
     </main>
   </body>
