@@ -80,11 +80,6 @@ button.language:active {
   margin-right: auto;
 }
 
-img.meer {
-  width: 100%;
-  height: auto;
-}
-
 .data a,
 .naming span {
   font-weight: bold;
@@ -114,4 +109,29 @@ img.meer {
   img.logo {
     margin-right: auto;
   }
+}
+
+aside img.meer {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--topbottom);
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(4, 200px);
+  gap: var(--leftright);
+  grid-template-areas:
+    "kalender r1"
+    "hause r2"
+    "jakob r3"
+    "ruza r4";
+}
+
+.container {
+  background-color: var(--lightfield);
+  border: 1px solid red;
 }
