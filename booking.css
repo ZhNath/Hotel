@@ -123,15 +123,44 @@ main {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(4, 200px);
-  gap: var(--leftright);
+  gap: calc(var(--leftright) / 2);
   grid-template-areas:
-    "kalender r1"
+    "kalender status"
     "hause r2"
-    "jakob r3"
+    "jakov r3"
     "ruza r4";
 }
 
 .container {
   background-color: var(--lightfield);
-  border: 1px solid red;
+}
+
+.container.chechout {
+  grid-area: kalender;
+  display: grid;
+}
+.container.status {
+  grid-area: status;
+}
+
+.container.haus {
+  grid-area: hause;
+}
+.container.was1 {
+  grid-area: r2;
+  display: grid;
+}
+.container.jakov {
+  grid-area: jakov;
+}
+
+.container.was2 {
+  grid-area: r2;
+}
+.container.ruza {
+  grid-area: ruza;
+}
+
+.container.was3 {
+  grid-area: r3;
 }
