@@ -29,9 +29,16 @@ body {
   width: 100vw;
 }
 header {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 8vh;
   display: flex;
   justify-content: space-around;
+
+  background-color: var(--darkfield);
 }
 .naming,
 .data {
@@ -92,8 +99,7 @@ button.language:active {
     display: flex;
     justify-content: space-evenly;
     gap: var(--leftright);
-    margin-left: var(--leftright);
-    margin-right: var(--leftright);
+    padding: 0 var(--leftright);
   }
   .naming span,
   .data a {
@@ -112,6 +118,8 @@ button.language:active {
 }
 
 aside img.meer {
+  margin-top: 8vh;
+
   width: 100%;
   height: auto;
   max-height: 40vh;
@@ -127,6 +135,10 @@ main {
   gap: 2rem;
   color: var(--darkgold);
   font-weight: bold;
+}
+table.kalender {
+  margin-top: 2rem;
+  display: none;
 }
 .bookbtn {
   width: 6rem;
@@ -214,7 +226,7 @@ input:focus {
   color: var(--darkgold);
   font-size: 2rem;
   position: absolute;
-  right: -2rem;
+  right: 0;
   top: 1rem;
   display: none;
 }
@@ -446,6 +458,7 @@ button.submit {
 
   table.kalender {
     margin-top: 2rem;
+    display: contents;
   }
   table.kalender,
   th,
