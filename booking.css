@@ -118,22 +118,7 @@ aside img.meer {
   object-fit: cover;
   margin-bottom: var(--topbottom);
 }
-
-/* main {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(4, 200px);
-  gap: calc(var(--leftright) / 2);
-  grid-template-areas:
-    "kalender status"
-    "hause r2"
-    "jakov r3"
-    "ruza r4";
-  color: var(--darkgold);
-  font-weight: bold;
-} */
+/* ----------------------- */
 main {
   width: 90%;
   margin: auto;
@@ -142,16 +127,6 @@ main {
   gap: 2rem;
   color: var(--darkgold);
   font-weight: bold;
-}
-
-.container {
-  background-color: var(--lightfield);
-  height: fit-content;
-  padding-bottom: 2rem;
-}
-
-main * {
-  /* border: 1px solid red; */
 }
 .bookbtn {
   width: 6rem;
@@ -176,6 +151,7 @@ main * {
 .bookbtn:active {
   box-shadow: inset 0px 0px 3px var(--darkgold);
 }
+
 /* ------------ */
 button,
 input {
@@ -203,6 +179,11 @@ input:focus {
   display: none;
 }
 /* ---------------------------- */
+.container {
+  background-color: var(--lightfield);
+  height: fit-content;
+  padding-bottom: 2rem;
+}
 
 .guest {
   position: relative;
@@ -229,10 +210,21 @@ input:focus {
   align-items: baseline;
   gap: 1.5rem;
 }
+.guest .fa-xmark {
+  color: var(--darkgold);
+  font-size: 2rem;
+  position: absolute;
+  right: -2rem;
+  top: 1rem;
+  display: none;
+}
 
 #gpanel:checked + .guestwrapper {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   border: 1px solid var(--darkgold);
+}
+#gpanel:checked + .guestwrapper > .inputwrapper > .close .fa-xmark {
+  display: block;
 }
 
 label[for="gpanel"],
@@ -305,16 +297,9 @@ button.submit {
 .rightdatawrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.in {
-}
-.out {
-}
-.left {
-}
-.right {
-}
-
+/* ------------------------------------- */
 .container.status {
   padding: var(--leftrightklein);
   display: grid;
@@ -393,18 +378,92 @@ button.submit {
   grid-area: 6/2/7/4;
   justify-self: end;
 }
+.container.room.haus {
+  grid-template-rows: repeat(5, 1fr);
+}
+.room.haus span:nth-child(4) {
+  grid-area: 4/2/5/4;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  justify-self: end;
+}
+.room.haus .bookbtn {
+  grid-area: 5/2/6/4;
+  justify-self: end;
+}
 
-.container.haus {
-}
-.container.was1 {
-}
-.container.jakov {
-}
-
+.container.was1,
 .container.was2 {
+  height: 30vw;
+  display: grid;
+  place-items: center;
 }
-.container.ruza {
-}
+@media (min-width: 800px) {
+  main {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
 
-.container.was3 {
+    gap: calc(var(--leftright) / 3);
+    grid-template-areas:
+      "checkout status"
+      "hause r1"
+      "jakov r2"
+      "ruza .";
+    color: var(--darkgold);
+    font-weight: bold;
+    margin-bottom: var(--topbottombig);
+  }
+  .container {
+    height: 100%;
+    padding: var(--leftrightklein);
+  }
+  .container.checkout {
+    grid-area: checkout;
+  }
+  .container.status {
+    grid-area: status;
+  }
+  .container.room.haus {
+    grid-area: hause;
+  }
+  .container.room.jakov {
+    grid-area: jakov;
+  }
+  .container.room.ruza {
+    grid-area: ruza;
+  }
+  .container.was1 {
+    grid-area: r1;
+  }
+  .container.was2 {
+    grid-area: r2;
+  }
+  .guestwrapper {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
+  }
+
+  table.kalender {
+    margin-top: 2rem;
+  }
+  table.kalender,
+  th,
+  td {
+    border: 1px solid var(--altgold);
+  }
+  th,
+  td {
+    width: 3rem;
+    height: 3rem;
+  }
+  .bookbtn {
+    width: 10rem;
+    height: 4rem;
+  }
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
