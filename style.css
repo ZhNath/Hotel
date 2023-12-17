@@ -63,7 +63,7 @@ header span {
 
 header > img {
   grid-area: gerb;
-  height: 4rem;
+  height: auto;
   width: 4rem;
   align-self: end;
 }
@@ -104,7 +104,7 @@ header .line {
   }
 
   header > img {
-    height: 6rem;
+    height: auto;
     width: 6rem;
   }
 
@@ -296,7 +296,7 @@ label.close:hover .fa-xmark {
   }
 
   header > img {
-    height: 6rem;
+    height: auto;
     width: 6rem;
   }
 
@@ -892,7 +892,7 @@ footer .signup {
 
 .namen img {
   width: 4rem;
-  height: 4rem;
+  height: auto;
 }
 
 .data span:nth-last-child(2) {
@@ -951,7 +951,7 @@ footer .signup {
   }
   .contactus.namen img {
     width: 7rem;
-    height: 7rem;
+    height: auto;
   }
 
   .contactus.linkswrapper {
@@ -986,7 +986,7 @@ footer .signup {
   }
   .contactus.namen img {
     width: 17rem;
-    height: 17rem;
+    height: auto;
   }
   .contactus.linkswrapper span,
   .contactus.data span {
