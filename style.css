@@ -639,8 +639,15 @@ img {
   height: 80%;
   object-fit: cover;
   object-position: bottom;
+  transition: all 0.5s;
 }
-
+.photo .slide img:hover {
+  scale: 1.2;
+}
+.photo .slide img:active {
+  scale: 0.8;
+  box-shadow: 0px 0px 0 80vw var(--greenshadow);
+}
 /* alle slides nach checked */
 #slider1:checked ~ .overflow .photo {
   margin-left: -40%;
