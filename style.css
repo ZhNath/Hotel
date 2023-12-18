@@ -275,10 +275,6 @@ label.close:hover .fa-xmark {
   display: none;
 }
 
-#menu:checked + .slide-panel > .bookbtn {
-  animation: buttonexplosion 1s forwards;
-}
-
 @media (min-width: 481px) {
   .slide-panel {
     width: 45vw;
@@ -320,41 +316,6 @@ label.close:hover .fa-xmark {
   header span:nth-child(2),
   header nav {
     justify-self: end;
-  }
-}
-
-@keyframes buttonexplosion {
-  0% {
-    transform: scale(0.01);
-
-    box-shadow: 0px 0px 0px var(--darkgold);
-  }
-
-  50% {
-    transform: scale(1.2) translateY(-20px);
-    box-shadow: 0px 0px 10px 4px var(--darkgold);
-  }
-
-  65% {
-    transform: scale(0.9);
-    box-shadow: inset 0px 0px 0px 0px var(--darkgold);
-  }
-
-  70% {
-    transform: scale(0.9);
-    box-shadow: inset 0px 0px 5px var(--darkgold);
-  }
-  73% {
-    transform: scale(0.9);
-  }
-
-  90% {
-    transform: scale(1.1) translateY(-7px);
-    box-shadow: 0px 0px 5px var(--darkgold);
-  }
-
-  100% {
-    transform: scale(1) translateY(7px);
   }
 }
 
