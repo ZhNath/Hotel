@@ -54,19 +54,46 @@ header {
   left: 0;
   width: 100%;
   padding: var(--topbottom) var(--leftright);
-  grid-template-columns: 40% 5rem auto 0.5fr;
-  grid-template-rows: 2rem 1rem repeat(2, 2rem) 1rem;
+  grid-template-columns: calc(17ch - 4rem) 4rem auto;
+  grid-template-rows: 2rem 1.8rem repeat(2, 2rem) 1rem;
   grid-template-areas:
-    "house house . language"
-    ". gerb . ."
-    "casa gerb . ."
-    "nostra gerb . bookbutton"
-    "linie linie linie linie";
+    "house house  language"
+    ". gerb  ."
+    "casa gerb  ."
+    "nostra gerb  bookbutton"
+    "linie linie linie";
   z-index: 1;
 }
+/* golden line */
+header .line {
+  grid-area: linie;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: self-end;
+}
 
+/* links naming */
 header span {
   color: var(--gold);
+  font-size: 1.7rem;
+}
+
+span.casa-nostra {
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+header span:nth-child(1) {
+  grid-area: house;
+}
+
+header span:nth-child(2) {
+  grid-area: casa;
+}
+
+header span:nth-child(3) {
+  grid-area: nostra;
 }
 
 header > img {
@@ -76,33 +103,11 @@ header > img {
   align-self: end;
 }
 
-header span:nth-child(1) {
-  grid-area: house;
-  font-size: 1.5rem;
-  line-height: 1em;
-}
-
-.casanostra {
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-
-header span:nth-child(2) {
-  grid-area: casa;
-}
-header .line {
-  grid-area: linie;
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  align-self: self-end;
-}
-
+/* responsiv links naming */
 @media (min-width: 481px) {
   header {
-    grid-template-columns: 1fr 0.5fr 1fr 1fr;
-    grid-template-rows: 3rem 1rem repeat(2, 3rem) 2rem;
+    grid-template-columns: 17ch 6rem 1fr 1fr;
+    grid-template-rows: 3rem 2rem repeat(2, 3rem) 2rem;
     grid-template-areas:
       "house house house language"
       ". gerb . ."
@@ -116,24 +121,44 @@ header .line {
     width: 6rem;
   }
 
-  .casanostra {
+  span.casa-nostra {
     font-size: 3rem;
   }
 
-  header span:nth-child(1):not(.bookbutton span) {
+  header span:nth-child(1) {
     font-size: 2.5rem;
   }
 }
 
-header span:nth-child(3) {
-  grid-area: nostra;
+@media (min-width: 769px) {
+  header {
+    grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
+    grid-template-rows: repeat(3, 4rem) 2rem;
+    grid-template-areas:
+      ".  house house house language"
+      ". . gerb . ."
+      ". casa gerb nostra ."
+      "linie linie linie linie linie";
+  }
+
+  header > img {
+    width: 6rem;
+    height: auto;
+    justify-self: center;
+  }
+
+  header span:nth-child(1) {
+    font-size: 4rem;
+    margin-left: 1em;
+    justify-self: center;
+  }
+
+  header span:nth-child(2) {
+    justify-self: end;
+  }
 }
 
-header > .bookbtn {
-  grid-area: bookbutton;
-  place-self: end;
-}
-
+/* nav = language + hamburger */
 header nav {
   grid-area: language;
   display: flex;
@@ -178,7 +203,10 @@ label.close:hover .fa-xmark {
   cursor: pointer;
   transform: scale(1.3);
 }
-
+header > .bookbtn {
+  grid-area: bookbutton;
+  place-self: end;
+}
 @media (min-width: 481px) {
   select.language {
     display: none;
@@ -290,36 +318,11 @@ label.close:hover .fa-xmark {
 }
 
 @media (min-width: 769px) {
-  header {
-    grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
-    grid-template-rows: repeat(3, 4rem) 2rem;
-    grid-template-areas:
-      ".  house house house language"
-      ". . gerb . ."
-      ". casa gerb nostra ."
-      "linie linie linie linie linie";
-  }
-
-  header > img {
-    height: auto;
-    width: 6rem;
-  }
-
   header > .bookbtn,
   header .hamburger {
     display: none;
   }
 
-  header > img,
-  header span:nth-child(1) {
-    justify-self: center;
-    font-size: 4rem;
-  }
-  header span:nth-child(1) {
-    margin-left: 1em;
-  }
-
-  header span:nth-child(2),
   header nav {
     justify-self: end;
   }
