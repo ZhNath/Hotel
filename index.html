@@ -173,24 +173,26 @@
           <span>Free parking on premises</span>
         </div>
       </section>
-      
+
       <div class="line"></div>
    
     </main>
 
-    <h2 class="carousel caption">Lorem, ipsum dolor.</h2>
-    <section class="carousel">
-      <input class="radiobuttons" type="radio" name="slider" id="slider1" checked>
-      <input class="radiobuttons" type="radio" name="slider" id="slider2">
-      <input class="radiobuttons" type="radio" name="slider" id="slider3">
-      <input class="radiobuttons" type="radio" name="slider" id="slider4">
+    <aside class="carousel">
+      <h2 class="carousel caption">Impressions</h2>
+
+      <input class="radio-control" type="radio" name="slider" id="slider1" checked>
+      <input class="radio-control" type="radio" name="slider" id="slider2">
+      <input class="radio-control" type="radio" name="slider" id="slider3">
+      <input class="radio-control" type="radio" name="slider" id="slider4">
 
       <div class="overflow">
-        <div class="photo">
+        <div class="photo-box">
           <div class="slide slide_4">
             <img src="./images/NP-Krka-3.jpg" alt="natur">
             <p>What to visit</p>
           </div>
+
             <div class="slide slide_1">
                 <a href="https://www.loverogoznica.eu/en/plaze/" target="_blank"><img src="./images/beach.jpg" alt="beach"></a>
                 <p>Beaches</p>
@@ -207,19 +209,18 @@
             </div>
   
             <div class="slide slide_4">
-                  
                   <a href="https://www.loverogoznica.eu/en/sto-posjetiti/" target="_blank"><img src="./images/NP-Krka-3.jpg" alt="natur"></a>
                   <p>What to visit</p>
             </div>
+
             <div class="slide slide_1">
               <img src="./images/beach.jpg" alt="beach">
-             
               <p>Beaches</p>
           </div>
         </div>
       </div>
 
-      <div class="controls">
+      <div class="controls-arrows">
         <label for="slider1"></label>
         <label for="slider2"></label>
         <label for="slider3"></label>
@@ -232,25 +233,30 @@
         <label for="slider3"></label>
         <label for="slider4"></label>
       </div>
-</section>
-      <div class="line"></div>
+    </aside>
 
-  <h2 class="map caption">Lorem, ipsum dolor.</h2>
-  <section class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2892.142714996445!2d15.9574346!3d43.5410669!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133519caffdeb421%3A0x88a18cb6c8b9ebd4!2sApartment%20House%20Casa%20Nostra!5e0!3m2!1sen!2sde!4v1702671354330!5m2!1sen!2sde" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Rogoznica map"></iframe>
-</section>
-
-<div class="line"></div>
+      <div id="map" class="line"></div>
 
 
+    <aside class="map" >
+        <h2 class="map caption">Lorem, ipsum dolor.</h2>
 
-<footer class="adress">
-  <input type="checkbox" name="down" id="down">
+       <div class="map-background">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2892.142714996445!2d15.9574346!3d43.5410669!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133519caffdeb421%3A0x88a18cb6c8b9ebd4!2sApartment%20House%20Casa%20Nostra!5e0!3m2!1sen!2sde!4v1702671354330!5m2!1sen!2sde" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-down-grade" title="Rogoznica map"></iframe>
+        </div>
+    </aside>
+
+    <!-- <div class="line"></div> -->
+
+
+
+<footer class="information">
+  <input type="checkbox" name="down-arrow" id="down-arrow">
   <div class="signup">
-    <form class="writeus">
+    <form class="write-us-bar">
       <legend>Sign up for our news and offers
-        <label class="down" for="down"><i class="fa-solid fa-chevron-down"></i></label>
-        <label class="up"  for="down"><i class="fa-solid fa-chevron-up"></i></label>
+        <label class="down-arrow" for="down-arrow"><i class="fa-solid fa-chevron-down"></i></label>
+        <label class="up-arrow"  for="down-arrow"><i class="fa-solid fa-chevron-up"></i></label>
       </legend>
           <input type="text" name="Name" id="Name" placeholder="Name"> 
           <input type="text" name="Surname" id="SurName" placeholder="Surname">
@@ -259,30 +265,27 @@
     </form>
   </div>
 
-  <div class="info">
-    <div class="contactus namen">
+  <div class="info-bar">
+
+    <div class="contact-us naming">
       <span>apartment house</span>
-      <span>APARTMENT</span>
-      <span>HOUSE</span>
       <span>CASA NOSTRA</span>
-      <span>CASA</span>
-      <span>NOSTRA</span>
-      <img src="./images/logo.png" alt="" />
+      <img src="./images/logo.png" alt="gerb" />
     </div>
 
-    <div class="contactus linkswrapper">
-      <span>apartment</span>
-      <span>place</span>
-      <span>ATTRACTION</span>
-      <span>location</span>
-      <span>beaches</span>
-      <span>gallery</span>
-      <span>prise</span>
-      <span>house rules</span>
-      <span>CONTACT</span>
+    <div class="contact-us linkswrapper">
+      <a href="#">apartment</a>
+      <a href="#">place</a>
+      <a href="#">ATTRACTION</a>
+      <a href="#">location</a>
+      <a href="#">beaches</a>
+      <a href="#">gallery</a>
+      <a href="#">prise</a>
+      <a href="#">house rules</a>
+      <a href="#">CONTACT</a>
     </div>
 
-   <div class="col3">
+   <div class="contact-us adress">
         <!-- <button class="booknow">BOOK NOW</button> -->
         <div class="bookbtn">
           <input type="checkbox" name="bookbutton" id="bookcontact">
@@ -299,11 +302,9 @@
             </div>
           </div>
         </div>
-
-        <div class="contactus data">
-            <span>Loznica I 2b, 22203, Zečevo Rogozničko, Croatia</span>
+            <a href="#map">Loznica I 2b, 22203, Zečevo Rogozničko, Croatia</a>
            <span>+385989797117</span>
-         </div>
+         
    </div>
    
   </div>
@@ -313,7 +314,6 @@
     <span>Radanovic Matilda </span>
   </div>
 </footer>
-
 
 
 <!-- <div class="leer"></div> -->
