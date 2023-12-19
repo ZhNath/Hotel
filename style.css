@@ -1147,10 +1147,11 @@ footer.navigation {
 
 /*bookbutton dialog bar */
 .dialog {
-  width: 90vw;
+  width: 60vw;
   aspect-ratio: 3/2;
   min-width: 250px;
-  max-width: 55vw;
+  max-height: 70vh;
+  /* max-width: 55vw; */
   background: var(--darkfield);
 
   position: fixed;
@@ -1213,4 +1214,37 @@ footer.navigation {
 #share-button {
   display: none;
 }
-.d
+#share-button:checked + .dialog-sharing {
+  display: grid;
+}
+.dialog-sharing .dialogbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2vw;
+  justify-items: center;
+  align-items: start;
+}
+.dialog-sharing .fa-brands,
+.dialog-sharing .fa-copy {
+  font-size: 7vw;
+  background-color: var(--lightfield);
+}
+
+.fa-twitter {
+  color: var(--twitter);
+}
+.fa-telegram {
+  color: var(--telegram);
+}
+.fa-facebook {
+  color: var(--facebook);
+}
+.fa-at {
+  color: var(--email);
+}
+.fa-whatsapp {
+  color: var(--whatsapp);
+}
+.fa-viber {
+  color: var(--viber);
+}
