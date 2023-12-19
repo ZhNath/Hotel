@@ -57,6 +57,12 @@ label:hover {
   --leftrightklein: 2vw;
   --topbottom: 2rem;
   --topbottombig: 7rem;
+  --twitter: #1da1f2;
+  --telegram: #0088cc;
+  --facebook: #1877f2;
+  --whatsapp: #25d366;
+  --viber: #59267c;
+  --email: #ea4335;
 }
 
 /* ----------------- */
@@ -457,6 +463,13 @@ h2.caption {
 .card-room-text button a {
   text-transform: uppercase;
   color: var(--darkgold);
+}
+.card-room-btns {
+  display: flex;
+  gap: 2rem;
+}
+.fa-star:active {
+  color: var(--gold);
 }
 /* responsiv apartment cards */
 @media (min-width: 481px) {
@@ -876,7 +889,7 @@ footer .signup {
   height: auto;
 }
 
-.adress a:nth-last-child(2) {
+.adress a:nth-child(2) {
   text-transform: initial;
   text-align: center;
   padding: var(--leftrightklein);
@@ -896,6 +909,16 @@ footer .signup {
   justify-content: space-evenly;
   align-items: center;
 }
+.icons {
+  margin-top: var(--topbottom);
+  display: flex;
+  gap: 1rem;
+}
+.icons i {
+  color: var(--altgold);
+  font-size: 2rem;
+  gap: 10px;
+}
 
 @media (min-width: 481px) {
   .linkswrapper {
@@ -913,10 +936,6 @@ footer .signup {
 }
 
 @media (min-width: 768px) {
-  .contact-us span {
-    font-size: 2rem;
-  }
-
   .info-bar {
     display: grid;
     grid-template-columns: max-content 2fr 1fr;
@@ -941,7 +960,7 @@ footer .signup {
     height: 12rem;
   }
   .contact-us.adress {
-    align-self: self-end;
+    justify-content: space-between;
   }
   .contact-us.adress span {
     font-size: 2rem;
@@ -1122,7 +1141,7 @@ footer.navigation {
 }
 /* *************************************************** */
 /* controller booknow */
-#bookbutton {
+#book-button {
   display: none;
 }
 
@@ -1131,7 +1150,7 @@ footer.navigation {
   width: 90vw;
   aspect-ratio: 3/2;
   min-width: 250px;
-  max-width: 40vw;
+  max-width: 55vw;
   background: var(--darkfield);
 
   position: fixed;
@@ -1185,7 +1204,13 @@ footer.navigation {
     font-size: 2rem;
   }
 }
-#bookbutton:checked + .dialog {
+#book-button:checked + .dialog-booking {
   display: grid;
 }
+
 /* ******************************************* */
+/* controller share-button */
+#share-button {
+  display: none;
+}
+.d
