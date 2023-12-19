@@ -84,7 +84,7 @@ header {
     "linie linie linie";
   z-index: 1;
 }
-/* golden line */
+/* golden header line */
 header .line {
   grid-area: linie;
   width: 100%;
@@ -268,14 +268,7 @@ button.language:active {
   color: var(--gold);
   font-size: 1.5rem;
 }
-.hamburger .fa-xmark {
-  color: var(--darkgold);
-  font-size: 2rem;
-  position: absolute;
-  right: 3rem;
-  top: 3rem;
-  z-index: 5;
-}
+
 label.ham-lines:hover .fa-bars,
 label.close:hover .fa-xmark {
   cursor: pointer;
@@ -287,67 +280,6 @@ label.close:hover .fa-xmark {
     font-size: 3rem;
   }
 }
-/* right slide-bar */
-#control-slide-bar {
-  display: none;
-}
-
-.slide-bar-background {
-  height: 60vh;
-  width: 100vw;
-  position: fixed;
-  top: 20vh;
-  right: -100vw;
-  background: var(--darkfield);
-  color: var(--darkgold);
-  z-index: 4;
-}
-/* responsiv slide-bar */
-@media (min-width: 481px) {
-  .slide-bar-background {
-    width: 45vw;
-    top: 0;
-    right: -45vw;
-  }
-}
-
-.slide-bar-background .slide-bar {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
-  bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: var(--lightfield);
-}
-
-.slide-bar a,
-.slide-bar a:visited {
-  color: var(--darkgold);
-  font-size: 2rem;
-  margin-left: var(--leftright);
-  width: fit-content;
-}
-
-.slide-bar a:active {
-  box-shadow: inset 0px 0px 5px var(--darkgold);
-}
-#control-slide-bar:checked + .slide-bar-background {
-  right: 0;
-  box-shadow: 0 0 0 50vmax var(--greenshadow);
-}
-
-#control-slide-bar:checked + .slide-bar-background + .slide-button .fa-bars {
-  display: none;
-}
-/* 
-.slide-bar-background .bookbtn {
-  position: absolute;
-  top: 9rem;
-  right: var(--leftright);
-} */
 
 /* ----------------------- */
 main {
@@ -949,7 +881,8 @@ footer .signup {
   text-align: center;
   padding: var(--leftrightklein);
 }
-.adress .bookbtn {
+
+.adress label[for="bookbutton"] {
   margin-bottom: var(--topbottom);
 }
 
@@ -1050,7 +983,7 @@ footer.navigation {
     background-color: var(--green);
   }
 
-  footer.navigation a:not(.bookbutton a) {
+  footer.navigation a {
     text-decoration: none;
     color: var(--gold);
     font-size: 1.5rem;
@@ -1064,11 +997,8 @@ footer.navigation {
     box-shadow: inset 0px 0px 5px var(--gold);
     border-radius: 1rem;
   }
-
-  /* footer.navigation button {
-    justify-self: center;
-  } */
 }
+/* *************************************************** */
 /* goldene linie */
 .line {
   height: 2px;
@@ -1096,76 +1026,131 @@ footer.navigation {
   width: 90%;
   background-color: var(--gold);
 }
-
+/* ************************************************* */
 /* bookbutton */
 .bookbtn {
-  width: 6rem;
-  height: 2rem;
-  min-height: 2rem;
-  display: grid;
-  place-content: center;
-  background-color: var(--gold);
-}
-.bookbtn label {
   display: block;
   font-size: 1rem;
+  padding: 5px;
   font-weight: bold;
+  background-color: var(--gold);
   color: var(--green);
 }
 .bookbtn a {
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
   color: var(--green);
 }
-
 .bookbtn:active {
   box-shadow: inset 0px 0px 3px var(--darkgold);
 }
-
-input[name="bookbutton"] {
-  display: none;
-}
 /* bookbutton responsiv */
-
 @media (min-width: 481px) {
   .bookbtn {
-    height: 3rem;
-    width: 9rem;
+    font-size: 1.3rem;
   }
   .bookbtn {
-    font-size: 1.5rem;
-  }
-
-  .bookbtn:active {
     box-shadow: inset 0px 0px 5px var(--darkgold);
   }
 }
+@media (min-width: 768px) {
+  .bookbtn {
+    font-size: 1.5rem;
+    padding: 7px;
+  }
+}
+/* *************************************************** */
+/* right slide-bar */
+#control-slide-bar {
+  display: none;
+}
+.slide-bar-background .fa-xmark {
+  color: var(--darkgold);
+  font-size: 2rem;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  z-index: 5;
+}
+.slide-bar-background {
+  height: 60vh;
+  width: 100vw;
+  position: fixed;
+  top: 20vh;
+  right: -100vw;
+  background: var(--darkfield);
+  color: var(--darkgold);
+  z-index: 4;
+}
+/* responsiv slide-bar */
+@media (min-width: 481px) {
+  .slide-bar-background {
+    width: 45vw;
+    top: 0;
+    right: -45vw;
+  }
+}
+
+.slide-bar-background .slide-bar {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--lightfield);
+}
+
+.slide-bar a,
+.slide-bar a:visited {
+  color: var(--darkgold);
+  font-size: 2rem;
+  margin-left: var(--leftright);
+  width: fit-content;
+}
+
+.slide-bar a:active {
+  box-shadow: inset 0px 0px 5px var(--darkgold);
+}
+#control-slide-bar:checked + .slide-bar-background {
+  right: 0;
+  box-shadow: 0 0 0 50vmax var(--greenshadow);
+}
+
+#control-slide-bar:checked + .slide-bar-background + .slide-button .fa-bars {
+  display: none;
+}
+/* *************************************************** */
+/* controller booknow */
+#bookbutton {
+  display: none;
+}
+
 /*bookbutton dialog bar */
 .dialog {
   width: 90vw;
   aspect-ratio: 3/2;
   min-width: 250px;
-  /* max-width: 600px; */
   max-width: 40vw;
   background: var(--darkfield);
+
   position: fixed;
   top: 20rem;
   left: 50%;
   transform: translateX(-50%);
+
   display: none;
   z-index: 20;
   box-shadow: 0 0 0 50vmax var(--greenshadow);
 }
 
 .dialogbar {
-  width: 90%;
-  height: 90%;
   background: var(--lightfield);
   border: 3px solid var(--gold);
-
+  width: 90%;
+  height: 90%;
   place-self: center;
-  padding: 10vw;
+  padding: 5vw;
 
   display: flex;
   flex-direction: column;
@@ -1173,24 +1158,34 @@ input[name="bookbutton"] {
   align-items: end;
   text-align: end;
   gap: 10px;
+  position: relative;
 }
+
 .dialogbar span {
   color: var(--green);
   font-size: 1.5rem;
   font-weight: bold;
 }
-.dialog .fa-xmark {
+
+.dialogbar .close {
   color: var(--darkgold);
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
-  right: 10%;
-  top: 10%;
+  right: 1vw;
+  top: 1vw;
 }
-@media (min-width: 481) {
+
+@media (min-width: 481px) {
+  .dialogbar span {
+    font-size: 1.7rem;
+  }
+}
+@media (min-width: 768px) {
   .dialogbar span {
     font-size: 2rem;
   }
 }
-.bookbtn input:checked ~ .dialog {
+#bookbutton:checked + .dialog {
   display: grid;
 }
+/* ******************************************* */
