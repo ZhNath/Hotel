@@ -44,7 +44,9 @@ label:hover {
 :root {
   font-size: 62.5%;
   font-family: "PoiretOne", Arial, Helvetica, sans-serif;
-  --green: hsl(167, 66%, 16%);
+  /* --green: hsl(167, 66%, 16%); */
+  --green: #092c24;
+
   --greenshadow: hsla(167, 71%, 12%, 0.887);
 
   --gold: #cfb53c;
@@ -53,6 +55,7 @@ label:hover {
   --darkfield: #f3f0e3;
   --lightfield: #fefae7;
   --violet: rgb(48, 2, 62);
+  --violetlight: #4b07e3;
   --leftright: 5vw;
   --leftrightklein: 2vw;
   --topbottom: 2rem;
@@ -754,6 +757,9 @@ footer.information {
   background-color: var(--darkfield);
   width: 100vw;
   margin-bottom: 8rem;
+
+  font-weight: bold;
+  font-size: 1.7rem;
 }
 
 footer .signup {
@@ -771,26 +777,26 @@ footer .signup {
   padding: var(--leftright);
   padding-top: 0;
 
-  font-weight: bold;
-  font-size: 1.7rem;
-  line-height: 5rem;
-
   clip-path: polygon(0% 0%, 100% 0%, 100%5rem, 0%5rem);
   transition: clip-path 1s;
 }
 
 .write-us-bar legend {
   height: 5rem;
+
+  line-height: 5rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  margin-bottom: 2rem;
 }
 /* controller down-drop formular */
 #down-arrow {
   display: none;
 }
 
-.write-us-bar label {
+.write-us-bar legend label.arrow {
   margin-left: var(--leftrightklein);
 }
 .write-us-bar label.up-arrow {
@@ -800,22 +806,32 @@ footer .signup {
   display: block;
 }
 
-.write-us-bar input,
+.input-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.input-group .false-placeholder {
+  position: absolute;
+  left: 1rem;
+  transform: translateY(1rem);
+  line-height: 3rem;
+  background-color: var(--darkgold);
+}
+.input-group input,
 .write-us-bar button {
-  display: block;
   width: 100%;
   height: 5rem;
   padding: 1rem;
-  margin: var(--topbottom) 0;
   font-size: 2rem;
-  background-color: var(--darkgold);
+  background: none;
   border: 1px solid var(--lightfield);
   outline: none;
   color: var(--lightfield);
 }
-.write-us-bar input::placeholder,
-.write-us-bar button::placeholder {
-  color: var(--lightfield);
+
+.input-group input:focus ~ .false-placeholder,
+.input-group input:valid ~ .false-placeholder {
+  transform: translateY(-1.5rem);
 }
 
 #down-arrow:checked + .signup > .write-us-bar {
@@ -843,7 +859,7 @@ footer .signup {
   .signup .write-us-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 3rem 7rem;
+    grid-template-rows: 6rem 7rem;
     gap: 1rem;
   }
   .write-us-bar legend {
@@ -851,10 +867,10 @@ footer .signup {
   }
 
   #down-arrow:checked + .signup > .write-us-bar {
-    clip-path: polygon(0% 0%, 100% 0%, 100%13rem, 0%13rem);
+    clip-path: polygon(0% 0%, 100% 0%, 100%15rem, 0%15rem);
   }
   #down-arrow:checked + .signup {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
 }
 /* --contact us------ */
@@ -1054,11 +1070,28 @@ footer.navigation {
   font-weight: bold;
   background-color: var(--gold);
   color: var(--green);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.bookbtn span {
+  background: linear-gradient(to left, transparent, #efd045, transparent);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 5px;
+  position: absolute;
+  right: -4rem;
+  top: 0;
+  transition: 0.5s all;
 }
 .bookbtn a {
   color: var(--green);
+  letter-spacing: 2px;
 }
-.bookbtn:active {
+.bookbtn:hover span {
+  right: 100%;
+}
+.bookbtn:focus {
   box-shadow: inset 0px 0px 3px var(--darkgold);
 }
 /* bookbutton responsiv */
@@ -1224,9 +1257,13 @@ footer.navigation {
   justify-items: center;
   align-items: start;
 }
+.dialog-sharing .dialogbar span {
+  grid-area: 1/1/2/4;
+}
+
 .dialog-sharing .fa-brands,
 .dialog-sharing .fa-copy {
-  font-size: 7vw;
+  font-size: 6vw;
   background-color: var(--lightfield);
 }
 
@@ -1247,4 +1284,15 @@ footer.navigation {
 }
 .fa-viber {
   color: var(--viber);
+}
+
+/* controller link-copy */
+
+#link-copy {
+  width: 30px;
+  opacity: 0;
+}
+
+.btn {
+  background-color: var(--lightfield);
 }

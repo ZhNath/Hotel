@@ -8,12 +8,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
     <script
       src="https://kit.fontawesome.com/5d5b6f96a0.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+    
   </head>
   <body>
     <header>
@@ -40,7 +45,10 @@
           </div>
         </div>
       </nav>
-        <label class="bookbtn" for="book-button">BOOK NOW</label>
+        <label class="bookbtn" for="book-button">
+          BOOK NOW
+        <span></span>
+      </label>
      
 
 <!-- -------------------------------------------------------- -->
@@ -79,7 +87,7 @@
           </p>
           <div class="card-room-btns">
             <button><a href="#">show more</a></button>
-             <label  for="share-button"> <i class="fa-solid fa-share-nodes"></i></label>
+             <label  for="share-button"><i class="fa-solid fa-share-nodes"></i></label>
              <i class="fa-regular fa-star"></i>
           </div>
           
@@ -236,19 +244,28 @@
 
     <!-- <div class="line"></div> -->
 
- 
 
 <footer class="information">
   <input type="checkbox" name="down-arrow" id="down-arrow">
   <div class="signup">
     <form class="write-us-bar">
       <legend>Sign up for our news and offers
-        <label class="down-arrow" for="down-arrow"><i class="fa-solid fa-chevron-down"></i></label>
-        <label class="up-arrow"  for="down-arrow"><i class="fa-solid fa-chevron-up"></i></label>
+        <label class="arrow down-arrow" for="down-arrow"><i class="fa-solid fa-chevron-down"></i></label>
+        <label class="arrow up-arrow"  for="down-arrow"><i class="fa-solid fa-chevron-up"></i></label>
       </legend>
-          <input type="text" name="Name" id="Name" placeholder="Name"> 
-          <input type="text" name="Surname" id="SurName" placeholder="Surname">
-          <input type="email" name="Email" id="Email" placeholder="Email">
+
+          <div class="input-group">
+            <input type="text" name="Name" id="Name" required> 
+            <label class="false-placeholder" for="Name">Name</label>
+          </div>
+         <div class="input-group">
+           <input type="text" name="Surname" id="SurName" required>
+           <label class="false-placeholder" for="SurName">Surname</label>
+         </div>
+          <div class="input-group">
+            <input type="email" name="Email" id="Email" required>
+            <label class="false-placeholder" for="Email"Email>Email</label>
+          </div>
           <button type="submit">Submit</button>
     </form>
   </div>
@@ -274,7 +291,10 @@
     </div>
 
    <div class="contact-us adress">
-    <label class="bookbtn" for="book-button">BOOK NOW</label>
+    <label class="bookbtn" for="book-button">
+      BOOK NOW
+      <span></span>
+    </label>
     <a href="#map">Loznica I 2b, 22203, Zečevo Rogozničko, Croatia</a>
     <span>+385989797117</span>
     <div class="icons">
@@ -299,7 +319,10 @@
       <a href="#" target="_blank">ABOUT</a>
       <a href="#" target="_blank">PLACE</a>
       <a href="#" target="_blank">CONTACT</a>
-      <label class="bookbtn" for="book-button">BOOK NOW</label>
+      <label class="bookbtn" for="book-button">
+        BOOK NOW
+      <span></span>
+    </label>
       <a href="#" target="_blank">ATTRACTION</a>
       <a href="#" target="_blank">LOCATION</a>
 </footer>
@@ -321,10 +344,16 @@
   <div class="dialogbar">
     <label class="close" for="book-button"><i class="fa-solid fa-xmark"></i></label>
     <span>Ready to book now? <br>Book directly with us</span>
-    <label class="bookbtn"><a href="./booking.html">BOOK NOW</a></label>
+    <label class="bookbtn">
+      <a href="./booking.html">BOOK NOW</a>
+    <span></span>
+  </label>
     <div class="thinline"></div>
     <span class="bar">Have a questions? Write us</span> 
-    <label class="bookbtn"><a href="./email.html">EMAIL</a></label>
+    <label class="bookbtn">
+      <a href="./email.html">EMAIL</a>
+    <span></span>
+  </label>
   </div>
 </div>
 
@@ -332,38 +361,44 @@
 <div class="dialog dialog-sharing">
   <div class="dialogbar">
     <label class="close" for="share-button"><i class="fa-solid fa-xmark"></i></label>
+    <span>Share this place</span>
 
-<button class="button" data-sharer="twitter" data-title="Checkout Sharer.js!" data-hashtags="awesome, sharer.js" data-url="https://ellisonleao.github.io/sharer.js/"> 
-  <i class="fa-brands fa-twitter "></i> 
-</button>
+    <button class="button" data-sharer="twitter" data-title="Apartment House Casa Nostra"  data-url="http://127.0.0.1:5500/index.html"> 
+      <i class="fa-brands fa-twitter "></i> 
+    </button>
 
-<button class="button" data-sharer="telegram" data-title="Checkout Sharer.js!" data-url="https://ellisonleao.github.io/sharer.js/" >
-  <i class="fa-brands fa-telegram"></i>
-</button>
+    <button class="button" data-sharer="telegram" data-title="Apartment House Casa Nostra" data-url="http://127.0.0.1:5500/index.html" >
+      <i class="fa-brands fa-telegram"></i>
+    </button>
 
-<button class="button" data-sharer="facebook" data-hashtag="hashtag" data-url="https://ellisonleao.github.io/sharer.js/">
-   <i class="fa-brands fa-facebook"></i>
-</button>
+    <button class="button" data-sharer="facebook" data-title="Apartment House Casa Nostra" data-url="http://127.0.0.1:5500/index.html">
+      <i class="fa-brands fa-facebook"></i>
+    </button>
 
-<button class="button" data-sharer="email" data-title="Awesome Url" data-url="https://ellisonleao.github.io/sharer.js/" data-subject="Hey! Check out that URL" data-to="some@email.com"> <i class="fa-brands fa-at"></i>
-</button>
+    <button class="button" data-sharer="email" data-title="Apartment House Casa Nostra" data-url="http://127.0.0.1:5500/index.html" data-subject="Apartment in Croatia!" data-to="some@gmail.com"> <i class="fa-brands fa-at"></i>
+    </button>
 
-<button class="button" data-sharer="whatsapp" data-title="Checkout Sharer.js!" data-url="https://ellisonleao.github.io/sharer.js/">
-  <i class="fa-brands fa-whatsapp"></i>
-</button>
+    <button class="button" data-sharer="whatsapp" data-title="Apartment House Casa Nostra" data-url="http://127.0.0.1:5500/index.html">
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
 
-<button class="button" data-sharer="viber" data-title="Checkout Sharer.js!" data-url="https://ellisonleao.github.io/sharer.js/">
-  <i class="fa-brands fa-viber"></i>
-</button>
+    <button class="button" data-sharer="viber" data-title="Apartment House Casa Nostra" data-url="http://127.0.0.1:5500/index.html">
+      <i class="fa-brands fa-viber"></i>
+    </button>
 
-<button class="button button-copy" >
-  <i class="fa-regular fa-copy"></i>
-</button>
-
-  </div>
+    <input id="link-copy" value="http://127.0.0.1:5500/index.html">
+    <button class="button button-copy btn" data-clipboard-action="copy" data-clipboard-target="#link-copy" >
+      <i class="fa-regular fa-copy"></i>
+    </button>
+    
+ 
+</div>
 </div>
 
+<script src="./clipboard.min.js"></script>
+<script>var clipboard = new ClipboardJS('.btn');</script>
 
+ 
   </body>
  
  
