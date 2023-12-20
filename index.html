@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casa Nostra</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mod_window.css">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
-    <link rel="stylesheet" href="style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
@@ -339,9 +340,11 @@
   </div>
 </div>
 
+<input type="checkbox" name="email-button" id="reverse-button">
 <input type="checkbox" name="book-button" id="book-button">
 <div class="dialog dialog-booking">
-  <div class="dialogbar">
+
+  <div class="dialogbar front">
     <label class="close" for="book-button"><i class="fa-solid fa-xmark"></i></label>
     <span>Ready to book now? <br>Book directly with us</span>
     <label class="bookbtn">
@@ -350,12 +353,32 @@
   </label>
     <div class="thinline"></div>
     <span class="bar">Have a questions? Write us</span> 
-    <label class="bookbtn">
-      <a href="./email.html">EMAIL</a>
+    <label class="bookbtn" for="reverse-button">EMAIL
     <span></span>
   </label>
   </div>
+
+  <div class="dialogbar back email">
+    <label class="close" for="reverse-button"><i class="fa-solid fa-xmark"></i></label>
+        <form action="https://formspree.io/f/xqkrzezr" method="post">
+          <legend>Email us</legend>
+          <input type="text" name="name" id="name" placeholder="Name"  required/>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <input type="tel" name="tel" id="tel" placeholder="Telephon" required />
+          <textarea name="massage" id="message"  rows="10" placeholder="Message"></textarea>
+          <button type="submit" name="submit">
+            <a href="mailto:matilda.radanovic82@gmail.com ">Send</a>
+          </button>
+        </form>
+  </div> 
 </div>
+
 
 <input type="checkbox" name="share" id="share-button">
 <div class="dialog dialog-sharing">

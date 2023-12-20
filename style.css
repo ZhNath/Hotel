@@ -18,6 +18,8 @@ ul {
   list-style-type: none;
 }
 a,
+a:hover,
+a:active,
 a:visited,
 label {
   text-decoration: none;
@@ -1114,56 +1116,9 @@ footer.navigation {
 #control-slide-bar {
   display: none;
 }
-.slide-bar-background .fa-xmark {
-  color: var(--darkgold);
-  font-size: 2rem;
-  position: absolute;
-  right: 3rem;
-  top: 3rem;
-  z-index: 5;
-}
-.slide-bar-background {
-  height: 60vh;
-  width: 100vw;
-  position: fixed;
-  top: 20vh;
-  right: -100vw;
-  background: var(--darkfield);
-  color: var(--darkgold);
-  z-index: 4;
-}
-/* responsiv slide-bar */
-@media (min-width: 481px) {
-  .slide-bar-background {
-    width: 45vw;
-    top: 0;
-    right: -45vw;
-  }
-}
 
-.slide-bar-background .slide-bar {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
-  bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background-color: var(--lightfield);
-}
+/* 3 */
 
-.slide-bar a,
-.slide-bar a:visited {
-  color: var(--darkgold);
-  font-size: 2rem;
-  margin-left: var(--leftright);
-  width: fit-content;
-}
-
-.slide-bar a:active {
-  box-shadow: inset 0px 0px 5px var(--darkgold);
-}
 #control-slide-bar:checked + .slide-bar-background {
   right: 0;
   box-shadow: 0 0 0 50vmax var(--greenshadow);
@@ -1178,56 +1133,12 @@ footer.navigation {
   display: none;
 }
 
-/*bookbutton dialog bar */
-.dialog {
-  width: 60vw;
-  aspect-ratio: 3/2;
-  min-width: 250px;
-  max-height: 70vh;
-  /* max-width: 55vw; */
-  background: var(--darkfield);
-
-  position: fixed;
-  top: 20rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  display: none;
-  z-index: 20;
-  box-shadow: 0 0 0 50vmax var(--greenshadow);
-}
-
-.dialogbar {
-  background: var(--lightfield);
-  border: 3px solid var(--gold);
-  width: 90%;
-  height: 90%;
-  place-self: center;
-  padding: 5vw;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-  text-align: end;
-  gap: 10px;
-  position: relative;
-}
-
+/* 1 */
 .dialogbar span {
   color: var(--green);
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-.dialogbar .close {
-  color: var(--darkgold);
-  font-size: 1.5rem;
-  position: absolute;
-  right: 1vw;
-  top: 1vw;
-}
-
 @media (min-width: 481px) {
   .dialogbar span {
     font-size: 1.7rem;
@@ -1250,23 +1161,12 @@ footer.navigation {
 #share-button:checked + .dialog-sharing {
   display: grid;
 }
-.dialog-sharing .dialogbar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 2vw;
-  justify-items: center;
-  align-items: start;
-}
-.dialog-sharing .dialogbar span {
-  grid-area: 1/1/2/4;
-}
-
+/* 2 */
 .dialog-sharing .fa-brands,
 .dialog-sharing .fa-copy {
   font-size: 6vw;
   background-color: var(--lightfield);
 }
-
 .fa-twitter {
   color: var(--twitter);
 }
@@ -1295,4 +1195,112 @@ footer.navigation {
 
 .btn {
   background-color: var(--lightfield);
+}
+
+/* reverse-controller */
+#reverse-button {
+  display: none;
+}
+
+.dialogbar.back {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  transition: 1s;
+}
+
+#reverse-button:checked ~ .dialog > .dialogbar.back {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* email */
+
+.email a,
+.email a:active,
+.email a:visited,
+.email input::placeholder,
+.email textarea::placeholder {
+  color: var(--lightfield);
+  font-family: "PoiretOne";
+  font-weight: bold;
+}
+
+.email form {
+  width: 100%;
+  height: fit-content;
+  text-align: start;
+  background-color: var(--darkgold);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--lightfield);
+}
+
+.email legend {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: var(--topbottom);
+}
+.email label {
+  margin-left: 5%;
+}
+.email input,
+.email textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+  background: none;
+  outline: none;
+  border-bottom: 1px solid var(--lightfield);
+  padding-top: 40px;
+  padding-left: 10px;
+}
+
+.email textarea {
+  padding: 5px;
+}
+.email input::placeholder {
+  transition: 0.3s;
+}
+.email input:focus::placeholder,
+.email input:valid::placeholder {
+  transform: translateY(-30px);
+  font-size: 2rem;
+}
+.email textarea::placeholder {
+  padding: 5px;
+}
+
+.email button {
+  width: 30%;
+  height: 3rem;
+  background-color: var(--darkgold);
+  border: 1px solid var(--lightfield);
+
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-left: 65%;
+  margin-bottom: var(--topbottom);
+  margin-top: var(--topbottom);
+}
+
+.email input::after {
+  content: "";
+  background: url(./icons/star-of-life-solid.svg);
+  color: red;
+  width: 15rem;
+  height: 15rem;
+  background-size: cover;
+  position: absolute;
+}
+@media (min-width: 481px) {
+  .email legend {
+    font-size: 3rem;
+  }
+
+  .email .border button {
+    width: 30%;
+    height: 4rem;
+  }
 }
