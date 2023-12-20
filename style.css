@@ -863,10 +863,12 @@ iframe {
 
 /* -------------------------------- */
 footer.information {
-  background-color: var(--darkfield);
   width: 100vw;
-  margin-bottom: 8rem;
-
+  background-color: var(--green);
+}
+.informat-wrapper {
+  background-color: var(--darkfield);
+  width: 100%;
   font-weight: bold;
   font-size: 1.7rem;
 }
@@ -962,8 +964,9 @@ footer .signup {
   }
 }
 @media (min-width: 769px) {
-  .information {
+  .informat-wrapper {
     margin-bottom: 8rem;
+    transition: 0.5s;
   }
   .signup .write-us-bar {
     display: grid;
@@ -982,6 +985,7 @@ footer .signup {
     margin-bottom: 12rem;
   }
 }
+
 /* --contact us------ */
 .info-bar,
 .contact-us {
@@ -1092,10 +1096,9 @@ footer .signup {
   }
 }
 @media (min-width: 1200px) {
-  footer.information {
+  .informat-wrapper {
     width: 70vw;
     margin: auto;
-    margin-bottom: 8rem;
   }
   footer .signup {
     width: 70vw;
@@ -1108,6 +1111,17 @@ footer .signup {
     width: 70vw;
   }
 }
+
+footer.information:hover + footer.navigation {
+  bottom: -8rem;
+}
+
+@media (min-width: 768px) {
+  footer.information:hover .informat-wrapper {
+    margin-bottom: 0;
+  }
+}
+
 /* -------------------------------- */
 footer.navigation {
   display: none;
@@ -1125,6 +1139,7 @@ footer.navigation {
     align-items: center;
     gap: 2vw;
     background-color: var(--green);
+    transition: bottom 0.5s;
   }
 
   footer.navigation a {
