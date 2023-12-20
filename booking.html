@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="booking.css" />
+    <!-- <link rel="stylesheet" href="booking.css" /> -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mod_window.css" />
     <title>Booking</title>
@@ -33,27 +33,29 @@
       </div>
     </header>
 
-    <aside>
+    <aside class="p-b">
       <img class="meer" src="./images/pozadina1.jpg" alt="meer" />
     </aside>
-    <main>
+
+    <main class="p-b">
       <div class="container checkout">
-        <div class="form guest">
+        <div class="guest">
           <input type="checkbox" name="gpanel" id="gpanel" />
           <div class="guestwrapper">
             <div class="inputwrapper">
-              <label class="close" for="gpanel"
-                ><i class="fa-solid fa-xmark"></i
-              ></label>
               <label for="gpanel">
                 <i class="fa-solid fa-user-check"></i>Guest
               </label>
+              <label class="close" for="gpanel"
+                ><i class="fa-solid fa-xmark"></i
+              ></label>
               <label for="aguest">Adult</label>
               <input type="number" name="aguest" id="aguest" />
               <label for="chguest">Children</label>
               <input type="number" name="chguest" id="chguest" />
             </div>
-            <span>Select Guests:</span>
+
+            <h2 class="caption">Select Guests:</h2>
             <div class="buttonswrapper">
               <label for="aguest" name="bigaguest">Adult</label>
               <button class="minus">-</button>
@@ -224,7 +226,7 @@
         </div>
       </div>
       <div class="container status">
-        <span>Your Stay:</span>
+        <h2 class="caption">Your Stay:</h2>
         <span>Check-in</span>
         <span>Check-out</span>
         <span>After 3:00 PM</span>
@@ -236,40 +238,49 @@
 
       <div class="container room haus">
         <img src="./images/house.webp" alt="house" />
-        <spanlo
-          >apartment house <br />
-          casa nostra
-        </spanlo>
-        <span>etwas ueber house</span>
-        <span
-          >150 Euro <br />
-          per Night</span
-        >
+        <h3>apartment house</h3>
+        <h2>casa nostra</h2>
+        <h4>etwas ueber house</h4>
+        <h4>
+          150 Euro <br />
+          per Night
+        </h4>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
 
       <div class="container room jakov">
         <img src="./images/sobe_jakov_7.jpg" alt="jakov" />
-        <span>apartment jakov</span>
-        <span>3 bedroom | 120m2</span>
-        <span
-          >100 Euro <br />
-          per Night</span
-        >
+
+        <h3>apartment</h3>
+        <h2>jakov</h2>
+
+        <h4>3 bedroom | 120m2</h4>
+        <h4>
+          100 Euro <br />
+          per Night
+        </h4>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
       <div class="container room ruza">
         <img src="./images/sobe_ruza_2.jpg" alt="ruza" />
-        <span> apartment ruza</span>
-        <span>2 bedroom | 90m2</span>
-        <span
-          >90 Euro <br />
-          per Night</span
-        >
+
+        <h3>apartment</h3>
+        <h2>ruza</h2>
+
+        <h4>2 bedroom | 90m2</h4>
+        <h4>
+          90 Euro <br />
+          per Night
+        </h4>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
       <div class="container was1">Werbung ZB</div>
       <div class="container was2">was2</div>
+      <div class="leer"></div>
     </main>
+    <div class="autors">
+      <span>Zharova Natalia</span>
+      <span>Radanovic Matilda </span>
+    </div>
   </body>
 </html>
