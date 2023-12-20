@@ -76,6 +76,9 @@ body {
   background-color: var(--green);
   width: 100vw;
 }
+body.page-booking {
+  background-color: var(--darkfield);
+}
 
 header {
   background-color: var(--green);
@@ -83,7 +86,7 @@ header {
   display: grid;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   padding: var(--topbottom) var(--leftright);
   grid-template-columns: calc(17ch - 4rem) 4rem auto;
   grid-template-rows: 2rem 1.8rem repeat(2, 2rem) 1rem;
@@ -95,6 +98,7 @@ header {
     "linie linie linie";
   z-index: 1;
 }
+
 /* golden header line */
 header .line {
   grid-area: linie;
@@ -105,7 +109,7 @@ header .line {
 }
 
 /* links naming */
-header span {
+header.index span {
   color: var(--gold);
   font-size: 1.7rem;
 }
@@ -115,19 +119,19 @@ span.casa-nostra {
   letter-spacing: 3px;
 }
 
-header span:nth-child(1) {
+header.index span:nth-child(1) {
   grid-area: house;
 }
 
-header span:nth-child(2) {
+header.index span:nth-child(2) {
   grid-area: casa;
 }
 
-header span:nth-child(3) {
+header.index span:nth-child(3) {
   grid-area: nostra;
 }
 
-header > img {
+header > .logo {
   grid-area: gerb;
   height: auto;
   width: 4rem;
@@ -156,7 +160,7 @@ header > img {
     font-size: 3rem;
   }
 
-  header span:nth-child(1) {
+  header.index span:nth-child(1) {
     font-size: 2.5rem;
   }
 }
@@ -178,13 +182,13 @@ header > img {
     justify-self: center;
   }
 
-  header span:nth-child(1) {
+  header.index span:nth-child(1) {
     font-size: 4rem;
     margin-left: 1em;
     justify-self: center;
   }
 
-  header span:nth-child(2) {
+  header.index span:nth-child(2) {
     justify-self: end;
   }
 }
@@ -290,6 +294,68 @@ label.close:hover .fa-xmark {
   .hamburger .fa-bars {
     font-size: 3rem;
   }
+}
+/* *****header page booking******* */
+header.p-b {
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkfield);
+  gap: 1.5rem;
+  z-index: 3;
+}
+
+.p-b-naming,
+.p-b-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+header.p-b > .logo {
+  align-self: self-end;
+  margin-right: auto;
+}
+
+.p-b-langnav {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+button.language {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+button.language:active {
+  box-shadow: inset 0px 0px 4px var(--green);
+}
+
+.eng {
+  background-image: url(./images/eng.png);
+}
+
+.deu {
+  background-image: url(./images/deutsch.png);
+}
+
+.cro {
+  background-image: url(./images/Croatia.png);
+  margin-right: auto;
+}
+
+.data a,
+.naming span {
+  font-weight: bold;
+  color: var(--green);
+  text-decoration: none;
 }
 
 /* ----------------------- */
@@ -1304,3 +1370,5 @@ footer.navigation {
     height: 4rem;
   }
 }
+
+/* ************************************* */
