@@ -1038,6 +1038,7 @@ footer .signup {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .icons {
   margin-top: var(--topbottom);
   display: flex;
@@ -1109,6 +1110,9 @@ footer .signup {
   }
   .autors {
     width: 70vw;
+  }
+  .page-booking .autors {
+    width: 100vw;
   }
 }
 
@@ -1730,6 +1734,7 @@ button.submit {
     height: 3rem;
   }
 }
+
 .room img:hover ~ .bookbtn {
   animation: buttonexplosion 1s forwards;
 }
