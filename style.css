@@ -1830,34 +1830,56 @@ button.submit {
 
 .wave:nth-child(4) {
   background-color: var(--telegram);
+  z-index: 8;
 
   animation: rotate 10s infinite forwards;
 }
 .wave:nth-child(1) {
   background-color: var(--facebook);
+  z-index: 5;
 
   animation: rotate 13s infinite;
   animation-delay: 3s;
 }
 .wave:nth-child(2) {
   background-color: #5b7dd9;
+  z-index: 6;
 
   animation: rotate 11s infinite;
   animation-delay: 1s;
 }
 .wave:nth-child(5) {
   background-color: #5bccd9;
+  z-index: 9;
 
   animation: rotate 12s infinite;
   animation-delay: 2s;
 }
 .wave:nth-child(3) {
   background-color: var(--twitter);
+  z-index: 7;
 
   animation: rotate 9s infinite;
   animation-delay: 2s;
 }
+.wave:nth-child(6) {
+  background-color: #5bccd9;
+  z-index: 10;
+  animation: rotate 9s infinite;
+}
+.wave:nth-child(7) {
+  background-color: var(--telegram);
+  z-index: 3;
 
+  animation: rotate 10s infinite forwards;
+}
+.wave:nth-child(8) {
+  background-color: var(--facebook);
+  z-index: 2;
+
+  animation: rotate 13s infinite;
+  animation-delay: 3s;
+}
 @keyframes rotate {
   from {
     transform: rotate(0deg) translate(0, 0);
@@ -1882,5 +1904,79 @@ button.submit {
   }
   100% {
     transform: translate(0, -50px);
+  }
+}
+.ship-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 80%;
+  z-index: 4;
+
+  animation: ship-in-wave 15s ease-in-out infinite;
+}
+.ship-circle-1 {
+  left: -25%;
+}
+.ship-circle-2 {
+  left: 15%;
+  transform: rotate(-180deg);
+
+  animation-delay: 5s;
+}
+.ship-circle-3 {
+  left: 50%;
+  transform: rotate(-180deg);
+
+  animation-delay: 10s;
+}
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ship {
+  position: relative;
+  width: 70px;
+  height: 80px;
+  left: 40%;
+  top: -60px;
+}
+.s {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  position: absolute;
+}
+.ls {
+  clip-path: polygon(50% 0%, 0% 100%, 50% 100%);
+  left: 0;
+  top: 15px;
+}
+.rs {
+  clip-path: polygon(51% 15%, 100% 100%, 50% 100%);
+  left: 3px;
+  top: 15px;
+}
+.fl {
+  width: 30px;
+  height: 15px;
+  background-color: red;
+  clip-path: polygon(0 0, 100% 0, 63% 47%, 100% 100%, 0 100%);
+  position: absolute;
+  left: 33px;
+  top: 5px;
+}
+@keyframes ship-in-wave {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(90deg);
   }
 }
