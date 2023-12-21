@@ -55,7 +55,7 @@ input[type="number"]::-webkit-outer-spin-button {
   /* --green: hsl(167, 66%, 16%); */
   --green: #092c24;
 
-  --gold: #cfb53c;
+  --gold: hsl(49, 60%, 52%);
   --darkgold: #8f7745;
   --altgold: #695c1d;
   --darkfield: #f3f0e3;
@@ -1213,40 +1213,39 @@ footer.navigation {
   border-radius: 5px;
   position: relative;
   overflow: hidden;
+  transition: 0.2s ease-in-out;
 }
-.bookbtn span {
+.bookbtn::after {
+  content: "";
   background: linear-gradient(to left, transparent, #efd045, transparent);
-  height: 5rem;
-  width: 5rem;
-  border-radius: 5px;
+  height: 5em;
+  width: 8em;
+  background-size: cover;
   position: absolute;
-  right: -4rem;
-  top: 0;
-  transition: 0.5s all;
+
+  right: -6em;
+  top: -1rem;
+  transition: 0.5s all ease-in-out;
+}
+
+.bookbtn:hover::after {
+  right: 90%;
 }
 .bookbtn a {
   color: var(--green);
   letter-spacing: 2px;
 }
-.bookbtn:hover span {
-  right: 100%;
-}
-.bookbtn:focus {
-  box-shadow: inset 0px 0px 3px var(--darkgold);
-}
+
 /* -------------------------------------------------bookbutton responsiv */
 @media (min-width: 481px) {
   .bookbtn {
     font-size: 1.3rem;
   }
-  .bookbtn {
-    box-shadow: inset 0px 0px 5px var(--darkgold);
-  }
 }
 @media (min-width: 768px) {
   .bookbtn {
     font-size: 1.5rem;
-    padding: 7px;
+    padding: 5px;
   }
 }
 /* *************************************************** */
