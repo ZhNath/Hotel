@@ -1208,6 +1208,7 @@ footer.navigation {
   font-size: 1rem;
   padding: 5px;
   font-weight: bold;
+  letter-spacing: 1px;
   background-color: var(--gold);
   color: var(--green);
   border-radius: 5px;
@@ -1233,7 +1234,7 @@ footer.navigation {
 }
 .bookbtn a {
   color: var(--green);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* -------------------------------------------------bookbutton responsiv */
@@ -1244,7 +1245,7 @@ footer.navigation {
 }
 @media (min-width: 768px) {
   .bookbtn {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 5px;
   }
 }
