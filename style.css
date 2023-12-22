@@ -14,16 +14,21 @@
   border: 0;
   box-sizing: border-box;
 }
+
 ul {
   list-style-type: none;
 }
+
 a,
 a:hover,
 a:active,
 a:visited,
 label {
   text-decoration: none;
+  color: inherit;
+  font-size: inherit;
 }
+
 input:active,
 input:focus,
 select:active,
@@ -37,6 +42,7 @@ label:hover {
   cursor: pointer;
   scale: 1.1;
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -56,22 +62,24 @@ input[type="number"]::-webkit-outer-spin-button {
   --green: #092c24;
 
   --gold: hsl(49, 60%, 52%);
-  --darkgold: #8f7745;
-  --altgold: #695c1d;
+  /* --darkgold: #8f7745; */
+  --darkgold: #6c592f;
+  --altgold: #514716;
   --darkfield: #f3f0e3;
   --lightfield: #fefae7;
   --violet: rgb(48, 2, 62);
   --violetlight: #4b07e3;
-  --leftright: 5vw;
-  --leftrightklein: 2vw;
-  --topbottom: 2rem;
-  --topbottombig: 7rem;
   --twitter: #1da1f2;
   --telegram: #0088cc;
   --facebook: #1877f2;
   --whatsapp: #25d366;
   --viber: #59267c;
   --email: #ea4335;
+
+  --leftright: 5vw;
+  --leftrightklein: 2vw;
+  --topbottom: 2rem;
+  --topbottombig: 7rem;
 
   /* --greenshadow: hsla(167, 67%, 12%, 0.886); */
   --imgshadow: rgba(58, 31, 3, 0.1) 0px 2px 1px,
@@ -121,6 +129,11 @@ header.p-b {
   grid-template-rows: repeat(3, 1fr);
   align-items: start;
   row-gap: 1rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--green);
+  text-decoration: none;
 }
 
 /*--------------------------------- golden header line */
@@ -159,13 +172,7 @@ header.index span:nth-child(3) {
 .p-b-naming {
   grid-area: 1/1/4/2;
 }
-.p-b-data a,
-.p-b-naming span {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--green);
-  text-decoration: none;
-}
+
 header.p-b span {
   font-size: 1.3rem;
 }
@@ -188,7 +195,7 @@ header.p-b > .logo {
   margin-right: auto;
 }
 
-/*---------------------------------- responsiv links logo naming, logo */
+/*----------------       ---responsiv links naming, logo */
 @media (min-width: 481px) {
   header.index {
     grid-template-columns: 17ch 6rem 1fr 1fr;
@@ -260,7 +267,7 @@ header.p-b > .logo {
     font-size: 1.5rem;
   }
 }
-
+/* -------------------------------------------- */
 header > .bookbtn {
   grid-area: bookbutton;
   place-self: end;
@@ -340,6 +347,14 @@ button.language:active {
 .p-b-langnav button.language {
   display: block;
   border: none;
+}
+.p-b .homelink {
+  color: var(--green);
+  font-size: 2em;
+  grid-area: 2/3/3/4;
+  justify-self: center;
+  align-self: self-end;
+  width: fit-content;
 }
 /* -----------------------------------responsiv header nav */
 @media (min-width: 481px) {
@@ -581,11 +596,12 @@ h2.caption {
 
 .card-room-text button {
   width: fit-content;
+  background-color: var(--darkfield);
 }
 
 .card-room-text button a {
   text-transform: uppercase;
-  color: var(--darkgold);
+  color: var(--violet);
 }
 .card-room-btns {
   display: flex;
@@ -701,6 +717,7 @@ h2.caption {
   width: 100vw;
   font-size: 1.5rem;
   color: var(--darkgold);
+  font-weight: bold;
   text-align: left;
 }
 
@@ -1007,11 +1024,11 @@ footer .signup {
   align-items: center;
   gap: 1rem;
   padding-bottom: var(--leftrightklein);
+  color: var(--altgold);
 }
 
 .contact-us span,
 .contact-us a {
-  color: var(--altgold);
   font-size: 1.5rem;
   text-transform: uppercase;
 }
@@ -1150,20 +1167,22 @@ footer.navigation {
     left: 0;
     right: 0;
     bottom: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2vw;
+
     background-color: var(--green);
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: bold;
+
     transition: bottom 0.5s;
   }
 
   footer.navigation a {
-    text-decoration: none;
-    color: var(--gold);
-    font-size: 1.5rem;
     letter-spacing: 3px;
-    font-weight: bold;
     width: fit-content;
     padding: 10px;
   }
@@ -1207,10 +1226,10 @@ footer.navigation {
   display: block;
   font-size: 1rem;
   padding: 5px;
-  font-weight: bold;
   letter-spacing: 1px;
   background-color: var(--gold);
   color: var(--green);
+  font-weight: bold;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -1233,7 +1252,6 @@ footer.navigation {
   right: 90%;
 }
 .bookbtn a {
-  color: var(--green);
   letter-spacing: 1px;
 }
 
@@ -1732,7 +1750,7 @@ button.submit {
     grid-area: r2;
   }
   .guestwrapper {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%);
   }
 
   table.kalender {
@@ -1754,6 +1772,7 @@ button.submit {
 .room img:hover ~ .bookbtn {
   animation: buttonexplosion 1s forwards;
 }
+/* ------------- -------------------------------------------home-link */
 
 @keyframes buttonexplosion {
   0% {
@@ -1789,7 +1808,7 @@ button.submit {
     transform: scale(1) translateY(7px);
   }
 }
-/* ******************** */
+/* **********************************************************animation* */
 .animation {
   position: relative;
   width: 100%;

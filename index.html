@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore Apartment House Casa Nostra in Rogoznica, Croatia. Discover 2 spacious apartments with private pools, offering 120 sq.m and 90 sq.m of luxury living. Book your stay today!">
     <title>Casa Nostra</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mod_window.css">
@@ -13,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<!-- <link rel="manifest" href="/site.webmanifest"> -->
     <script
       src="https://kit.fontawesome.com/5d5b6f96a0.js"
       crossorigin="anonymous"
@@ -29,7 +30,7 @@
       <img class="logo" src="./images/logo.png" alt="logo" />
 
       <nav>
-        <select id="lan" class="language">
+        <select id="lan" class="language" aria-label="Choose a language">
           <option value="eng">englisch</option>
           <option value="deu">deutsch</option>
           <option value="cro">croatian</option>
@@ -40,11 +41,11 @@
         <button class="language cro" id="cro" title="cro"></button>
 
         <div class="hamburger">
-          
           <div class="slide-button">
             <label class="ham-lines" for="control-slide-bar"><i class="fa-solid fa-bars"></i></label>
           </div>
         </div>
+
       </nav>
         <label class="bookbtn" for="book-button">
           BOOK NOW
@@ -87,8 +88,8 @@
           </p>
           <div class="card-room-btns">
             <button><a href="#">show more</a></button>
-             <label  for="share-button"><i class="fa-solid fa-share-nodes"></i></label>
-             <i class="fa-regular fa-star"></i>
+            <label  for="share-button"><i class="fa-solid fa-share-nodes"></i></label>
+            <i class="fa-regular fa-star"></i>
           </div>
           
         </div>
@@ -332,7 +333,7 @@
 
 <input type="checkbox" id="control-slide-bar" />
 <div class="slide-bar-background">
-  <label class="close" for="control-slide-bar"><i class="fa-solid fa-xmark"></i></label>
+<label class="close" for="control-slide-bar"><i class="fa-solid fa-xmark"></i></label>
   <div class="slide-bar">
     <a href="#" target="_blank">ABOUT</a>
     <a href="#" target="_blank">PLACE</a>
