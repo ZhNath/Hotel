@@ -347,14 +347,15 @@ button.language:active {
 .p-b-langnav button.language {
   display: block;
   border: none;
+  align-self: center;
 }
 .p-b .homelink {
   color: var(--green);
   font-size: 2em;
   grid-area: 2/3/3/4;
-  justify-self: center;
-  align-self: self-end;
+  justify-self: self-start;
   width: fit-content;
+  margin-right: 1em;
 }
 /* -----------------------------------responsiv header nav */
 @media (min-width: 481px) {
