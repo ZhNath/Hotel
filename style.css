@@ -469,7 +469,7 @@ h2.caption {
   margin-bottom: var(--topbottom);
   text-align: center;
 
-  background-image: url(./images/wave.jpg);
+  background-image: url(./images/webp/wave.webp);
   background-size: 100vw 100vh;
   /* background-size: contain; */
   background-position: bottom;
@@ -551,7 +551,7 @@ h2.caption {
 
 .mask {
   mix-blend-mode: multiply;
-  background-image: url(./images/1677269655_bogatyr-club-p-boke-na-chernom-fone-foni-21.png);
+  background-image: url(./images/webp/1677269655_bogatyr-club-p-boke-na-chernom-fone-foni-21.webp);
   background-size: contain;
 }
 /* ---------------------------------------responsiv first image */
@@ -570,7 +570,7 @@ h2.caption {
   width: 100%;
 }
 
-.card-room img {
+.card-room picture {
   margin-bottom: 0.5rem;
 }
 
@@ -625,7 +625,7 @@ h2.caption {
     grid-template-rows: repeat(5, 10vh) auto;
   }
 
-  .card-room.horizontal img {
+  .card-room.horizontal picture {
     width: 75vw;
     grid-area: 2/1/7/6;
   }
@@ -636,7 +636,7 @@ h2.caption {
     grid-area: 1/3/4/7;
   }
 
-  .card-room.vertical img {
+  .card-room.vertical picture {
     width: 75vw;
     grid-area: 1/1/7/3;
   }
@@ -652,12 +652,12 @@ h2.caption {
   .card-room .card-room-text {
     font-size: 2rem;
   }
-  .card-room.horizontal img {
+  .card-room.horizontal picture {
     width: 60vw;
     grid-area: 2/2/8/6;
   }
 
-  .card-room.vertical img {
+  .card-room.vertical picture {
     width: 60vw;
     grid-area: 1/2/7/6;
   }
