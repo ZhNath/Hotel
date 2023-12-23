@@ -1,11 +1,13 @@
 @font-face {
   font-family: "PoiretOne";
   src: url(./fonts/PoiretOne-Regular.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: "JosefinSans";
   src: url(./fonts/JosefinSans-Bold.ttf);
   font-weight: 700;
+  font-display: swap;
 }
 
 * {
@@ -464,15 +466,21 @@ h2.caption {
 }
 
 .slogan {
+  margin-bottom: var(--topbottom);
   text-align: center;
+
   background-image: url(./images/wave.jpg);
-  background-size: contain;
+  background-size: 100vw 100vh;
+  /* background-size: contain; */
+  background-position: bottom;
+
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  margin-bottom: var(--topbottom);
-  background-position: bottom;
+  background-clip: text;
+
   animation: sloganmeer 60s infinite;
   animation-fill-mode: forwards;
+  transform: translateZ(0);
 }
 
 .slogan span {
@@ -489,11 +497,9 @@ h2.caption {
 @keyframes sloganmeer {
   from {
     background-position: bottom;
-    background-size: 100vw 100vh;
   }
   to {
     background-position: top;
-    background-size: 100vw 100vh;
   }
 }
 /* responsiv slogan */
@@ -1356,7 +1362,7 @@ footer.navigation {
 }
 
 /* reverse-controller */
-#reverse-button {
+#email-button {
   display: none;
 }
 
@@ -1368,7 +1374,7 @@ footer.navigation {
   transition: 1s;
 }
 
-#reverse-button:checked ~ .dialog > .dialogbar.back {
+#email-button:checked ~ .dialog > .dialogbar.back {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
