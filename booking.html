@@ -22,7 +22,7 @@
         <span class="headtext casanostra">CASA NOSTRA</span>
       </div>
 
-      <img class="logo" src="./images/logo.png" alt="logo" />
+      <img class="logo" src="./images/grb2klein.png" alt="logo Casa Nostra" />
 
       <div class="p-b-data">
         <a href="tel:+385 123-456-78">tel:+385 123-456-78</a>
@@ -40,11 +40,30 @@
     </header>
 
     <aside class="p-b">
-      <img
-        class="meer"
-        src="./images/jpg/sunrise-over-the-sea-Croatia-Rogozničko.jpg"
-        alt="Sunrise over the sea"
-      />
+      <picture>
+        <source
+          media="(min-width: 480px)"
+          srcset="
+            ./images/webp/sunrise-over-the-sea-Croatia-Rogoznicko_1024.webp
+          "
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 480px)"
+          srcset="./images/jpg/sunrise-over-the-sea-Croatia-Rogoznicko_1024.jpg"
+          type="image/jpg"
+        />
+        <source
+          srcset="
+            ./images/webp/sunrise-over-the-sea-Croatia-Rogoznicko_480.webp
+          "
+          type="image/webp"
+        />
+        <img
+          src="./images/jpg/sunrise-over-the-sea-Croatia-Rogoznicko_480.jpg"
+          alt="Sunrise over the sea"
+        />
+      </picture>
     </aside>
 
     <main class="p-b">
@@ -249,50 +268,96 @@
       </div>
 
       <div class="container room haus">
-        <img
-          src="./images/webp/apartment-haus-Croatia-Rogozničko.webp"
-          alt="Overall view of the guesthouse with a courtyard and pool"
-        />
+        <picture>
+          <img
+            src="./images/webp/apartment-haus-Croatia-Rogozničko.webp"
+            alt="Overall view of the guesthouse with a courtyard and pool"
+          />
+        </picture>
         <h3>apartment house</h3>
         <h2>casa nostra</h2>
-        <h4>etwas ueber house</h4>
-        <h4>
+        <p>etwas ueber house</p>
+        <p>
           150 Euro <br />
           per Night
-        </h4>
+        </p>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
 
       <div class="container room jakov">
-        <img
-          src="./images/jpg/Jakov-3-bedroom-120m2-haus-Croatia-Rogozničko.jpg"
-          alt="Living room, bedroom, and balcony in the apartments. Beautiful armchair, large bed"
-        />
+        <picture>
+          <source
+            media="(min-width: 480px)"
+            srcset="
+              ./images/webp/Jakov-3-bedroom-120m2-haus-Croatia-Rogozničko.webp
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcset="
+              ./images/jpg/Jakov-3-bedroom-120m2-haus-Croatia-Rogozničko.jpg
+            "
+            type="image/jpg"
+          />
+          <source
+            srcset="
+              ./images/webp/Jakov-3-bedroom-120m2-haus-Croatia-Rogozničko_small.webp
+            "
+            type="image/webp"
+          />
+          <img
+            src="./images/jpg/Jakov-3-bedroom-120m2-haus-Croatia-Rogozničko_small.jpg"
+            alt="Living room, bedroom, and balcony in the apartments. Beautiful armchair, large bed"
+          />
+        </picture>
 
         <h3>apartment</h3>
         <h2>jakov</h2>
 
-        <h4>3 bedroom | 120m2</h4>
-        <h4>
+        <p>3 bedroom | 120m2</p>
+        <p>
           100 Euro <br />
           per Night
-        </h4>
+        </p>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
       <div class="container room ruza">
-        <img
-          src="./images/jpg/Ruza-2-bedroom-90m2-haus-Croatia-Rogozničko.jpg"
-          alt="Living room and balcony in the apartments. Comfortable armchair, table"
-        />
+        <picture>
+          <source
+            media="(min-width: 480px)"
+            srcset="
+              ./images/webp/Ruza-2-bedroom-90m2-haus-Croatia-Rogozničko.webp
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcset="
+              ./images/jpg/Ruza-2-bedroom-90m2-haus-Croatia-Rogozničko.jpg
+            "
+            type="image/jpg"
+          />
+          <source
+            srcset="
+              ./images/webp/Ruza-2-bedroom-90m2-haus-Croatia-Rogozničko_small.webp
+            "
+            type="image/webp"
+          />
+          <img
+            src="./images/jpg/Ruza-2-bedroom-90m2-haus-Croatia-Rogozničko_small.jpg"
+            alt="Living room and balcony in the apartments. Comfortable armchair, table"
+          />
+        </picture>
 
         <h3>apartment</h3>
         <h2>ruza</h2>
 
-        <h4>2 bedroom | 90m2</h4>
-        <h4>
+        <p>2 bedroom | 90m2</p>
+        <p>
           90 Euro <br />
           per Night
-        </h4>
+        </p>
         <div class="bookbtn"><a href="http://">BOOK</a></div>
       </div>
 

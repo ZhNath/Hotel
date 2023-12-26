@@ -9,6 +9,14 @@
   font-weight: 700;
   font-display: swap;
 }
+/* fallback */
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2)
+    format("woff2");
+}
 
 * {
   margin: 0;
@@ -56,11 +64,9 @@ input[type="number"]::-webkit-outer-spin-button {
 :root {
   font-size: 62.5%;
   font-family: "PoiretOne", Arial, Helvetica, sans-serif;
-  /* --green: hsl(167, 66%, 16%); */
   --green: #092c24;
 
   --gold: hsl(49, 60%, 52%);
-  /* --darkgold: #8f7745; */
   --darkgold: #6c592f;
   --altgold: #514716;
   --darkfield: #f3f0e3;
@@ -79,7 +85,6 @@ input[type="number"]::-webkit-outer-spin-button {
   --topbottom: 2rem;
   --topbottombig: 7rem;
 
-  /* --greenshadow: hsla(167, 67%, 12%, 0.886); */
   --imgshadow: rgba(58, 31, 3, 0.1) 0px 2px 1px,
     rgba(58, 31, 3, 0.1) 0px 4px 2px, rgba(58, 31, 3, 0.1) 0px 8px 4px,
     rgba(58, 31, 3, 0.1) 0px 16px 8px, rgba(58, 31, 3, 0.1) 0px 32px 16px;
@@ -467,12 +472,8 @@ h2.caption {
   margin-bottom: var(--topbottom);
   text-align: center;
 
-  background-image: image-set(
-    /* url(./images/webp/wave_480.webp), */
-      /* url(./images/webp/wave_800.webp), */ url(./images/webp/wave_1800.webp),
-    /* url(./images/webp/wave_480.jpg), */
-      /* url(./images/webp/wave_800.jpg), */ url(./images/webp/wave_1800.jpg)
-  );
+  background-image: url(./images/webp/wave_480.webp);
+
   background-size: 100vw 100vh;
   /* background-size: contain; */
   background-position: bottom;
@@ -510,11 +511,17 @@ h2.caption {
   .slogan span {
     font-size: 6vw;
   }
+  .slogan {
+    background-image: url(./images/webp/wave_800.webp);
+  }
 }
 @media (min-width: 1000px) {
   .slogan span {
     font-size: 16rem;
     animation: sloganmeer 20s infinite;
+  }
+  .slogan {
+    background-image: url(./images/webp/wave_1800.webp);
   }
 }
 /* ------first image with animation------- */
@@ -703,8 +710,8 @@ h2.caption {
 }
 
 .offers-board .material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
   font-size: 3rem;
-  font-variation-settings: "opsz" 30;
 }
 /* -----------------------------------------------responsiv offers-board */
 @media (min-width: 481px) {
@@ -1474,9 +1481,8 @@ footer.navigation {
 
 /* ************************************* */
 /* booking page meer-image */
-aside.p-b img.meer {
+aside.p-b img {
   margin-top: 10rem;
-
   width: 100%;
   height: auto;
   max-height: 40vh;
@@ -1683,7 +1689,7 @@ button.submit {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.room img {
+.room picture {
   grid-area: 1/1/5/2;
 }
 .room h3 {
@@ -1692,11 +1698,11 @@ button.submit {
 .room h2 {
   grid-area: 2/2/3/5;
 }
-.room h4:nth-child(4) {
+.room p:nth-child(4) {
   grid-area: 3/2/4/5;
 }
 
-.room h4:nth-child(5) {
+.room p:nth-child(5) {
   grid-area: 5/3/6/5;
   letter-spacing: 1px;
   justify-self: end;
