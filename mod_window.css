@@ -32,6 +32,7 @@
     width: 50vw;
   }
 }
+
 .dialogbar {
   background: var(--lightfield);
   border: 3px solid var(--gold);
@@ -56,7 +57,21 @@
   right: 1vw;
   top: 1vw;
 }
-
+.dialogbar span {
+  color: var(--green);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (min-width: 481px) {
+  .dialogbar span {
+    font-size: 1.7rem;
+  }
+}
+@media (min-width: 768px) {
+  .dialogbar span {
+    font-size: 2rem;
+  }
+}
 /* 2 */
 .dialog-sharing .dialogbar {
   display: grid;
@@ -125,8 +140,6 @@
   z-index: 5;
 }
 /* -----------------------------------------------formular seite */
-.p-f-form-wrapper {
-}
 
 form.p-f {
   width: 90%;
