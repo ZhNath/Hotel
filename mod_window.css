@@ -124,3 +124,82 @@
   top: 3rem;
   z-index: 5;
 }
+/* -----------------------------------------------formular seite */
+.p-f-form-wrapper {
+}
+
+form.p-f {
+  width: 90%;
+  /* max-width: 70%; */
+  height: fit-content;
+  margin-top: 4vh;
+  margin: auto;
+  margin-bottom: var(--topbottom);
+
+  background-color: var(--darkgold);
+  padding: var(--leftrightklein);
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--lightfield);
+}
+
+.p-f legend {
+  letter-spacing: 1px;
+  margin-bottom: 0.7em;
+}
+
+.p-f input {
+  width: 100%;
+  background-color: var(--darkgold);
+  border-bottom: 1px solid var(--lightfield);
+  font-size: 1em;
+  height: 4em;
+  padding: 1em;
+  padding-bottom: 0;
+  margin-bottom: 0.7em;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+.p-f input::placeholder {
+  color: var(--lightfield);
+  line-height: 1em;
+  transition: 0.3s;
+}
+
+.p-f input:focus::placeholder,
+.p-f input:valid::placeholder {
+  transform: translateY(-20px);
+}
+.pay-card-bild i {
+  font-size: 40px;
+  color: var(--darkgold);
+}
+
+.pay-card-bild {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: var(--topbottom);
+}
+
+.p-f-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.p-f-button {
+  width: 30vw;
+  height: 3rem;
+  border: 2px solid var(--darkgold);
+  background-color: var(--lightfield);
+}
+
+.page-formular .container.animation {
+  height: 7rem;
+  background-color: var(--darkfield);
+}

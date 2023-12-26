@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore Apartment House Casa Nostra in Rogoznica, Croatia. Discover 2 spacious apartments with private pools, offering 120 sq.m and 90 sq.m of luxury living. Book your stay today!"
+    />
+    <title>Formular</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mod_window.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+  </head>
+
+  <body class="page-formular page-booking">
+    <header class="p-b">
+      <div class="p-b-naming">
+        <span class="headtext house">APARTMENT HOUSE</span>
+        <span class="headtext casanostra">CASA NOSTRA</span>
+      </div>
+
+      <img class="logo" src="./images/grb2klein.png" alt="logo Casa Nostra" />
+
+      <div class="p-b-data">
+        <a href="tel:+385 98-97-97-117">tel:+385 98-97-97-117</a>
+        <a href="mailto: casanostraholiday@gmail.com"
+          >casanostraholiday@gmail.com</a
+        >
+      </div>
+
+      <div class="p-b-langnav">
+        <div class="homelink">
+          <a href="./index.html">Home</a>
+        </div>
+        <button class="language eng" id="eng" title="eng"></button>
+        <button class="language deu" id="deu" title="deu"></button>
+        <button class="language cro" id="cro" title="cro"></button>
+      </div>
+    </header>
+    <aside class="p-b">
+      <picture>
+        <!-- <source
+          media="(min-width: 480px)"
+          srcset="./images/webp/balkon-pool-guest-haus-Croatia-Rogozničko"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 480px)"
+          srcset="./images/jpg/sunrise-over-the-sea-Croatia-Rogoznicko_1024.jpg"
+          type="image/jpg"
+        /> -->
+        <source srcset="./images/webp/pozadina.webp" type="image/webp" />
+        <img src="./images/jpg/pozadina.jpg" alt="Sunrise over the sea" />
+      </picture>
+    </aside>
+
+    <main class="page-booking">
+      <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
+        <legend>GUEST INFORMATION</legend>
+        <input
+          type="text"
+          name="vorname"
+          placeholder="first name"
+          id="vorname-id"
+          required
+        />
+        <input
+          type="text"
+          name="nachname"
+          placeholder="last name"
+          id="nachname-id"
+          required
+        />
+
+        <input
+          type="tel"
+          name="tel"
+          id="tel-id"
+          required
+          placeholder="Mobile phone"
+        />
+
+        <input
+          type="email"
+          name="email"
+          id="email-id"
+          placeholder="Email adress"
+          required
+        />
+        <button class="p-f-button" type="reset">Reset</button>
+      </form>
+
+      <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
+        <legend>ADRESS</legend>
+        <input
+          type="text"
+          name="country"
+          placeholder="Country"
+          id="country-id"
+          required
+        />
+        <input
+          type="text"
+          name="post"
+          placeholder="Zip/Post Code"
+          id="post-id"
+          required
+        />
+        <input
+          type="tel"
+          name="city"
+          placeholder="City"
+          id="city-id"
+          required
+        />
+        <button class="p-f-button" type="reset">Reset</button>
+      </form>
+
+      <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
+        <legend>ADDITIONAL DETAILS</legend>
+        <input
+          type="text"
+          name="country"
+          placeholder="Please note your requests or special needs"
+          id="country-id"
+          required
+        />
+      </form>
+
+      <form
+        class="p-f"
+        class="payment"
+        action="https://formspree.io/f/xqkrzezr"
+        method="post"
+      >
+        <legend>PAYMENT INFORMATION</legend>
+        <input
+          type="text"
+          name="card"
+          placeholder="Card Number"
+          id="card-id"
+          required
+        />
+        <input
+          type="date"
+          name="date"
+          placeholder="Date(MM/YY)"
+          id="datum-id"
+          required
+        />
+        <input type="text" name="cvv" placeholder="CVV" id="cvv-id" required />
+        <input
+          type="text"
+          name="card"
+          placeholder="Name of card"
+          id="card-id"
+          required
+        />
+        <button class="p-f-button" type="reset">Reset</button>
+      </form>
+
+      <div class="pay-card-bild">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+      </div>
+
+      <div class="p-f-btn-wrapper">
+        <button class="p-f-button" type="submit">Submit</button>
+      </div>
+    </main>
+
+    <!-- ***** -->
+    <div class="container animation">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <!-- ***** -->
+    <div class="autors">
+      <span>Zharova Natalia</span>
+      <span>Radanovic Matilda </span>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/5d5b6f96a0.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
