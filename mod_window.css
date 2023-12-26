@@ -130,7 +130,6 @@
 
 form.p-f {
   width: 90%;
-  /* max-width: 70%; */
   height: fit-content;
   margin-top: 4vh;
   margin: auto;
@@ -193,7 +192,7 @@ form.p-f {
   margin-bottom: 1rem;
 }
 .p-f-button {
-  width: 30vw;
+  width: 10rem;
   height: 3rem;
   border: 2px solid var(--darkgold);
   background-color: var(--lightfield);
@@ -202,4 +201,12 @@ form.p-f {
 .page-formular .container.animation {
   height: 7rem;
   background-color: var(--darkfield);
+}
+@media (min-width: 768px) {
+  form.p-f {
+    max-width: 50%;
+  }
+  .p-f-button {
+    height: 4rem;
+  }
 }

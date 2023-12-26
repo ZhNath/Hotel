@@ -1777,7 +1777,7 @@ button.submit {
   }
 }
 
-.room img:hover ~ .bookbtn {
+.room picture:hover ~ .bookbtn {
   animation: buttonexplosion 1s forwards;
 }
 /* ------------- -------------------------------------------home-link */
