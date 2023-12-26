@@ -90,7 +90,7 @@ input[type="number"]::-webkit-outer-spin-button {
     rgba(58, 31, 3, 0.1) 0px 16px 8px, rgba(58, 31, 3, 0.1) 0px 32px 16px;
   --boxshadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px,
     rgba(58, 31, 3, 0.1) 0px 2px 4px -1px;
-  --panelshadow: 0 0 0 50vmax hsla(167, 67%, 12%, 0.886);
+  --panelshadow: 0 0 0 70vmax hsla(167, 67%, 12%, 0.886);
 }
 
 /* ----------------- */
@@ -760,8 +760,7 @@ h2.caption {
   height: 100%;
   float: left;
   background-color: var(--lightfield);
-  padding: 0.2rem;
-  padding-top: 2rem;
+  padding: 1rem;
   margin: 0.2rem;
 }
 /* --------------------------------------------transition: scale, box-shadow*/
@@ -782,6 +781,7 @@ h2.caption {
   scale: 0.8;
   border: 3px solid var(--gold);
   box-shadow: var(--panelshadow);
+  cursor: wait;
 }
 
 /* --------------------------------------------alle slides nach checked */
@@ -912,6 +912,7 @@ footer.information {
   width: 100vw;
   background-color: var(--green);
 }
+
 .informat-wrapper {
   background-color: var(--darkfield);
   width: 100%;
@@ -1165,10 +1166,6 @@ footer .signup {
   }
 }
 
-footer.information:hover + footer.navigation {
-  bottom: -8rem;
-}
-
 /* -------------------------------- */
 footer.navigation {
   display: none;
@@ -1191,8 +1188,6 @@ footer.navigation {
     color: var(--gold);
     font-size: 1.5rem;
     font-weight: bold;
-
-    transition: bottom 0.5s;
   }
 
   footer.navigation a {
@@ -1287,8 +1282,7 @@ footer.navigation {
   display: none;
 }
 
-/* 3 */
-
+/* 3 mod window*/
 #control-slide-bar:checked + .slide-bar-background {
   right: 0;
   box-shadow: var(--panelshadow);
@@ -1303,7 +1297,7 @@ footer.navigation {
   display: none;
 }
 
-/* 1 */
+/* 1 mod window*/
 .dialogbar span {
   color: var(--green);
   font-size: 1.5rem;
@@ -1332,7 +1326,7 @@ footer.navigation {
 #share-button:checked + .dialog-sharing {
   display: grid;
 }
-/* 2 */
+/* 2 mod window*/
 .dialog-sharing .fa-brands,
 .dialog-sharing .fa-copy {
   font-size: 6vw;
@@ -1582,6 +1576,7 @@ label[for="chguest"],
 label[for="gpanel"] {
   font-size: 1.6rem;
 }
+
 label[for="gpanel"]:hover {
   cursor: pointer;
 }
