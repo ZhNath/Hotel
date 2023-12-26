@@ -17,10 +17,6 @@
   box-sizing: border-box;
 }
 
-ul {
-  list-style-type: none;
-}
-
 a,
 a:hover,
 a:active,
@@ -188,9 +184,11 @@ header > .logo {
   width: 4rem;
   align-self: end;
 }
+
 header.index > .logo {
   grid-area: gerb;
 }
+
 header.p-b > .logo {
   grid-area: 1/2/4/3;
   align-self: center;
@@ -469,7 +467,12 @@ h2.caption {
   margin-bottom: var(--topbottom);
   text-align: center;
 
-  background-image: url(./images/webp/wave.webp);
+  background-image: image-set(
+    /* url(./images/webp/wave_480.webp), */
+      /* url(./images/webp/wave_800.webp), */ url(./images/webp/wave_1800.webp),
+    /* url(./images/webp/wave_480.jpg), */
+      /* url(./images/webp/wave_800.jpg), */ url(./images/webp/wave_1800.jpg)
+  );
   background-size: 100vw 100vh;
   /* background-size: contain; */
   background-position: bottom;
@@ -510,7 +513,8 @@ h2.caption {
 }
 @media (min-width: 1000px) {
   .slogan span {
-    font-size: 6rem;
+    font-size: 16rem;
+    animation: sloganmeer 20s infinite;
   }
 }
 /* ------first image with animation------- */
@@ -529,20 +533,20 @@ h2.caption {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background-size: 100%;
 }
 
 .gradient {
   background-attachment: fixed;
-  mix-blend-mode: color-dodge;
+  mix-blend-mode: screen;
   background-image: linear-gradient(
     180deg,
     black 5%,
-    #42b8eb 35%,
-    #f3735c,
-    #f58308 80%,
+    #f3735c 35%,
+    #f58308,
+    yellow 80%,
     black
   );
   width: 100%;
@@ -551,8 +555,6 @@ h2.caption {
 
 .mask {
   mix-blend-mode: multiply;
-  background-image: url(./images/webp/1677269655_bogatyr-club-p-boke-na-chernom-fone-foni-21.webp);
-  background-size: contain;
 }
 /* ---------------------------------------responsiv first image */
 @media (min-width: 481px) {
@@ -608,11 +610,13 @@ h2.caption {
 
 .card-room-text button a {
   text-transform: uppercase;
-  color: var(--violet);
 }
 .card-room-btns {
   display: flex;
-  gap: 2rem;
+  gap: 2em;
+}
+.card-room-btns .fa-solid {
+  margin: 0;
 }
 .fa-star:active {
   color: var(--gold);
@@ -1002,8 +1006,8 @@ footer .signup {
 @media (min-width: 769px) {
   .informat-wrapper {
     margin-bottom: 8rem;
-    transition: 0.5s;
   }
+
   .signup .write-us-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1136,7 +1140,9 @@ footer .signup {
   .informat-wrapper {
     width: 70vw;
     margin: auto;
+    margin-bottom: 8rem;
   }
+
   footer .signup {
     width: 70vw;
   }
@@ -1154,12 +1160,6 @@ footer .signup {
 
 footer.information:hover + footer.navigation {
   bottom: -8rem;
-}
-
-@media (min-width: 768px) {
-  footer.information:hover .informat-wrapper {
-    margin-bottom: 0;
-  }
 }
 
 /* -------------------------------- */
