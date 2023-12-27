@@ -1069,7 +1069,7 @@ footer .signup {
   height: auto;
 }
 
-.adress a:nth-child(2) {
+.adress a[href="#map"] {
   text-transform: initial;
   text-align: center;
   padding: var(--leftrightklein);
@@ -1095,10 +1095,10 @@ footer .signup {
   display: flex;
   gap: 1rem;
 }
+
 .icons i {
   color: var(--altgold);
   font-size: 2rem;
-  gap: 10px;
 }
 
 @media (min-width: 481px) {
@@ -2054,7 +2054,9 @@ button.submit {
   gap: 1rem;
   margin-bottom: var(--topbottom);
 }
-
+.bed-wrapper.ruza {
+  grid-template-columns: repeat(2, 1fr);
+}
 .bed {
   border: 1px solid var(--gold);
   border-radius: 10px;
@@ -2155,17 +2157,69 @@ button.submit {
   width: 100%;
   height: auto;
 }
-.gallery .photos picture:nth-child(3) {
+.gallery .photos-house picture:nth-child(3) {
   grid-area: 2/1/4/2;
 }
-.gallery .photos picture:nth-child(20) {
+.gallery .photos-house picture:nth-child(20) {
   grid-area: 7/1/9/2;
 }
-.gallery .photos picture:nth-child(30) {
+.gallery .photos-house picture:nth-child(30) {
   grid-area: 11/3/13/4;
 }
-.gallery .photos picture:nth-child(3) img,
-.gallery .photos picture:nth-child(20) img,
-.gallery .photos picture:nth-child(30) img {
+.gallery .photos-house picture:nth-child(3) img,
+.gallery .photos-house picture:nth-child(20) img,
+.gallery .photos-house picture:nth-child(30) img {
   height: 100%;
+}
+.gallery .photos-jakov picture:nth-child(16) {
+  grid-area: 5/2/7/3;
+}
+.gallery .photos-jakov picture:nth-child(16) img {
+  height: 100%;
+}
+.gallery .photos-ruza picture:nth-child(8) {
+  grid-area: 3/2/5/3;
+}
+.gallery .photos-ruza picture:nth-child(8) img {
+  height: 100%;
+}
+.attraction {
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: var(--topbottom);
+  align-items: start;
+}
+.attraction i {
+  margin-bottom: 1rem;
+}
+
+.attraction ul {
+  display: grid;
+  grid-template-columns: auto 5rem;
+  gap: 1rem;
+}
+
+.contact {
+  width: 50vw;
+  margin: auto;
+  height: fit-content;
+  border: 2px solid var(--darkgold);
+  color: var(--green);
+  box-shadow: var(--boxshadow);
+  margin-bottom: var(--topbottom);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.contact address,
+.contact p:nth-child(2) {
+  margin-bottom: 1rem;
+}
+
+.marginer {
+  margin-bottom: 15rem;
 }
