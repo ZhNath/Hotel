@@ -139,7 +139,7 @@
   top: 3rem;
   z-index: 5;
 }
-/* -----------------------------------------------formular seite */
+/* ------------------------------------formular seite */
 
 form.p-f {
   width: 90%;
@@ -184,6 +184,7 @@ form.p-f {
 .p-f input:valid::placeholder {
   transform: translateY(-20px);
 }
+
 .pay-card-bild i {
   font-size: 40px;
   color: var(--darkgold);
@@ -209,20 +210,4 @@ form.p-f {
   height: 3rem;
   border: 2px solid var(--darkgold);
   background-color: var(--lightfield);
-}
-
-.page-formular .container.animation {
-  height: 9rem;
-  background-color: var(--darkfield);
-}
-@media (min-width: 768px) {
-  form.p-f {
-    max-width: 50%;
-  }
-  .p-f-button {
-    height: 4rem;
-  }
-  .page-formular .container.animation {
-    height: 24rem;
-  }
 }

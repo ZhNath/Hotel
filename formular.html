@@ -161,9 +161,13 @@
           required
         />
         <input
-          type="date"
+          type="text"
           name="date"
           placeholder="Date(MM/YY)"
+          required
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          min="2024-01-01"
           id="datum-id"
           required
         />
