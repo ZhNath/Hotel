@@ -16,6 +16,7 @@
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2)
     format("woff2");
+  font-display: swap;
 }
 
 * {
@@ -2060,10 +2061,13 @@ button.submit {
   padding: 0.5em;
 }
 
-.bed h4 {
+.bed h3 {
   margin-bottom: 1em;
 }
-
+.bed .material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-size: 2.5rem;
+}
 .gallery-offers {
   width: 100%;
   background-color: var(--darkgold);
@@ -2106,7 +2110,7 @@ button.submit {
   grid-template-columns: 10rem auto;
   grid-template-rows: 1fr 2fr;
 }
-.checking h4 {
+.checking h3 {
   grid-area: 1/1/3/2;
 }
 .checking p:nth-child(2) {
