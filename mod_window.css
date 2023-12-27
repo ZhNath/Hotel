@@ -212,7 +212,7 @@ form.p-f {
 }
 
 .page-formular .container.animation {
-  height: 7rem;
+  height: 9rem;
   background-color: var(--darkfield);
 }
 @media (min-width: 768px) {
@@ -221,5 +221,8 @@ form.p-f {
   }
   .p-f-button {
     height: 4rem;
+  }
+  .page-formular .container.animation {
+    height: 24rem;
   }
 }

@@ -419,8 +419,9 @@ main {
 
 main.index,
 main.gallery {
-  margin-top: 13rem;
+  margin-top: 15rem;
 }
+
 main.p-b {
   display: flex;
   flex-direction: column;
@@ -2024,9 +2025,8 @@ button.submit {
 }
 
 /* ----------------------------gallery */
-.gallery h2 {
+.gallery h2.caption {
   color: var(--darkgold);
-  margin-bottom: var(--topbottom);
 }
 
 .text-green-field {
@@ -2105,21 +2105,23 @@ button.submit {
   margin-bottom: var(--topbottom);
 }
 
-.checking {
+.gallery-offers .checking {
   display: grid;
   grid-template-columns: 10rem auto;
   grid-template-rows: 1fr 2fr;
 }
-.checking h3 {
-  grid-area: 1/1/3/2;
-}
-.checking p:nth-child(2) {
-  grid-area: 1/2/2/3;
-}
-.checking p:nth-child(3) {
-  grid-area: 2/2/3/3;
+.gallery-offers .checking:nth-child(2) {
+  gap: 0.7rem;
+  margin-bottom: var(--topbottom);
 }
 
-.checking p:nth-child(2) {
+.gallery-offers .checking h3 {
+  grid-area: 1/1/2/2;
+}
+.gallery-offers .checking p:nth-child(2) {
+  grid-area: 1/2/2/3;
   font-weight: bold;
+}
+.gallery-offers .checking p:nth-child(3) {
+  grid-area: 2/2/3/3;
 }
