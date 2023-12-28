@@ -2038,6 +2038,39 @@ label[for="out"] {
 .gallery .photos-ruza picture:nth-child(8) img {
   height: 100%;
 }
+/*-----------------------------------------------gallery-tabelle */
+
+.gallery-prise {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--topbottombig);
+  }
+
+table {
+  width: 80%;
+  text-align: center;
+  box-shadow: var(--imgshadow);
+}
+
+table td,
+table th {
+  border: 2px solid var(--darkgold);
+  padding: 2rem;
+}
+
+table th {
+  text-align: center;
+  font-size: 1.2rem;
+  color:var(--green);
+}
+
+table td {
+  text-align: center;
+  font-size: 1.2rem;
+  color:var(--darkfield);
+  background-color: var(--darkgold);
+}
+
 /*-----------------------------------------------gallery--attraction */
 .attraction {
   width: 80vw;
