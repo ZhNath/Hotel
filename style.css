@@ -148,6 +148,7 @@ header.p-b {
   font-weight: bold;
   color: var(--green);
   text-decoration: none;
+  z-index: 30;
 }
 
 /*--------------------------------- golden header line */
@@ -1305,14 +1306,6 @@ footer.navigation {
   display: none;
 }
 
-.dialogbar.back {
-  position: absolute;
-  width: 100%;
-  height: fit-content;
-  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-  transition: 1s;
-}
-
 #email-button:checked ~ .dialog > .dialogbar.back {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
@@ -1373,7 +1366,7 @@ table.kalender {
   top: 0;
   left: 0;
   right: 0;
-  bottom: -40vh;
+  bottom: -39vh;
   background-color: var(--lightfield);
 
   clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 0% 10%);
@@ -1598,12 +1591,12 @@ label[for="out"] {
     display: contents;
   }
   table.kalender,
-  th,
-  td {
+  .kalender th,
+  .kalender td {
     border: 1px solid var(--altgold);
   }
-  th,
-  td {
+  .kalender th,
+  .kalender td {
     width: 3rem;
     height: 3rem;
   }
@@ -2040,35 +2033,43 @@ label[for="out"] {
 }
 /*-----------------------------------------------gallery-tabelle */
 
-.gallery-prise {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--topbottombig);
-  }
-
-table {
-  width: 80%;
+.gallery-tbl {
+  width: 100%;
   text-align: center;
   box-shadow: var(--imgshadow);
+  margin-bottom: calc(var(--topbottom) / 2);
 }
-
-table td,
-table th {
+.gallery thead {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.gallery-tbl td,
+.gallery-tbl th {
   border: 2px solid var(--darkgold);
-  padding: 2rem;
+  padding: 0.7rem;
 }
 
-table th {
-  text-align: center;
-  font-size: 1.2rem;
-  color:var(--green);
+.gallery-tbl th {
+  font-size: 1rem;
+  color: var(--green);
 }
 
-table td {
-  text-align: center;
+.gallery-tbl td {
   font-size: 1.2rem;
-  color:var(--darkfield);
+  font-weight: bold;
+  color: var(--darkfield);
   background-color: var(--darkgold);
+}
+
+.gallery .p-f-button {
+  width: 12rem;
+  display: block;
+  margin: auto;
+  background-color: var(--darkgold);
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  color: var(--lightfield);
+  margin-bottom: var(--topbottombig);
 }
 
 /*-----------------------------------------------gallery--attraction */
@@ -2092,7 +2093,7 @@ table td {
 }
 /* -------------------------------------------------gallery-contact */
 .contact {
-  width: 60vw;
+  width: 70vw;
   margin: auto;
   height: fit-content;
   border: 2px solid var(--darkgold);
@@ -2108,6 +2109,13 @@ table td {
 .contact p:nth-child(2) {
   margin-bottom: 1rem;
 }
+.inputcheck {
+  width: 5px;
+  height: 5px;
+  background-color: var(--lightfield);
+  border: 1px solid var(--darkgold);
+}
+
 /* ****************************************************anchors */
 .anchor-margin {
   scroll-margin-top: 13rem;

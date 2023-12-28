@@ -2467,49 +2467,51 @@
         </picture>
       </aside>
       <!-- ------------------------------------------------------ -->
-     
-      <h2 class="caption" id="prise-anchor">Prise list:</h2>
-      <section class="gallery-prise">
-      <thead>
-      <table>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">01.04.-20.05.<br>20.09.-01.11.</th>
-                <th scope="col">20.05.-30.06.<br>20.08.-20.09.</th>
-                <th scope="col">01.07.-20.08.</th> 
-            </tr>
+
+      <h2 class="caption anchor-margin" id="prise-anchor">Prise list:</h2>
+      <table class="gallery-tbl">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">01.04.-20.05.<br />20.09.-01.11.</th>
+            <th scope="col">20.05.-30.06.<br />20.08.-20.09.</th>
+            <th scope="col">01.07.-20.08.</th>
+          </tr>
         </thead>
-    
-            <tr>
-              <th rowspan="2" scope="row">Apartment House<br>Casa Nostra</th>
-              <td>250</td>
-              <td>320</td>
-              <td>480</td>
-            </tr>
-            <tr></tr>
-            <tr>
-              <th rowspan="2" scope="row">Apartman Jakov</th>
-              <td>150</td>
-              <td>200</td>
-              <td>280</td>
+        <tbody>
+          <tr>
+            <th scope="row">Apartment House<br />Casa Nostra</th>
+            <td>250</td>
+            <td>320</td>
+            <td>480</td>
           </tr>
           <tr></tr>
-            <tr>
-              <th rowspan="2" scope="row">Apartman Ruza</th>
-              <td>90</td>
-              <td>120</td>
-              <td>180</td>
-            </tr>
+          <tr>
+            <th scope="row">Apartman Jakov</th>
+            <td>150</td>
+            <td>200</td>
+            <td>280</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <th scope="row">Apartman Ruza</th>
+            <td>90</td>
+            <td>120</td>
+            <td>180</td>
+          </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <th colspan="4" scope="row">Price per apartment per day/ Reservation min 5 days</th>
-              
-            </tr>
+          <tr>
+            <th colspan="4" scope="row">
+              Price per apartment per day/ Reservation min 5 days
+            </th>
+          </tr>
         </tfoot>
-    </table>
-  </section>
-    
+      </table>
+      <button class="p-f-button">
+        <a href="./booking.html">To booking page</a>
+      </button>
+
       <!-- ------------------------------------------------------ -->
       <h2 class="caption">What this place offers:</h2>
       <section class="gallery-offers">
@@ -2781,7 +2783,11 @@
       <section class="contact anchor-margin" id="contact-anchor">
         <address>Loznica I 2b, 22203, Zečevo Rogozničko, Croatia</address>
         <p>+385989797117</p>
-        <p>casanostraholiday@gmail.com</p>
+        <label class="bookbtn" for="email-btn"
+          ><a href="mailto:casanostraholiday@gmail.com"
+            >casanostraholiday@gmail.com</a
+          ></label
+        >
       </section>
     </main>
     <div class="autors">
@@ -2789,7 +2795,6 @@
       <span>Radanovic Matilda </span>
     </div>
 
-    <input type="checkbox" name="zoom" id="zoom-photo" />
     <input type="checkbox" name="email-button" id="email-button" />
     <input type="checkbox" name="book-button" id="book-button" />
 
@@ -2854,7 +2859,6 @@
       </section>
     </div>
 
-    <div class="dialog dialog-zoom"></div>
     <script
       src="https://kit.fontawesome.com/5d5b6f96a0.js"
       crossorigin="anonymous"

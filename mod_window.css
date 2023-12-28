@@ -63,6 +63,14 @@ textarea:focus::placeholder {
   position: relative;
 }
 
+.dialogbar.back {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  transition: 1s;
+}
+
 .dialogbar .close {
   color: var(--darkgold);
   font-size: 1.5rem;
