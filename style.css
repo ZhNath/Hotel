@@ -1883,17 +1883,25 @@ label[for="out"] {
 }
 /* -------------------------------------------------gallery-text */
 .text-green-field {
+  display: block;
+
   width: 100%;
+  max-width: 950px;
+
   background-color: var(--green);
+  box-shadow: var(--boxshadow);
+
   color: var(--lightfield);
   font-family: "Arial";
   font-size: 1.4rem;
   line-height: 1.5;
-  padding: var(--topbottom);
   text-align: justify;
+
+  padding: var(--topbottom);
+  margin: auto;
   margin-bottom: var(--topbottom);
-  box-shadow: var(--boxshadow);
 }
+
 .text-green-field p {
   margin-bottom: 1rem;
 }
@@ -1933,6 +1941,9 @@ label[for="out"] {
 /* --------------------------------------------------gallery-offers */
 .gallery-offers {
   width: 100%;
+  max-width: 700px;
+  margin: auto;
+
   background-color: var(--darkgold);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1988,6 +1999,7 @@ label[for="out"] {
 .gallery-offers .checking p:nth-child(3) {
   grid-area: 2/2/3/3;
 }
+
 /* -------------------------------------------------photogallery */
 .gallery .photos {
   display: grid;
@@ -2035,6 +2047,8 @@ label[for="out"] {
 
 .gallery-tbl {
   width: 100%;
+  max-width: 700px;
+  margin: auto;
   text-align: center;
   box-shadow: var(--imgshadow);
   margin-bottom: calc(var(--topbottom) / 2);
@@ -2075,6 +2089,7 @@ label[for="out"] {
 /*-----------------------------------------------gallery--attraction */
 .attraction {
   width: 80vw;
+  max-width: 700px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2094,6 +2109,7 @@ label[for="out"] {
 /* -------------------------------------------------gallery-contact */
 .contact {
   width: 70vw;
+  max-width: 500px;
   margin: auto;
   height: fit-content;
   border: 2px solid var(--darkgold);
@@ -2121,13 +2137,28 @@ label[for="out"] {
   scroll-margin-top: 13rem;
 }
 
+/* --------------------gallery responsivitaet */
 @media (min-width: 480px) {
+  .gallery-offers,
+  .gallery .attraction,
+  .gallery-tbl th {
+    font-size: 1.3em;
+  }
+  .gallery-tbl td {
+    font-size: 1.5rem;
+  }
   .anchor-margin {
     scroll-margin-top: 17rem;
   }
 }
+
 @media (min-width: 768px) {
   .anchor-margin {
     scroll-margin-top: 19rem;
+  }
+  .gallery-offers,
+  .gallery .attraction,
+  .gallery-tbl th {
+    font-size: 1.5em;
   }
 }
