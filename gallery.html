@@ -61,7 +61,9 @@
       <div class="line"></div>
     </header>
     <main class="gallery">
-      <h2 class="caption" id="house_anchor">Apartment Hause Casa Nostra</h2>
+      <h2 class="caption anchor-margin" id="house_anchor">
+        Apartment Hause Casa Nostra
+      </h2>
       <section class="text-green-field">
         <p>
           About this space This newly built and modernly furnished House (with 2
@@ -120,8 +122,36 @@
           <p>1 queen bed</p>
         </div>
       </section>
-      <aside class="photos photos-house" id="photos-anchor">
+      <aside class="photos photos-house anchor-margin" id="photos-anchor">
         <!-- house -->
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="./images/house/webp/house_ruza.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./images/house/jpg/house_ruza.jpg"
+            type="image/jpg"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcset="./images/house/webp/house_ruza_500.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcset="./images/house/jpg/house_ruza_500.jpg"
+            type="image/jpg"
+          />
+          <source
+            srcset="./images/house/webp/house_ruza_200.webp"
+            type="image/webp"
+          />
+          <img src="./images/house/jpg/house_ruza_200.jpg" alt="house ruza" />
+        </picture>
+
         <picture>
           <source
             media="(min-width: 768px)"
@@ -148,33 +178,6 @@
             type="image/webp"
           />
           <img src="./images/jakov/jpg/house_jakov_2_200.jpg" alt="house1" />
-        </picture>
-        <picture>
-          <source
-            media="(min-width: 768px)"
-            srcset="./images/house/webp/house_jakov_1.webp"
-            type="image/webp"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcset="./images/house/jpg/house_jakov_1.jpg"
-            type="image/jpg"
-          />
-          <source
-            media="(min-width: 480px)"
-            srcset="./images/house/webp/house_jakov_1_500.webp"
-            type="image/webp"
-          />
-          <source
-            media="(min-width: 480px)"
-            srcset="./images/house/jpg/house_jakov_1_500.jpg"
-            type="image/jpg"
-          />
-          <source
-            srcset="./images/house/webp/house_jakov_1_200.webp"
-            type="image/webp"
-          />
-          <img src="./images/house/jpg/house_jakov_1_200.jpg" alt="house1" />
         </picture>
         <picture>
           <source
@@ -209,29 +212,29 @@
         <picture>
           <source
             media="(min-width: 768px)"
-            srcset="./images/house/webp/house_ruza.webp"
+            srcset="./images/house/webp/house_jakov_1.webp"
             type="image/webp"
           />
           <source
             media="(min-width: 768px)"
-            srcset="./images/house/jpg/house_ruza.jpg"
+            srcset="./images/house/jpg/house_jakov_1.jpg"
             type="image/jpg"
           />
           <source
             media="(min-width: 480px)"
-            srcset="./images/house/webp/house_ruza_500.webp"
+            srcset="./images/house/webp/house_jakov_1_500.webp"
             type="image/webp"
           />
           <source
             media="(min-width: 480px)"
-            srcset="./images/house/jpg/house_ruza_500.jpg"
+            srcset="./images/house/jpg/house_jakov_1_500.jpg"
             type="image/jpg"
           />
           <source
-            srcset="./images/house/webp/house_ruza_200.webp"
+            srcset="./images/house/webp/house_jakov_1_200.webp"
             type="image/webp"
           />
-          <img src="./images/house/jpg/house_ruza_200.jpg" alt="house ruza" />
+          <img src="./images/house/jpg/house_jakov_1_200.jpg" alt="house1" />
         </picture>
 
         <!-- --------------------------------------------------------------- -->
@@ -1307,7 +1310,7 @@
         </picture>
       </aside>
       <!-- ********************************** -->
-      <h2 class="caption" id="jakov_anchor">Apartment Jakov</h2>
+      <h2 class="caption anchor-margin" id="jakov_anchor">Apartment Jakov</h2>
       <section class="text-green-field">
         <p>
           This newly built and modernly furnished 3 Bedroom apartment (120m2) is
@@ -1883,8 +1886,7 @@
         </picture>
       </aside>
       <!-- *********************************** -->
-      <p class="marginer" id="ruza_anchor"></p>
-      <h2 class="caption">Apartment Ruza</h2>
+      <h2 class="caption anchor-margin" id="ruza_anchor">Apartment Ruza</h2>
       <section class="text-green-field">
         <p>
           This newly built and modernly furnished 2 Bedroom apartment (90m2) is
@@ -2552,7 +2554,7 @@
           </ul>
         </div>
         <div class="down">
-          <h2 class="caption" id="rules-anchor">House rules</h2>
+          <h2 class="caption anchor-margin" id="rules-anchor">House rules</h2>
           <div class="checking">
             <h3>Check-in</h3>
             <p>From 15:00 to 20:00</p>
@@ -2568,7 +2570,7 @@
         </div>
       </section>
       <!-- ********************************************* -->
-      <h2 class="caption" id="attraction-anchor">Attraction</h2>
+      <h2 class="caption anchor-margin" id="attraction-anchor">Attraction</h2>
       <section class="attraction">
         <ul>
           <li><i class="fa-solid fa-city"></i></li>
@@ -2732,7 +2734,7 @@
         </ul>
       </section>
       <!-- *********************** -->
-      <section class="contact" id="contact-anchor">
+      <section class="contact anchor-margin" id="contact-anchor">
         <address>Loznica I 2b, 22203, Zečevo Rogozničko, Croatia</address>
         <p>+385989797117</p>
         <p>casanostraholiday@gmail.com</p>
@@ -2743,6 +2745,7 @@
       <span>Radanovic Matilda </span>
     </div>
 
+    <input type="checkbox" name="zoom" id="zoom-photo" />
     <input type="checkbox" name="email-button" id="email-button" />
     <input type="checkbox" name="book-button" id="book-button" />
 
@@ -2807,6 +2810,7 @@
       </section>
     </div>
 
+    <div class="dialog dialog-zoom"></div>
     <script
       src="https://kit.fontawesome.com/5d5b6f96a0.js"
       crossorigin="anonymous"

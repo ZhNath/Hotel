@@ -340,12 +340,11 @@
       </div>
     </aside>
 
-      <div id="map" class="line"></div>
+      <div class="line"></div>
 
 
     <aside class="map" >
-        <h2 class="map caption">We are here:</h2>
-
+      <h2 class="map caption anchor-margin" id="map">We are here:</h2>
        <div class="map-background">
          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2892.142714996445!2d15.9574346!3d43.5410669!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133519caffdeb421%3A0x88a18cb6c8b9ebd4!2sApartment%20House%20Casa%20Nostra!5e0!3m2!1sen!2sde!4v1702671354330!5m2!1sen!2sde" style="border:0;" allowfullscreen="" loading="lazy"
          width="800" aspect-ratio="4/3"
@@ -379,8 +378,9 @@
            </div>
             <div class="input-group">
               <input type="email" name="Email" id="Email" autocomplete="on" required>
-              <label class="false-placeholder" for="Email"Email>Email</label>
+              <label class="false-placeholder" for="Email">Email</label>
             </div>
+            <button type="reset">Reset</button>
             <button type="submit">Submit</button>
       </form>
     </div>
@@ -399,10 +399,10 @@
   
       <div class="contact-us linkswrapper">
         <a href="./gallery.html#house-anchor">apartment</a>
-        <a href="https://www.loverogoznica.eu/">place</a>
+        <a href="https://www.loverogoznica.eu/" target="_blank">place</a>
         <a href="./gallery.html#attraction-anchor">ATTRACTION</a>
         <a href="#map">location</a>
-        <a href="https://www.loverogoznica.eu/en/?s=plaze">beaches</a>
+        <a href="https://www.loverogoznica.eu/en/?s=plaze" target="_blank">beaches</a>
         <a href="./gallery.html#photos-anchor">gallery</a>
         <a href="./gallery.html#prise-anchor">prise</a>
         <a href="./gallery.html#rules-anchor">house rules</a>
@@ -434,25 +434,25 @@
 
 <!-- <div class="leer"></div> -->
  <footer class="navigation">
-      <a href="./gallery.html#house-anchor" target="_blank">ABOUT</a>
+      <a href="./gallery.html#house-anchor">ABOUT</a>
       <a href="https://www.loverogoznica.eu/" target="_blank">PLACE</a>
-      <a href="./gallery.html#contact-anchor" target="_blank">CONTACT</a>
+      <a href="./gallery.html#contact-anchor">CONTACT</a>
       <label class="bookbtn" for="book-button">
         BOOK NOW
     </label>
-      <a href="./gallery.html#attraction-anchor" target="_blank">ATTRACTION</a>
-      <a href="#map" target="_blank">LOCATION</a>
+      <a href="./gallery.html#attraction-anchor">ATTRACTION</a>
+      <a href="#map">LOCATION</a>
 </footer>
 
 <input type="checkbox" id="control-slide-bar" />
 <div class="slide-bar-background">
 <label class="close" for="control-slide-bar"><i class="fa-solid fa-xmark"></i></label>
   <div class="slide-bar">
-    <a href="./gallery.html#house-anchor" target="_blank">ABOUT</a>
+    <a href="./gallery.html#house-anchor" >ABOUT</a>
     <a href="https://www.loverogoznica.eu/" target="_blank">PLACE</a>
-    <a href="./gallery.html#contact-anchor" target="_blank">CONTACT</a>
-    <a href="./gallery.html#attraction-anchor" target="_blank">ATTRACTION</a>
-    <a href="#map" target="_blank">LOCATION</a>
+    <a href="./gallery.html#contact-anchor" >CONTACT</a>
+    <a href="./gallery.html#attraction-anchor">ATTRACTION</a>
+    <a href="#map" target="_blank" >LOCATION</a>
   </div>
 </div>
 
@@ -475,17 +475,18 @@
     <label class="close" for="email-button"><i class="fa-solid fa-xmark"></i></label>
     <form action="https://formspree.io/f/xqkrzezr" method="post" id="emailform">
       <legend>Email us</legend>
-      <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required/>
+      <input type="text" name="name" id="name" placeholder="Name *" autocomplete="on" required/>
       <input
         type="email"
         name="email"
         id="email"
-        placeholder="Email"
+        placeholder="Email *"
         autocomplete="on"
         required
       />
       <input type="tel" name="tel" id="tel" placeholder="Telephon" autocomplete="on" required />
-      <textarea name="massage" id="message"  rows="10" placeholder="Message"></textarea>
+      <textarea name="massage" id="message"  rows="10" placeholder="Message *"></textarea>
+      <button type="reset">Reset</button>
       <button type="submit" name="submit">
         <a href="mailto:casanostraholiday@gmail.com ">Send</a>
       </button>
