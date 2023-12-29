@@ -13,5 +13,6 @@
     "sass": "^1.69.5"
   },
   "license": "ISC",
-  "main": "clipboard.min.js"
+  "main": "clipboard.min.js",
+  "devDependencies": {}
 }

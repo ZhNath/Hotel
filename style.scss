@@ -1,13 +1,15 @@
 @import 'style/variables';
 @import 'style/settings';
+@import 'style/mixins';
 @import 'style/buttons';
-// @import 'style/bars_windows';
+@import 'style/bars_windows';
 
 @mixin fixed-elements {
       position: fixed;
       left: 0;
       right: 0;
 }
+
 
 :root {
       font-size: 62.5%;
@@ -96,10 +98,7 @@ header {
 
             .p-b-data,
             .p-b-naming {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: start;
+                  @include flex(column, center, start);
                   gap: 1rem;
             }
 
@@ -995,5 +994,1047 @@ footer.navigation {
       footer.navigation a:active {
             box-shadow: inset 0px 0px 5px $gold;
             border-radius: 1rem;
+      }
+}
+
+/* ----------------------------------------controller right slide-bar */
+#control-slide-bar {
+      display: none;
+}
+
+/* ----------------------------------------------------3) mod window*/
+#control-slide-bar:checked+.slide-bar-background {
+      right: 0;
+      box-shadow: $panelshadow;
+}
+
+#control-slide-bar:checked+.slide-bar-background+.slide-button .fa-bars {
+      display: none;
+}
+
+/* ***************************************************************** */
+/* _______________________________________________controller booknow */
+#book-button {
+      display: none;
+}
+
+/* ---------------------------------------------------1) mod window*/
+
+#book-button:checked+.dialog-booking {
+      display: grid;
+      box-shadow: $panelshadow;
+}
+
+/* ***************************************************************** */
+/* ------------------------------------------controller share-button */
+#share-button {
+      display: none;
+}
+
+#share-button:checked+.dialog-sharing {
+      display: grid;
+}
+
+/*--------------------------------------------------- 2) mod window*/
+.dialog-sharing .fa-brands,
+.dialog-sharing .fa-copy {
+      font-size: 6vw;
+      background-color: $lightfield;
+}
+
+.fa-twitter {
+      color: $twitter;
+}
+
+.fa-telegram {
+      color: $telegram;
+}
+
+.fa-facebook {
+      color: $facebook;
+}
+
+.fa-at {
+      color: $email;
+}
+
+.fa-whatsapp {
+      color: $whatsapp;
+}
+
+.fa-viber {
+      color: $viber;
+}
+
+/* ***********************************************controller link-copy */
+
+#link-copy {
+      width: 30px;
+      opacity: 0;
+}
+
+.btn {
+      background-color: $lightfield;
+}
+
+/* ***********************************************reverse-controller */
+#email-button {
+      display: none;
+}
+
+#email-button:checked~.dialog>.dialogbar.back {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* ***********************************booking seite****************************** */
+/* ****************************************************************************** */
+/* --------------------------------------------booking page meer-image */
+aside.p-b img {
+      margin-top: 10rem;
+      width: 100%;
+      height: auto;
+      max-height: 40vh;
+      object-fit: cover;
+      margin-bottom: $topbottom;
+}
+
+/*-------------------------------------------------- booking page main */
+
+.fa-solid,
+.fa-regular {
+      font-size: 1.7rem;
+      margin-right: $leftrightklein;
+}
+
+table.kalender {
+      margin-top: 2rem;
+      display: none;
+}
+
+/* ------------------------------------------------------------ */
+.container {
+      background-color: $lightfield;
+      height: fit-content;
+      padding-bottom: 2rem;
+      box-shadow: $boxshadow;
+}
+
+/* ----------------------------------------first container. Guests, checkout */
+.container.checkout {
+      display: flex;
+      flex-direction: column;
+}
+
+/*---------------------------------------- controller booking guest-panel */
+#gpanel {
+      display: none;
+}
+
+/* -------------------------------------------------------closed panel */
+.checkout {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $darkgold;
+}
+
+.guest {
+      position: relative;
+}
+
+.guestwrapper {
+      position: absolute;
+      padding-top: $leftrightklein;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: -39vh;
+      background-color: $lightfield;
+
+      clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 0% 10%);
+      transition: all 0.5s;
+}
+
+.inputwrapper {
+      margin-bottom: $topbottom;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 1.5rem;
+}
+
+.guest .close {
+      font-size: 2rem;
+      justify-self: end;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+}
+
+/* -------------------------------------------------------opened panel */
+#gpanel:checked+.guestwrapper {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      border: 1px solid $darkgold;
+}
+
+#gpanel:checked+.guestwrapper>.inputwrapper>.close {
+      display: block;
+}
+
+label[for="gpanel"]:hover {
+      cursor: pointer;
+}
+
+input[type="number"] {
+      width: 20px;
+      height: 20px;
+      background-color: $darkfield;
+}
+
+input[name="bigaguest"],
+input[name="bigchguest"] {
+      width: 30px;
+      height: 30px;
+      margin-bottom: $topbottom;
+}
+
+.buttonswrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+}
+
+.buttonswrapper button {
+      height: 30px;
+      background-color: $darkgold;
+      color: $lightfield;
+      position: relative;
+      width: 30px;
+}
+
+button.plus {
+      left: -10px;
+}
+
+button.minus {
+      left: 10px;
+}
+
+button.cancel,
+button.submit {
+      width: 80px;
+      letter-spacing: 2px;
+}
+
+.datawrapper {
+      display: flex;
+      justify-content: center;
+      gap: $leftright;
+      margin-top: 8vh;
+}
+
+label[for="in"],
+label[for="out"] {
+      text-align: center;
+      display: block;
+      margin-bottom: calc($topbottom / 2);
+}
+
+.leftdatawrapper,
+.rightdatawrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+/* ----------------------------------------booking seite-container status */
+.container.status {
+      padding: $leftrightklein;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 1fr repeat(3, 2fr);
+      align-items: center;
+      text-align: center;
+}
+
+.status span {
+      font-size: 1.6rem;
+}
+
+.status h2 {
+      grid-area: 1/1/2/3;
+}
+
+.status span:nth-child(2) {
+      grid-area: 2/1/3/2;
+}
+
+.status span:nth-child(3) {
+      grid-area: 2/2/3/3;
+}
+
+.status span:nth-child(4) {
+      grid-area: 3/1/4/2;
+}
+
+.status span:nth-child(5) {
+      grid-area: 3/2/4/3;
+}
+
+.status span:nth-child(6) {
+      grid-area: 4/1/5/3;
+}
+
+.status span:nth-child(7) {
+      grid-area: 5/1/6/2;
+}
+
+.status span:nth-child(8) {
+      grid-area: 5/2/6/3;
+      color: $lightfield;
+      width: 13rem;
+      height: 3rem;
+      line-height: 3rem;
+      background-color: $darkgold;
+      justify-self: center;
+}
+
+/* ----------------------------------------------booking seite-room-card  */
+.container.room {
+      display: grid;
+      grid-template-columns: 50% 1fr 1fr;
+      grid-template-rows: repeat(6, auto);
+      padding: $leftrightklein;
+      column-gap: 2rem;
+      row-gap: 1rem;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+}
+
+.room picture {
+      grid-area: 1/1/5/2;
+}
+
+.room h3 {
+      grid-area: 1/2/2/5;
+}
+
+.room h2 {
+      grid-area: 2/2/3/5;
+}
+
+.room p:nth-child(4) {
+      grid-area: 3/2/4/5;
+}
+
+.room p:nth-child(5) {
+      grid-area: 5/3/6/5;
+      letter-spacing: 1px;
+      justify-self: end;
+      text-transform: none;
+      letter-spacing: initial;
+}
+
+.room .bookbtn {
+      grid-area: 6/4/7/5;
+      justify-self: end;
+}
+
+/* -----------------------------------------------responsiv booking seite */
+@media (min-width: 480px) {
+      .container.room {
+            font-size: 1.3rem;
+      }
+}
+
+@media (min-width: 800px) {
+      main.p-b {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+
+            gap: calc($leftright / 3);
+            grid-template-areas:
+                  "checkout status"
+                  "hause r1"
+                  "jakov r2"
+                  "ruza .";
+            margin-bottom: $topbottombig;
+      }
+
+      .container {
+            height: 100%;
+            padding: $leftrightklein;
+      }
+
+      .container.checkout {
+            grid-area: checkout;
+      }
+
+      .container.status {
+            grid-area: status;
+      }
+
+      .container.room.haus {
+            grid-area: hause;
+      }
+
+      .container.room.jakov {
+            grid-area: jakov;
+      }
+
+      .container.room.ruza {
+            grid-area: ruza;
+      }
+
+      .container.was1 {
+            grid-area: r1;
+      }
+
+      .container.was2 {
+            grid-area: r2;
+      }
+
+      .guestwrapper {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 20%);
+      }
+
+      table.kalender {
+            margin-top: 2rem;
+            display: contents;
+      }
+
+      table.kalender,
+      .kalender th,
+      .kalender td {
+            border: 1px solid $altgold;
+      }
+
+      .kalender th,
+      .kalender td {
+            width: 3rem;
+            height: 3rem;
+      }
+}
+
+/* ************************************************booking spring button */
+.room picture:hover~.bookbtn {
+      animation: buttonexplosion 1s forwards;
+}
+
+@keyframes buttonexplosion {
+      0% {
+            transform: scale(0.01);
+
+            box-shadow: 0px 0px 0px $darkgold;
+      }
+
+      50% {
+            transform: scale(1.2) translateY(-20px);
+            box-shadow: 0px 0px 10px 4px $darkgold;
+      }
+
+      65% {
+            transform: scale(0.9);
+            box-shadow: inset 0px 0px 0px 0px $darkgold;
+      }
+
+      70% {
+            transform: scale(0.9);
+            box-shadow: inset 0px 0px 5px $darkgold;
+      }
+
+      73% {
+            transform: scale(0.9);
+      }
+
+      90% {
+            transform: scale(1.1) translateY(-7px);
+            box-shadow: 0px 0px 5px $darkgold;
+      }
+
+      100% {
+            transform: scale(1) translateY(7px);
+      }
+}
+
+/* *************************************************booking animation* */
+.animation {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+}
+
+.himmel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient(rgb(0, 213, 255), transparent);
+}
+
+.sun {
+      position: absolute;
+      top: -50px;
+      bottom: -50px;
+      left: 0px;
+      right: 0;
+      background: radial-gradient(circle at 50% 0px,
+
+                  rgba(255, 229, 38, 1) 3%,
+                  rgba(255, 251, 173, 0.34077380952380953) 20%,
+                  transparent);
+}
+
+.animation img {
+      width: 20%;
+      height: 30%;
+      object-fit: contain;
+}
+
+.sunray {
+      background: radial-gradient(circle at 50% 0px,
+
+                  rgba(255, 229, 38, 1) 1%,
+                  rgba(255, 251, 173, 0.34077380952380953) 50%,
+                  transparent);
+      animation: sunshine 5s infinite ease-in-out;
+}
+
+.wave {
+      position: absolute;
+      width: 200%;
+      aspect-ratio: 1;
+      border-radius: 40%;
+      opacity: 0.9;
+      top: 80%;
+      left: -50%;
+}
+
+.wave:nth-child(4) {
+      background-color: $telegram;
+      z-index: 8;
+
+      animation: rotate 10s infinite forwards;
+}
+
+.wave:nth-child(1) {
+      background-color: $facebook;
+      z-index: 5;
+
+      animation: rotate 13s infinite;
+      animation-delay: 3s;
+}
+
+.wave:nth-child(2) {
+      background-color: #5b7dd9;
+      z-index: 6;
+
+      animation: rotate 11s infinite;
+      animation-delay: 1s;
+}
+
+.wave:nth-child(5) {
+      background-color: #5bccd9;
+      z-index: 9;
+
+      animation: rotate 12s infinite;
+      animation-delay: 2s;
+}
+
+.wave:nth-child(3) {
+      background-color: $twitter;
+      z-index: 7;
+
+      animation: rotate 9s infinite;
+      animation-delay: 2s;
+}
+
+.wave:nth-child(6) {
+      background-color: #5bccd9;
+      z-index: 10;
+      animation: rotate 9s infinite;
+}
+
+.wave:nth-child(7) {
+      background-color: $telegram;
+      z-index: 3;
+
+      animation: rotate 10s infinite forwards;
+}
+
+.wave:nth-child(8) {
+      background-color: $facebook;
+      z-index: 2;
+
+      animation: rotate 13s infinite;
+      animation-delay: 3s;
+}
+
+@keyframes rotate {
+      from {
+            transform: rotate(0deg) translate(0, 0);
+      }
+
+      50% {
+            transform: rotate(180deg) translate(10%, -10%);
+      }
+
+      100% {
+            transform: rotate(1turn) translate(0, 0);
+      }
+}
+
+@keyframes sunshine {
+      from {
+            transform: translate(0, -50px);
+      }
+
+      50% {
+            transform: translate(0, -50px);
+      }
+
+      75% {
+            transform: translate(0px, 50px);
+            scale: 1.2;
+      }
+
+      100% {
+            transform: translate(0, -50px);
+      }
+}
+
+.ship-circle {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 80%;
+      z-index: 6;
+
+      animation: ship-in-wave 15s ease-in-out infinite;
+}
+
+.ship-circle-1 {
+      left: -25%;
+}
+
+.ship-circle-2 {
+      left: 15%;
+      transform: rotate(-180deg);
+
+      animation-delay: 5s;
+}
+
+.ship-circle-3 {
+      left: 50%;
+      transform: rotate(-180deg);
+
+      animation-delay: 10s;
+}
+
+.circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+}
+
+.ship {
+      position: relative;
+      width: 70px;
+      height: 80px;
+      left: 40%;
+      top: -60px;
+      opacity: 0.7;
+}
+
+.s {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      position: absolute;
+}
+
+.ls {
+      clip-path: polygon(50% 0%, 0% 100%, 50% 100%);
+      left: 0;
+      top: 15px;
+}
+
+.rs {
+      clip-path: polygon(51% 15%, 100% 100%, 50% 100%);
+      left: 3px;
+      top: 15px;
+}
+
+.fl {
+      width: 30px;
+      height: 15px;
+      background-color: rgb(244, 143, 143);
+      clip-path: polygon(0 0, 100% 0, 63% 47%, 100% 100%, 0 100%);
+      position: absolute;
+      left: 33px;
+      top: 5px;
+}
+
+.g {
+      width: 100px;
+      height: 60px;
+      top: 40px;
+      left: -10px;
+      background-color: rgb(93, 8, 8);
+      clip-path: polygon(30% 62%, 63% 62%, 100% 34%, 75% 100%, 25% 100%, 1% 58%);
+      position: absolute;
+}
+
+@keyframes ship-in-wave {
+      0% {
+            transform: rotate(-180deg);
+      }
+
+      100% {
+            transform: rotate(90deg);
+      }
+}
+
+/* *******************************Formular seite********************************** */
+/* ******************************************************************************* */
+.page-formular .container.animation {
+      height: 9rem;
+      background-color: $darkfield;
+}
+
+@media (min-width: 768px) {
+      form.p-f {
+            max-width: 50%;
+      }
+
+      .p-f-button {
+            height: 4rem;
+      }
+
+      .page-formular .container.animation {
+            height: 24rem;
+      }
+}
+
+/* ********************************Gallery seite**********************************/
+/* ****************************************************************************** */
+.gallery h2.caption {
+      color: $darkgold;
+}
+
+/* -------------------------------------------------gallery-text */
+.text-green-field {
+      display: block;
+
+      width: 100%;
+      max-width: 950px;
+
+      background-color: $green;
+      box-shadow: $boxshadow;
+
+      color: $lightfield;
+      font-family: "Arial";
+      font-size: 1.4rem;
+      line-height: 1.5;
+      text-align: justify;
+
+      padding: $topbottom;
+      margin: auto;
+      margin-bottom: $topbottom;
+}
+
+.text-green-field p {
+      margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------gallery--sleep */
+.bed-wrapper {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* grid-template-columns: repeat(3, 1fr); */
+      font-family: "Arial";
+      font-size: 1.3rem;
+      gap: 1rem;
+      margin-bottom: $topbottom;
+}
+
+/* .bed-wrapper.ruza {
+      grid-template-columns: repeat(2, 1fr);
+    } */
+
+.bed {
+      border: 1px solid $gold;
+      border-radius: 10px;
+      padding: 0.5em;
+      width: 20%;
+      min-width: 100px;
+      max-width: 150px;
+}
+
+.bed h3 {
+      margin-bottom: 1em;
+}
+
+.bed .material-symbols-outlined {
+      font-family: "Material Symbols Outlined";
+      font-size: 2.5rem;
+}
+
+/* --------------------------------------------------gallery-offers */
+.gallery-offers {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+
+      background-color: $darkgold;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: fit-content fit-content;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: $boxshadow;
+      margin-bottom: $topbottom;
+}
+
+.gallery-offers>div {
+      background-color: $lightfield;
+      padding: 1rem;
+      box-shadow: $boxshadow;
+}
+
+.gallery-offers .left {
+      grid-area: 1/1/2/2;
+}
+
+.gallery-offers .right {
+      grid-area: 1/2/2/3;
+}
+
+.gallery-offers .down {
+      grid-area: 2/1/3/3;
+}
+
+.left li,
+.right li {
+      padding-left: 2rem;
+}
+
+.left ul,
+.right ul {
+      margin-bottom: $topbottom;
+}
+
+/*-------------------------------------------------gallery-house rules */
+.gallery-offers .checking {
+      display: grid;
+      grid-template-columns: 10rem auto;
+      grid-template-rows: 1fr 2fr;
+}
+
+.gallery-offers .checking:nth-child(2) {
+      gap: 0.7rem;
+      margin-bottom: $topbottom;
+}
+
+.gallery-offers .checking h3 {
+      grid-area: 1/1/2/2;
+}
+
+.gallery-offers .checking p:nth-child(2) {
+      grid-area: 1/2/2/3;
+      font-weight: bold;
+}
+
+.gallery-offers .checking p:nth-child(3) {
+      grid-area: 2/2/3/3;
+}
+
+/* -------------------------------------------------photogallery */
+.gallery .photos {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-auto-rows: auto;
+      grid-auto-flow: row;
+      gap: 1rem;
+      margin-bottom: $topbottombig;
+}
+
+.gallery picture img {
+      width: 100%;
+      height: auto;
+      box-shadow: $smallimgshadow;
+}
+
+.gallery .photos-house picture:nth-child(2) {
+      grid-area: 1/3/3/4;
+      align-self: end;
+}
+
+.gallery .photos-house picture:nth-child(3) {
+      grid-area: 2/1/4/2;
+}
+
+.gallery .photos-house picture:nth-child(20) {
+      grid-area: 7/1/9/2;
+}
+
+.gallery .photos-house picture:nth-child(30) {
+      grid-area: 11/3/13/4;
+}
+
+.gallery .photos-jakov picture:nth-child(16) {
+      grid-area: 5/2/7/3;
+}
+
+.gallery .photos-ruza picture:nth-child(8) {
+      grid-area: 3/2/5/3;
+}
+
+.gallery .photos-house picture:nth-child(3) img,
+.gallery .photos-house picture:nth-child(20) img,
+.gallery .photos-house picture:nth-child(30) img,
+.gallery .photos-jakov picture:nth-child(16) img,
+.gallery .photos-ruza picture:nth-child(8) img {
+      height: 100%;
+}
+
+/*-----------------------------------------------gallery-tabelle */
+
+.gallery-tbl {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      box-shadow: $imgshadow;
+      margin-bottom: calc($topbottom) / 2;
+}
+
+.gallery thead {
+      font-family: Arial, Helvetica, sans-serif;
+}
+
+.gallery-tbl td,
+.gallery-tbl th {
+      border: 2px solid $darkgold;
+      padding: 0.7rem;
+}
+
+.gallery-tbl th {
+      font-size: 1rem;
+      color: $green;
+}
+
+.gallery-tbl td {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $darkfield;
+      background-color: $darkgold;
+}
+
+.gallery .p-f-button {
+      width: 12rem;
+      display: block;
+      margin: auto;
+      background-color: $darkgold;
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 2rem;
+      color: $lightfield;
+      margin-bottom: $topbottombig;
+}
+
+/*-----------------------------------------------gallery--attraction */
+.attraction {
+      width: 80vw;
+      max-width: 700px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: $topbottom;
+      align-items: start;
+}
+
+.attraction i {
+      margin-bottom: 1rem;
+}
+
+.attraction ul {
+      display: grid;
+      grid-template-columns: auto 5rem;
+      gap: 1rem;
+}
+
+/* -------------------------------------------------gallery-contact */
+.contact {
+      width: 70vw;
+      max-width: 500px;
+      margin: auto;
+      height: fit-content;
+      border: 2px solid $darkgold;
+      color: $green;
+      box-shadow: $boxshadow;
+      margin-bottom: $topbottom;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+}
+
+.contact address,
+.contact p:nth-child(2) {
+      margin-bottom: 1rem;
+}
+
+.inputcheck {
+      width: 5px;
+      height: 5px;
+      background-color: $lightfield;
+      border: 1px solid $darkgold;
+}
+
+/* ****************************************************anchors */
+.anchor-margin {
+      scroll-margin-top: 13rem;
+}
+
+/* --------------------gallery responsivitaet */
+@media (min-width: 480px) {
+
+      .gallery-offers,
+      .gallery .attraction,
+      .gallery-tbl th {
+            font-size: 1.3em;
+      }
+
+      .gallery-tbl td {
+            font-size: 1.5rem;
+      }
+
+      .anchor-margin {
+            scroll-margin-top: 17rem;
+      }
+}
+
+@media (min-width: 768px) {
+      .anchor-margin {
+            scroll-margin-top: 19rem;
+      }
+
+      .gallery-offers,
+      .gallery .attraction,
+      .gallery-tbl th {
+            font-size: 1.5em;
       }
 }

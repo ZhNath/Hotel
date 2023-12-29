@@ -1,222 +1,3 @@
-@font-face {
-  font-family: "PoiretOne";
-  src: url(../fonts/PoiretOne-Regular.ttf);
-  font-display: swap;
-}
-@font-face {
-  font-family: "JosefinSans";
-  src: url(../fonts/JosefinSans-Bold.ttf);
-  font-weight: 700;
-  font-display: swap;
-}
-/* fallback */
-@font-face {
-  font-family: "Material Symbols Outlined";
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2) format("woff2");
-  font-display: swap;
-}
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
-
-textarea::-moz-placeholder, input::-moz-placeholder {
-  text-decoration: none;
-  color: inherit;
-  font: inherit;
-}
-
-a,
-a:active,
-a:visited,
-label,
-textarea,
-textarea::placeholder,
-input,
-input::placeholder,
-button {
-  text-decoration: none;
-  color: inherit;
-  font: inherit;
-}
-
-textarea,
-input,
-input:active,
-input:focus,
-select:active,
-select:focus {
-  outline: none;
-  background: none;
-}
-
-a:hover,
-button:hover,
-select:hover,
-label:hover {
-  cursor: pointer;
-  scale: 1.1;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-ul li {
-  list-style-type: none;
-}
-
-h2.caption {
-  font-size: 2rem;
-  font-weight: bold;
-  color: hsl(49, 60%, 52%);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.shader img,
-.card-room img,
-.carousel img,
-.room img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px, rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px, rgba(58, 31, 3, 0.1) 0px 32px 16px;
-}
-
-input::-moz-placeholder {
-  -moz-transition: 0.3s;
-  transition: 0.3s;
-}
-
-input::placeholder {
-  transition: 0.3s;
-}
-
-input:focus::-moz-placeholder, input:valid::-moz-placeholder {
-  transform: translateY(-25px);
-  font-size: 1.3em;
-}
-
-input:focus::placeholder,
-input:valid::placeholder {
-  transform: translateY(-25px);
-  font-size: 1.3em;
-}
-
-textarea:focus::-moz-placeholder {
-  transform: translateY(14rem);
-  font-size: 1.3em;
-}
-
-textarea:focus::placeholder {
-  transform: translateY(14rem);
-  font-size: 1.3em;
-}
-
-button.language {
-  display: none;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-}
-button.language:active {
-  box-shadow: inset 0px 0px 4px #092c24;
-}
-button.language:hover {
-  transform: scale(1.2);
-}
-
-.language.eng {
-  background-image: url(../images/eng.png);
-}
-
-.language.deu {
-  background-image: url(../images/deutsch.png);
-}
-
-.language.cro {
-  background-image: url(../images/Croatia.png);
-  margin-right: auto;
-}
-
-/* ----------------------------------------------------goldene linie */
-.line {
-  height: 2px;
-  width: 70%;
-  margin: auto;
-  background-image: linear-gradient(to left, hsl(49, 60%, 52%), #6c592f, hsl(49, 60%, 52%));
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-@media (min-width: 481px) {
-  .line {
-    height: 3px;
-    margin-top: 7rem;
-    margin-bottom: 7rem;
-  }
-}
-
-.thinline {
-  height: 1px;
-  min-height: 1px;
-  width: 90%;
-  background-color: hsl(49, 60%, 52%);
-}
-
-/*------------------------------------------------------ bookbutton */
-.bookbtn {
-  display: block;
-  font-size: 1rem;
-  padding: 5px;
-  letter-spacing: 1px;
-  background-color: hsl(49, 60%, 52%);
-  color: #092c24;
-  font-weight: bold;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  transition: 0.2s ease-in-out;
-  /* -----------------------------------------------bookbutton responsiv */
-}
-.bookbtn::after {
-  content: "";
-  background: linear-gradient(to left, transparent, #efd045, transparent);
-  height: 5em;
-  width: 8em;
-  background-size: cover;
-  position: absolute;
-  right: -6em;
-  top: -1rem;
-  transition: 0.5s all ease-in-out;
-}
-.bookbtn::after:hover::after {
-  right: 90%;
-}
-.bookbtn::after a {
-  letter-spacing: 1px;
-}
-@media (min-width: 481px) {
-  .bookbtn {
-    font-size: 1.3rem;
-  }
-}
-@media (min-width: 768px) {
-  .bookbtn {
-    font-size: 1.4rem;
-    padding: 5px;
-  }
-}
-
 /* 1 */
 /*bookbutton dialog bar */
 .dialog {
@@ -232,13 +13,17 @@ button.language:hover {
   transform: translate(-50%, -50%);
   display: none;
   z-index: 20;
-  box-shadow: 5px 5px 10px 3px #031d17, 0 0 0 50vmax 0 0 0 70vmax hsla(167, 67%, 12%, 0.886), inset 5px 5px 15px 0 rgba(66, 68, 17, 0.429);
+  box-shadow: 5px 5px 10px 3px #031d17,
+    0 0 0 50vmax 0 0 0 70vmax hsla(167, 67%, 12%, 0.886),
+    inset 5px 5px 15px 0 rgba(66, 68, 17, 0.429);
 }
 
 @media (min-width: 768px) {
   .dialog {
     width: 60vw;
-    box-shadow: 10px 10px 20px 7px #031d17, 0 0 0 50vmax 0 0 0 70vmax hsla(167, 67%, 12%, 0.886), inset 10px 10px 30px 0 rgba(66, 68, 17, 0.429);
+    box-shadow: 10px 10px 20px 7px #031d17,
+      0 0 0 50vmax 0 0 0 70vmax hsla(167, 67%, 12%, 0.886),
+      inset 10px 10px 30px 0 rgba(66, 68, 17, 0.429);
   }
 }
 @media (min-width: 1280px) {
@@ -268,7 +53,7 @@ button.language:hover {
   height: -moz-fit-content;
   height: fit-content;
   -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-          clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
   transition: 1s;
 }
 
@@ -374,7 +159,9 @@ button.language:hover {
   height: -moz-fit-content;
   height: fit-content;
   background-color: #6c592f;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px, rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px, rgba(58, 31, 3, 0.1) 0px 32px 16px;
+  box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px,
+    rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px,
+    rgba(58, 31, 3, 0.1) 0px 32px 16px;
   color: #fefae7;
   font-family: "PoiretOne";
   font-weight: bold;
@@ -447,7 +234,7 @@ button.language:hover {
   padding: 5vw;
   padding-top: 0;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 5rem, 0% 5rem);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 5rem, 0% 5rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 5rem, 0% 5rem);
   transition: -webkit-clip-path 1s;
   transition: clip-path 1s;
   transition: clip-path 1s, -webkit-clip-path 1s;
@@ -493,7 +280,8 @@ legend label.down-arrow {
   color: #fefae7;
   position: relative;
 }
-.input-group input:focus ~ label.false-placeholder, .input-group input:valid ~ label.false-placeholder {
+.input-group input:focus ~ label.false-placeholder,
+.input-group input:valid ~ label.false-placeholder {
   transform: translateY(-1.5rem);
 }
 
@@ -531,7 +319,8 @@ form.p-f {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fefae7;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px, rgba(58, 31, 3, 0.1) 0px 2px 4px -1px;
+  box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px,
+    rgba(58, 31, 3, 0.1) 0px 2px 4px -1px;
 }
 
 .p-f legend {
@@ -574,7 +363,7 @@ form.p-f {
   color: #6c592f;
 }
 
-.p-f-button[type=submit] {
+.p-f-button[type="submit"] {
   display: block;
   margin: auto;
-}/*# sourceMappingURL=bars_windows.css.map */
+} /*# sourceMappingURL=bars_windows.css.map */
