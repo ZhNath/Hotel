@@ -1,0 +1,17 @@
+{
+  "name": "abschlusprojekt",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass": "sass --watch style.scss:style.css",
+    "browser": "xdg-open http://127.0.0.1:5500/index.html",
+    "start": "npm run browser && npm run sass"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "sass": "^1.69.5"
+  },
+  "license": "ISC",
+  "main": "clipboard.min.js"
+}

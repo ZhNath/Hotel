@@ -1,0 +1,544 @@
+@import 'style/variables';
+@import 'style/settings';
+@import 'style/buttons';
+
+@mixin fixed-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+}
+
+:root {
+      font-size: 62.5%;
+      font-family: "PoiretOne", Arial, Helvetica, sans-serif;
+}
+
+body {
+      background-color: $green;
+      width: 100vw;
+
+      &.page-booking {
+            background-color: $darkfield;
+      }
+}
+
+/* -------------------------------------------header */
+header {
+      @include fixed-elements;
+      background-color: $green;
+      display: grid;
+      padding: $topbottom $leftright;
+      z-index: 1;
+      /* -----------------------header naming*/
+
+      &.index {
+            grid-template-columns: calc(17ch - 4rem) 4rem auto;
+            grid-template-rows: 2rem 1.8rem repeat(2, 2rem) 1rem;
+            grid-template-areas:
+                  "house house  lang-ham"
+                  ". gerb  ."
+                  "casa gerb  ."
+                  "nostra gerb  bookbutton"
+                  "linie linie linie";
+
+            /* --------------------------------header links naming */
+            span {
+                  color: $gold;
+                  font-size: 1.7rem;
+
+                  &.casanostra {
+                        font-weight: bold;
+                        letter-spacing: 3px;
+                  }
+
+                  @each $num, $area in (1: house, 2: casa, 3: nostra) {
+                        &:nth-child(#{$num}) {
+                              grid-area: $area;
+                        }
+                  }
+
+            }
+
+      }
+
+      &.p-b {
+            height: 9rem;
+            background-color: inherit;
+
+            grid-template-columns: 1fr 6rem 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            align-items: start;
+            row-gap: 1rem;
+
+            font-weight: bold;
+            color: $green;
+
+            z-index: 30;
+
+            .p-b-naming {
+                  grid-area: 1/1/4/2;
+
+                  span {
+                        font-size: 1.3rem;
+
+                        &.casanostra {
+                              font-size: 1.7rem;
+                        }
+                  }
+            }
+
+            .p-b-data {
+                  grid-area: 2/3/4/4;
+                  justify-self: end;
+            }
+
+            .p-b-data,
+            .p-b-naming {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: start;
+                  gap: 1rem;
+            }
+
+            .p-b-langnav {
+                  grid-area: 1/3/2/4;
+                  justify-self: end;
+                  display: flex;
+                  gap: 5px;
+
+            }
+
+            button.language {
+                  display: block;
+                  border: none;
+                  align-self: center;
+            }
+
+            .homelink {
+                  color: $green;
+                  font-size: 2em;
+                  grid-area: 2/3/3/4;
+                  justify-self: self-start;
+                  width: fit-content;
+                  margin-right: 1em;
+            }
+      }
+
+      /* --------------------------------header logo */
+      .logo {
+            height: auto;
+            width: 4rem;
+            align-self: end;
+      }
+
+      &.index .logo {
+            grid-area: gerb;
+      }
+
+      &.p-b .logo {
+            grid-area: 1/2/4/3;
+            align-self: center;
+            margin-right: auto;
+      }
+
+      /*---------------- ---responsiv links naming, logo */
+      @media (min-width: 481px) {
+            .logo {
+                  width: 6rem;
+            }
+
+            &.index {
+                  grid-template-columns: 17ch 6rem 1fr 1fr;
+                  grid-template-rows: 3rem 2rem repeat(2, 3rem) 2rem;
+                  grid-template-areas:
+                        "house house house lang-ham"
+                        ". gerb . ."
+                        "casa gerb . ."
+                        "nostra gerb . bookbutton"
+                        "linie linie linie linie";
+
+                  span.casanostra {
+                        font-size: 3rem;
+                  }
+
+                  span:nth-child(1) {
+                        font-size: 2.5rem;
+                  }
+            }
+
+            &.p-b {
+                  grid-template-columns: auto 6rem 1fr;
+
+                  span.casanostra {
+                        font-size: 2.5rem;
+                  }
+
+                  span.house {
+                        font-size: 2rem;
+                  }
+            }
+      }
+
+      @media (min-width: 769px) {
+            &.index {
+                  grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
+                  grid-template-rows: repeat(3, 4rem) 2rem;
+                  grid-template-areas:
+                        ".  house house house lang-ham"
+                        ". . gerb . ."
+                        ". casa gerb nostra ."
+                        "linie linie linie linie linie";
+
+                  .logo {
+                        justify-self: center;
+                  }
+
+                  span:nth-child(1) {
+                        font-size: 4rem;
+                        margin-left: 1em;
+                        justify-self: center;
+                  }
+
+                  span:nth-child(2) {
+                        justify-self: end;
+                  }
+            }
+
+
+
+            &.p-b .p-b-data {
+                  grid-area: 2/3/4/4;
+                  justify-self: end;
+                  flex-direction: row;
+                  justify-content: end;
+                  align-items: start;
+                  gap: 1rem;
+
+                  a {
+                        font-size: 1.5rem;
+                  }
+            }
+
+      }
+
+      /* ------------------------header bookbutton */
+      .bookbtn {
+            grid-area: bookbutton;
+            place-self: end;
+      }
+
+      /* ---------------nav = language + hamburger */
+      nav {
+            grid-area: lang-ham;
+            display: flex;
+            justify-content: end;
+            gap: 2rem;
+
+            select.language {
+                  width: 6rem;
+                  height: 1rem;
+                  font-size: 1rem;
+                  border-radius: 0.5rem;
+                  background-color: $green;
+                  color: $gold;
+            }
+
+
+
+            select.language:hover {
+                  transform: scale(1.2);
+            }
+
+            select.language:active {
+                  box-shadow: inset 0px 0px 4px $green;
+            }
+
+
+
+            /* ----------hamburger and close button */
+            .hamburger .fa-bars {
+                  color: $gold;
+                  font-size: 1.5rem;
+            }
+
+            label.ham-lines:hover .fa-bars,
+            label.close:hover .fa-xmark {
+                  cursor: pointer;
+                  scale: 1.2;
+            }
+
+            /* ----------------responsiv header nav */
+            @media (min-width: 481px) {
+                  & {
+                        gap: 1rem;
+                  }
+
+                  select.language {
+                        display: none;
+                  }
+
+                  button.language {
+                        display: block;
+                  }
+
+                  .hamburger .fa-bars {
+                        font-size: 3rem;
+                  }
+            }
+
+            @media (min-width: 769px) {
+                  & {
+                        justify-self: end;
+                  }
+
+                  .bookbtn,
+                  .ham-lines {
+                        display: none;
+                  }
+
+            }
+
+            @media (min-width: 1000px) {
+                  button.language {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                  }
+            }
+      }
+
+      /*---------------------------- golden header line */
+      .line {
+            grid-area: linie;
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 0;
+            align-self: self-end;
+      }
+
+}
+
+main {
+      width: 90%;
+      margin: auto;
+
+      &.index,
+      &.gallery {
+            margin-top: 15rem;
+      }
+
+      &.p-b {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            color: $darkgold;
+            font-weight: bold;
+      }
+
+      .shader img,
+      .card-room img,
+      .carousel img,
+      .room img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: $imgshadow;
+      }
+
+      /*-----------------------------------responsive main*/
+      @media (min-width: 481px) {
+
+            &.index,
+            &.gallery {
+                  margin-top: 18rem;
+            }
+
+            h2.caption {
+                  font-size: 2.5rem;
+            }
+      }
+
+      @media (min-width: 768px) {
+
+            main.index,
+            main.gallery {
+                  margin-top: 20rem;
+            }
+
+            h2.caption {
+                  font-size: 3rem;
+            }
+      }
+
+      /* ------first image with animation------- */
+      /* -------------------------------------------first image animation-wrapper */
+      .shader {
+            position: relative;
+            overflow: hidden;
+            width: 90vw;
+            height: 30vh;
+            margin: auto;
+            z-index: -1;
+      }
+
+      /* -------------------------------------------------basic-img */
+
+      .shader_layer {
+            position: absolute;
+            background-size: 100%;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+
+            &.gradient {
+                  background-attachment: fixed;
+                  mix-blend-mode: screen;
+                  background-image: linear-gradient(180deg,
+                              black 5%,
+                              #f3735c 35%,
+                              #f58308,
+                              yellow 80%,
+                              black);
+                  width: 100%;
+                  height: 100%;
+            }
+
+            &.mask {
+                  mix-blend-mode: multiply;
+            }
+
+      }
+
+      /* ---------------------------------------responsiv first image */
+      @media (min-width: 481px) {
+            .shader {
+                  height: 73vh;
+            }
+      }
+
+      @media (min-width: 768px) {
+            .shader {
+                  height: 90vh;
+            }
+      }
+
+      /* -----------------------------------------apartament cards */
+      .card-room {
+            width: 100%;
+      }
+
+      .card-room picture {
+            margin-bottom: 0.5rem;
+      }
+
+      .card-room-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            gap: $topbottom;
+
+            width: 100%;
+            height: fit-content;
+            padding: $leftright;
+
+            background-color: $darkfield;
+            box-shadow: $boxshadow;
+            color: $violet;
+            font-size: 1.5rem;
+      }
+
+      .card-room-text p {
+            text-align: justify;
+      }
+
+      .card-room-text h2 {
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+      }
+
+      .card-room-text button {
+            width: fit-content;
+            background-color: $darkfield;
+      }
+
+      .card-room-text button a {
+            text-transform: uppercase;
+      }
+
+      .card-room-btns {
+            display: flex;
+            gap: 2em;
+      }
+
+      .card-room-btns .fa-solid {
+            margin: 0;
+      }
+
+      .fa-star:active {
+            color: $gold;
+      }
+
+      /* -------------------------------------------responsiv apartment cards */
+      @media (min-width: 481px) {
+            .card-room {
+                  display: grid;
+                  grid-template-columns: repeat(6, 15vw);
+                  grid-template-rows: repeat(5, 10vh) auto;
+            }
+
+            .card-room.horizontal picture {
+                  width: 75vw;
+                  grid-area: 2/1/7/6;
+            }
+
+            .card-room.horizontal .card-room-text {
+                  font-size: 1.5rem;
+                  padding: $leftrightklein;
+                  grid-area: 1/3/4/7;
+            }
+
+            .card-room.vertical picture {
+                  width: 75vw;
+                  grid-area: 1/1/7/3;
+            }
+
+            .card-room.vertical .card-room-text {
+                  font-size: 1.5rem;
+                  padding: $leftrightklein;
+                  grid-area: 2/3/4/7;
+            }
+      }
+
+      @media (min-width: 1000px) {
+            .card-room .card-room-text {
+                  font-size: 2rem;
+            }
+
+            .card-room.horizontal picture {
+                  width: 60vw;
+                  grid-area: 2/2/8/6;
+            }
+
+            .card-room.vertical picture {
+                  width: 60vw;
+                  grid-area: 1/2/7/6;
+            }
+
+            .card-room.horizontal .card-room-text {
+                  max-width: 40vw;
+                  grid-area: 1/-1/3/-5;
+                  justify-self: end;
+            }
+
+            .card-room.vertical .card-room-text {
+                  max-width: 40vw;
+                  grid-area: 2/-1/4/-5;
+                  justify-self: end;
+            }
+      }
+
+}
