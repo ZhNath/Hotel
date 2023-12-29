@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "sass": "sass --watch style.scss:style.css",
+    "sass": "sass --watch style.scss:style.css style/bars_windows.scss:mod_window.css",
     "browser": "xdg-open http://127.0.0.1:5500/index.html",
     "start": "npm run browser && npm run sass"
   },

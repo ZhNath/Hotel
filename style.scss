@@ -1,10 +1,10 @@
 @import 'style/variables';
 @import 'style/settings';
 @import 'style/buttons';
+// @import 'style/bars_windows';
 
 @mixin fixed-elements {
       position: fixed;
-      top: 0;
       left: 0;
       right: 0;
 }
@@ -26,6 +26,7 @@ body {
 /* -------------------------------------------header */
 header {
       @include fixed-elements;
+      top: 0;
       background-color: $green;
       display: grid;
       padding: $topbottom $leftright;
@@ -206,8 +207,6 @@ header {
                   }
             }
 
-
-
             &.p-b .p-b-data {
                   grid-area: 2/3/4/4;
                   justify-self: end;
@@ -336,15 +335,6 @@ main {
             font-weight: bold;
       }
 
-      .shader img,
-      .card-room img,
-      .carousel img,
-      .room img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            box-shadow: $imgshadow;
-      }
 
       /*-----------------------------------responsive main*/
       @media (min-width: 481px) {
@@ -541,4 +531,469 @@ main {
             }
       }
 
+      /* -------------------------------------------------background for offers */
+      .offers {
+            width: 70vw;
+            height: auto;
+            margin: auto;
+            font-size: 1.5rem;
+            background-color: $darkfield;
+            color: $violet;
+            padding: $leftright;
+      }
+
+      .offers-board {
+            width: 100%;
+            height: 100%;
+            padding: $leftright;
+            background-color: $lightfield;
+            border: 1px solid $gold;
+
+            display: grid;
+            grid-template-columns: 4rem auto;
+            gap: $topbottom;
+            align-items: center;
+      }
+
+      .offers-board .material-symbols-outlined {
+            font-family: "Material Symbols Outlined";
+            font-size: 3rem;
+      }
+
+      /* -----------------------------------------------responsiv offers-board */
+      @media (min-width: 481px) {
+            .offers {
+                  font-size: 2rem;
+            }
+      }
+
+      @media (min-width: 769px) {
+            .offers {
+                  padding: 40px;
+            }
+      }
+
+      @media (min-width: 1000px) {
+            .offers-board {
+                  grid-template-columns: 4rem 1fr 4rem 1fr;
+            }
+      }
+}
+
+/* ----------------------slider carousel----- */
+aside.carousel {
+      & {
+            width: 100vw;
+            font-size: 1.5rem;
+            color: $darkgold;
+            font-weight: bold;
+            text-align: left;
+      }
+
+      /* -------------radio-buttons for slide-control */
+      .input {
+            display: none;
+      }
+
+
+      /* ----------------------bounding box for photo-slides*/
+      .overflow {
+            width: 100%;
+            overflow: hidden;
+      }
+
+      /* -------------------------unlimited slide box*/
+      .photo-box {
+            width: 400%;
+            height: 40vh;
+            transition: margin-left 1s linear;
+
+            .slide {
+                  width: 60vw;
+                  height: 100%;
+                  float: left;
+                  background-color: $lightfield;
+                  padding: 1rem;
+                  margin: 0.2rem;
+
+                  /* ----------------transition: scale, box-shadow*/
+                  img {
+                        height: 80%;
+                        object-fit: cover;
+                        object-position: bottom;
+                        transition: all 0.5s;
+                        transition-delay: 0.3s;
+
+                        &:hover {
+                              scale: 1.2;
+                              box-shadow: $panelshadow;
+                        }
+
+                        &:active {
+                              scale: 0.8;
+                              border: 3px solid $gold;
+                              box-shadow: $panelshadow;
+                              cursor: wait;
+                        }
+                  }
+            }
+      }
+
+      /* --------------------alle slides nach checked */
+      $margins: 1 -40%, 2 -100%, 3 -160%, 4 -220%;
+
+      @each $num, $margin in $margins {
+            #slider#{$num}:checked~.overflow .photo-box {
+                  margin-left: $margin;
+            }
+      }
+
+      /* ----------------------------arrows left-right*/
+      .controls-arrows {
+            position: relative;
+            margin: calc(-20vh - 3rem) 0 0 0;
+            width: 100%;
+            height: 6rem;
+            z-index: 0;
+
+            label {
+                  transition: opacity 0.25s;
+                  width: 5rem;
+                  height: 5rem;
+                  opacity: 0.4;
+
+                  &:hover {
+                        opacity: 1;
+                  }
+            }
+      }
+
+      #slider1:checked~.controls-arrows label:nth-child(2),
+      #slider2:checked~.controls-arrows label:nth-child(3),
+      #slider3:checked~.controls-arrows label:nth-child(4),
+      #slider4:checked~.controls-arrows label:nth-child(1) {
+            background: url(./icons/chevron-right-solid.svg) no-repeat;
+            background-size: contain;
+            background-position: right;
+            margin: 0 $leftrightklein 0 0;
+            float: right;
+            display: block;
+      }
+
+      #slider1:checked~.controls-arrows label:nth-last-child(1),
+      #slider2:checked~.controls-arrows label:nth-last-child(4),
+      #slider3:checked~.controls-arrows label:nth-last-child(3),
+      #slider4:checked~.controls-arrows label:nth-last-child(2) {
+            background: url(./icons/chevron-left-solid.svg) no-repeat;
+            background-size: contain;
+            float: left;
+            margin: 0 0 0 $leftrightklein;
+            display: block;
+      }
+
+
+      .bullets {
+            margin: 17vh 0 0;
+            text-align: center;
+
+            label {
+                  display: inline-block;
+                  width: 1rem;
+                  height: 1rem;
+                  border-radius: 50%;
+                  background: $darkgold;
+                  margin: 0 10px;
+            }
+      }
+
+      #slider1:checked~.bullets label:nth-child(1),
+      #slider2:checked~.bullets label:nth-child(2),
+      #slider3:checked~.bullets label:nth-child(3),
+      #slider4:checked~.bullets label:nth-child(4) {
+            background-color: $gold;
+      }
+}
+
+/* -------------------------------------------------responsiv carousel */
+@media (min-width: 481px) {
+      .photo-box .slide p {
+            font-size: 2rem;
+            padding: 0 $leftright;
+      }
+
+      .bullets label {
+            width: 1.2rem;
+            height: 1.2rem;
+      }
+}
+
+@media (min-width: 769px) {
+      .photo-box .slide p {
+            font-size: 2.3rem;
+      }
+}
+
+@media (min-width: 1000px) {
+      .photo-box {
+            height: 50vh;
+      }
+
+      .photo-box .slide p {
+            font-size: 2.3rem;
+      }
+
+      .photo-box .slide img {
+            height: 90%;
+            object-position: 100% 80%;
+      }
+}
+
+
+aside.map {
+
+      .map-background {
+            width: 70%;
+            aspect-ratio: 4 / 3;
+            margin: auto;
+            border: 2px solid $altgold;
+            padding: $leftrightklein;
+            margin-bottom: $topbottombig;
+      }
+
+      iframe {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+      }
+}
+
+/* --------------------------------footer information--- */
+footer.information {
+      width: 100vw;
+      background-color: $green;
+
+      .informat-wrapper {
+            background-color: $darkfield;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.7rem;
+
+
+            .signup {
+                  position: relative;
+                  height: 5rem;
+                  margin-bottom: 3rem;
+                  transition: margin-bottom 1s;
+                  // drop-down form
+            }
+      }
+}
+
+/* -----controller down-drop formular */
+#down-arrow {
+      display: none;
+}
+
+#down-arrow:checked+.signup>.write-us-bar {
+      clip-path: polygon(0% 0%, 100% 0%, 100%35rem, 0%35rem);
+}
+
+#down-arrow:checked+.signup {
+      margin-bottom: 33rem;
+}
+
+#down-arrow:checked+.signup>.write-us-bar>legend>.up-arrow {
+      display: block;
+}
+
+#down-arrow:checked+.signup>.write-us-bar>legend>.down-arrow {
+      display: none;
+}
+
+
+@media (min-width: 769px) {
+      .informat-wrapper {
+            margin-bottom: 8rem;
+      }
+
+      #down-arrow:checked+.signup>.write-us-bar {
+            clip-path: polygon(0% 0%, 100% 0%, 100%15rem, 0%15rem);
+      }
+
+      #down-arrow:checked+.signup {
+            margin-bottom: 12rem;
+      }
+}
+
+/* ----------------contact us------ */
+.info-bar,
+.contact-us {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: $leftrightklein;
+      color: $altgold;
+}
+
+.contact-us span,
+.contact-us a {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+}
+
+.naming span:nth-child(1) {
+      font-size: 2.3rem;
+}
+
+.naming span:nth-child(2) {
+      font-size: 2.5rem;
+      font-weight: bold;
+}
+
+.naming img {
+      width: 8rem;
+      height: auto;
+}
+
+.adress a[href="#map"] {
+      text-transform: initial;
+      text-align: center;
+      padding: $leftrightklein;
+}
+
+.adress label[for="bookbutton"] {
+      margin-bottom: $topbottom;
+}
+
+.autors {
+      height: 5rem;
+      width: 100%;
+      background-color: $darkgold;
+      color: $lightfield;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+}
+
+.icons {
+      margin-top: $topbottom;
+      display: flex;
+      gap: 1rem;
+}
+
+.icons i {
+      color: $altgold;
+      font-size: 2rem;
+}
+
+@media (min-width: 481px) {
+      .linkswrapper {
+            width: 70%;
+            display: grid;
+            grid-template-columns: auto fit-content auto;
+            grid-template-rows: repeat(3, 1fr);
+            grid-auto-flow: column;
+            justify-items: start;
+      }
+
+      .contact-us span {
+            font-size: 2rem;
+      }
+}
+
+@media (min-width: 768px) {
+      .info-bar {
+            display: grid;
+            grid-template-columns: max-content 2fr 1fr;
+            padding-left: $leftrightklein;
+            padding-right: $leftrightklein;
+      }
+
+      .contact-us.naming {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+      }
+
+      .contact-us.naming img {
+            width: 15rem;
+            height: auto;
+      }
+
+      .contact-us.linkswrapper {
+            width: 100%;
+            height: 12rem;
+      }
+
+      .contact-us.adress {
+            justify-content: space-between;
+
+            span {
+                  font-size: 2rem;
+            }
+      }
+
+}
+
+@media (min-width: 1200px) {
+      footer.information .informat-wrapper {
+            width: 70vw;
+            margin: auto;
+            margin-bottom: 8rem;
+      }
+
+      footer .signup {
+            width: 70vw;
+      }
+
+      .contact-us.linkswrapper {
+            width: 70%;
+            margin: auto;
+      }
+
+      .autors {
+            width: 70vw;
+      }
+
+      .page-booking .autors {
+            width: 100vw;
+      }
+}
+
+/* ----------------------------------------------footer navigation */
+footer.navigation {
+      display: none;
+}
+
+@media (min-width: 769px) {
+      footer.navigation {
+            @include fixed-elements;
+            height: 8rem;
+            bottom: 0;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+
+            background-color: $green;
+            color: $gold;
+            font-size: 1.5rem;
+            font-weight: bold;
+      }
+
+      footer.navigation a {
+            letter-spacing: 3px;
+            width: fit-content;
+            padding: 10px;
+      }
+
+      footer.navigation a:active {
+            box-shadow: inset 0px 0px 5px $gold;
+            border-radius: 1rem;
+      }
 }

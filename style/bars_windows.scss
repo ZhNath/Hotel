@@ -1,0 +1,382 @@
+@import 'variables';
+@import 'settings';
+@import 'buttons';
+
+/* 1 */
+/*bookbutton dialog bar */
+.dialog {
+      width: 80vw;
+      aspect-ratio: 4/3;
+      min-width: 250px;
+      min-height: 190px;
+      max-height: 70vh;
+      background: $darkfield;
+
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      display: none;
+      z-index: 20;
+      box-shadow: 5px 5px 10px 3px #031d17, 0 0 0 50vmax $panelshadow,
+            inset 5px 5px 15px 0 rgba(66, 68, 17, 0.429);
+}
+
+@media (min-width: 768px) {
+      .dialog {
+            width: 60vw;
+            box-shadow: 10px 10px 20px 7px #031d17, 0 0 0 50vmax $panelshadow,
+                  inset 10px 10px 30px 0 rgba(66, 68, 17, 0.429);
+      }
+}
+
+@media (min-width: 1280px) {
+      .dialog {
+            width: 50vw;
+      }
+}
+
+.dialogbar {
+      background: $lightfield;
+      border: 3px solid $gold;
+      width: 90%;
+      height: 90%;
+      place-self: center;
+      padding: 5vw;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: end;
+      text-align: end;
+      gap: 10px;
+      position: relative;
+}
+
+.dialogbar.back {
+      position: absolute;
+      width: 100%;
+      height: fit-content;
+      clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+      transition: 1s;
+}
+
+.dialogbar .close {
+      @include closebutton;
+      right: 1vw;
+      top: 1vw;
+}
+
+.dialogbar span {
+      color: $green;
+      font-size: 1.5rem;
+      font-weight: bold;
+}
+
+@media (min-width: 481px) {
+      .dialogbar span {
+            font-size: 1.7rem;
+      }
+}
+
+@media (min-width: 768px) {
+      .dialogbar span {
+            font-size: 2rem;
+      }
+}
+
+/* 2 */
+.dialog-sharing .dialogbar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 2vw;
+      justify-items: center;
+      align-items: start;
+}
+
+.dialog-sharing .dialogbar span {
+      grid-area: 1/1/2/4;
+}
+
+/* 3 */
+/* right slide-bar */
+.slide-bar-background {
+      height: 60vh;
+      width: 100vw;
+      position: fixed;
+      top: 15vh;
+      right: -100vw;
+      background: $darkfield;
+      z-index: 4;
+      transition: all 0.5s;
+
+      color: $altgold;
+      font-size: 2em;
+}
+
+/* responsiv slide-bar */
+@media (min-width: 481px) {
+      .slide-bar-background {
+            width: 45vw;
+            top: 10vh;
+            right: -45vw;
+      }
+}
+
+.slide-bar-background .slide-bar {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      right: 2rem;
+      bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: $lightfield;
+}
+
+.slide-bar a,
+.slide-bar a:visited {
+      margin-left: $leftright;
+      width: fit-content;
+}
+
+.slide-bar a:active {
+      box-shadow: inset 0px 0px 5px $darkgold;
+}
+
+.slide-bar-background .fa-xmark {
+      @include closebutton;
+      right: 3rem;
+      top: 3rem;
+      z-index: 5;
+}
+
+/*--------------------------------------------------------- email */
+.email form {
+      width: 100%;
+      height: fit-content;
+
+      background-color: $darkgold;
+      box-shadow: $imgshadow;
+
+      color: $lightfield;
+      font-family: "PoiretOne";
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: start;
+}
+
+.email legend {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: $topbottom;
+}
+
+.email label {
+      margin-left: 5%;
+}
+
+.email input,
+.email textarea {
+      width: 90%;
+      display: block;
+      margin: auto;
+      border-bottom: 1px solid $lightfield;
+      padding-top: 40px;
+      padding-left: 10px;
+}
+
+.email textarea {
+      padding: 5px;
+}
+
+.email textarea::placeholder {
+      padding: 5px;
+}
+
+.email button,
+.write-us-bar button {
+      width: 32%;
+      height: 3rem;
+      background-color: $darkgold;
+      border: 1px solid $lightfield;
+
+      color: $lightfield;
+      font-size: 2rem;
+      letter-spacing: 3px;
+
+      margin-left: 12%;
+      margin-bottom: $topbottom;
+      margin-top: $topbottom;
+}
+
+@media (min-width: 481px) {
+      .email legend {
+            font-size: 3rem;
+      }
+
+      .email .border button {
+            width: 30%;
+            height: 4rem;
+      }
+}
+
+/* -----------down-drop formular---input group */
+
+.signup .write-us-bar {
+      position: absolute;
+      width: 100%;
+      background-color: $darkgold;
+      color: $lightfield;
+      padding: $leftright;
+      padding-top: 0;
+
+      clip-path: polygon(0% 0%, 100% 0%, 100%5rem, 0%5rem);
+      transition: clip-path 1s;
+}
+
+legend {
+      height: 5rem;
+
+      line-height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      margin-bottom: 2rem;
+
+      label.arrow {
+            margin-left: $leftrightklein;
+      }
+
+      label.up-arrow {
+            display: none;
+      }
+
+      label.down-arrow {
+            display: block;
+      }
+}
+
+.input-group {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .false-placeholder {
+            position: absolute;
+            left: 1rem;
+            transform: translateY(1rem);
+            line-height: 3rem;
+            background-color: $darkgold;
+      }
+
+      input {
+            width: 100%;
+            height: 5rem;
+            padding: 1rem;
+            font-size: 2rem;
+            background: none;
+            border: 1px solid $lightfield;
+            outline: none;
+            color: $lightfield;
+            position: relative;
+
+            &:focus~label.false-placeholder,
+            &:valid~label.false-placeholder {
+                  transform: translateY(-1.5rem);
+            }
+      }
+
+}
+
+@media (min-width: 480px) {
+      .signup .write-us-bar {
+            font-size: 2rem;
+      }
+}
+
+@media (min-width: 769px) {
+      .signup .write-us-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 6rem 7rem;
+            gap: 1rem;
+      }
+
+      .write-us-bar legend {
+            grid-area: 1/1/2/6;
+      }
+
+      .write-us-bar button {
+            width: 100%;
+            height: 5rem;
+            margin: 0;
+      }
+}
+
+/* ------------------------------------formular seite */
+
+form.p-f {
+      width: 90%;
+      height: fit-content;
+      margin-top: 4vh;
+      margin: auto;
+      margin-bottom: $topbottom;
+
+      background-color: $darkgold;
+      padding: $leftrightklein;
+
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $lightfield;
+
+      box-shadow: $boxshadow;
+}
+
+.p-f legend {
+      letter-spacing: 1px;
+      margin-bottom: 0.7em;
+}
+
+.p-f input {
+      width: 100%;
+      border-bottom: 1px solid $lightfield;
+      height: 4em;
+      padding: 1em;
+      padding-bottom: 0;
+      text-transform: capitalize;
+}
+
+.pay-card-bild i {
+      font-size: 40px;
+      color: $darkgold;
+}
+
+.pay-card-bild {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: $topbottom;
+}
+
+.p-f-button {
+      width: 10rem;
+      height: 3rem;
+      border: 2px solid $darkgold;
+      background-color: $lightfield;
+      margin-top: $topbottom;
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 2rem;
+      color: $darkgold;
+}
+
+.p-f-button[type="submit"] {
+      display: block;
+      margin: auto;
+}

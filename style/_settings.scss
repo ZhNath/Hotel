@@ -28,7 +28,6 @@
 }
 
 a,
-a:hover,
 a:active,
 a:visited,
 label,
@@ -76,4 +75,30 @@ h2.caption {
       color: $gold;
       margin-bottom: $topbottom;
       text-align: center;
+}
+
+
+.shader img,
+.card-room img,
+.carousel img,
+.room img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: $imgshadow;
+}
+
+input::placeholder {
+      transition: 0.3s;
+}
+
+input:focus::placeholder,
+input:valid::placeholder {
+      transform: translateY(-25px);
+      font-size: 1.3em;
+}
+
+textarea:focus::placeholder {
+      transform: translateY(calc(10 * 1.4rem));
+      font-size: 1.3em;
 }
