@@ -14,7 +14,8 @@
   font-family: "Material Symbols Outlined";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2) format("woff2");
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v154/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2)
+    format("woff2");
   font-display: swap;
 }
 * {
@@ -24,7 +25,8 @@
   box-sizing: border-box;
 }
 
-textarea::-moz-placeholder, input::-moz-placeholder {
+textarea::-moz-placeholder,
+input::-moz-placeholder {
   text-decoration: none;
   color: inherit;
   font: inherit;
@@ -62,8 +64,8 @@ label:hover {
   scale: 1.1;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -87,8 +89,10 @@ h2.caption {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px, rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px, rgba(58, 31, 3, 0.1) 0px 32px 16px;
+  object-fit: cover;
+  box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px,
+    rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px,
+    rgba(58, 31, 3, 0.1) 0px 32px 16px;
 }
 
 input::-moz-placeholder {
@@ -100,7 +104,8 @@ input::placeholder {
   transition: 0.3s;
 }
 
-input:focus::-moz-placeholder, input:valid::-moz-placeholder {
+input:focus::-moz-placeholder,
+input:valid::-moz-placeholder {
   transform: translateY(-25px);
   font-size: 1.3em;
 }
@@ -154,7 +159,12 @@ button.language:hover {
   height: 2px;
   width: 70%;
   margin: auto;
-  background-image: linear-gradient(to left, hsl(49, 60%, 52%), #6c592f, hsl(49, 60%, 52%));
+  background-image: linear-gradient(
+    to left,
+    hsl(49, 60%, 52%),
+    #6c592f,
+    hsl(49, 60%, 52%)
+  );
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -364,7 +374,11 @@ header.p-b .logo {
   header.index {
     grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
     grid-template-rows: repeat(3, 4rem) 2rem;
-    grid-template-areas: ".  house house house lang-ham" ". . gerb . ." ". casa gerb nostra ." "linie linie linie linie linie";
+    grid-template-areas:
+      ".  house house house lang-ham"
+      ". . gerb . ."
+      ". casa gerb nostra ."
+      "linie linie linie linie linie";
   }
   header.index .logo {
     justify-self: center;
@@ -442,8 +456,8 @@ header nav label.close:hover .fa-xmark {
   header nav {
     justify-self: end;
   }
-  header nav .bookbtn,
-  header nav .ham-lines {
+  header .bookbtn,
+  header .ham-lines {
     display: none;
   }
 }
@@ -474,7 +488,8 @@ main {
   /* -------------------------------------------------background for offers */
   /* -----------------------------------------------responsiv offers-board */
 }
-main.index, main.gallery {
+main.index,
+main.gallery {
   margin-top: 15rem;
 }
 main.p-b {
@@ -485,7 +500,8 @@ main.p-b {
   font-weight: bold;
 }
 @media (min-width: 481px) {
-  main.index, main.gallery {
+  main.index,
+  main.gallery {
     margin-top: 18rem;
   }
   main h2.caption {
@@ -520,7 +536,14 @@ main .shader_layer {
 main .shader_layer.gradient {
   background-attachment: fixed;
   mix-blend-mode: screen;
-  background-image: linear-gradient(180deg, black 5%, #f3735c 35%, #f58308, yellow 80%, black);
+  background-image: linear-gradient(
+    180deg,
+    black 5%,
+    #f3735c 35%,
+    #f58308,
+    yellow 80%,
+    black
+  );
   width: 100%;
   height: 100%;
 }
@@ -554,7 +577,8 @@ main .card-room-text {
   height: fit-content;
   padding: 5vw;
   background-color: #f3f0e3;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px, rgba(58, 31, 3, 0.1) 0px 2px 4px -1px;
+  box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px,
+    rgba(58, 31, 3, 0.1) 0px 2px 4px -1px;
   color: rgb(48, 2, 62);
   font-size: 1.5rem;
 }
@@ -673,13 +697,11 @@ main .offers-board .material-symbols-outlined {
 }
 
 /* ----------------------slider carousel----- */
-aside.carousel {
-  /* -------------radio-buttons for slide-control */
-  /* ----------------------bounding box for photo-slides*/
-  /* -------------------------unlimited slide box*/
-  /* --------------------alle slides nach checked */
-  /* ----------------------------arrows left-right*/
-}
+/* -------------radio-buttons for slide-control */
+/* ----------------------bounding box for photo-slides*/
+/* -------------------------unlimited slide box*/
+/* --------------------alle slides nach checked */
+/* ----------------------------arrows left-right*/
 aside.carousel {
   width: 100vw;
   font-size: 1.5rem;
@@ -711,9 +733,9 @@ aside.carousel .photo-box .slide {
 aside.carousel .photo-box .slide img {
   height: 80%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: bottom;
-     object-position: bottom;
+  object-position: bottom;
   transition: all 0.5s;
   transition-delay: 0.3s;
 }
@@ -821,7 +843,7 @@ aside.carousel #slider4:checked ~ .bullets label:nth-child(4) {
   .photo-box .slide img {
     height: 90%;
     -o-object-position: 100% 80%;
-       object-position: 100% 80%;
+    object-position: 100% 80%;
   }
 }
 aside.map .map-background {
@@ -862,7 +884,7 @@ footer.information .informat-wrapper .signup {
 
 #down-arrow:checked + .signup > .write-us-bar {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 35rem, 0% 35rem);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 35rem, 0% 35rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 35rem, 0% 35rem);
 }
 
 #down-arrow:checked + .signup {
@@ -883,7 +905,7 @@ footer.information .informat-wrapper .signup {
   }
   #down-arrow:checked + .signup > .write-us-bar {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 15rem, 0% 15rem);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 15rem, 0% 15rem);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 15rem, 0% 15rem);
   }
   #down-arrow:checked + .signup {
     margin-bottom: 12rem;
@@ -927,7 +949,7 @@ footer.information .informat-wrapper .signup {
   padding: 2vw;
 }
 
-.adress label[for=bookbutton] {
+.adress label[for="bookbutton"] {
   margin-bottom: 2rem;
 }
 
@@ -1045,4 +1067,4 @@ footer.navigation {
     box-shadow: inset 0px 0px 5px hsl(49, 60%, 52%);
     border-radius: 1rem;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
