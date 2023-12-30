@@ -1,0 +1,38 @@
+main.p-b {
+      @include flex-col(2rem);
+      @include font (inherit, $darkgold, bold);
+}
+
+
+.fa-solid,
+.fa-regular {
+      font-size: 1.7rem;
+      margin-right: $leftrightklein;
+}
+
+table.kalender {
+      display: none;
+}
+
+// -----------------------------------------------------
+.container {
+      @include size (100%, 100%, $lightfield);
+      box-shadow: $boxshadow;
+}
+
+.container {
+      padding: $leftrightklein;
+
+      $main-booking-seite: (
+            "&.checkout": checkout,
+            "&.status": status,
+            "&.room.haus": hause,
+            "&.was1": r1,
+            "&.was2": r2,
+            "&.room.jakov": jakov,
+            "&.room.ruza": ruza,
+      );
+@include grid-area($main-booking-seite);
+}
+
+@import 'checkout';

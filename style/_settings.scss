@@ -69,24 +69,10 @@ ul li {
       list-style-type: none;
 }
 
-h2.caption {
-      font-size: 2rem;
-      font-weight: bold;
-      color: $gold;
-      margin-bottom: $topbottom;
-      text-align: center;
-}
+
 
 // перенести куда-нибудь
-.shader img,
-.card-room img,
-.carousel img,
-.room img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      box-shadow: $imgshadow;
-}
+
 
 input::placeholder {
       transition: 0.3s;

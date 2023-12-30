@@ -1,0 +1,160 @@
+// header INDEX, GALLERY
+
+header.index {
+      @extend %header;
+      background-color: $green;
+
+      grid-template-columns: calc(17ch - 4rem) 4rem auto;
+      grid-template-rows: 2rem 1.8rem repeat(2, 2rem) 1rem;
+      grid-template-areas:
+            "house house  lang-ham"
+            ". gerb  ."
+            "casa gerb  ."
+            "nostra gerb  bookbutton"
+            "linie linie linie";
+
+      $header-index-grid-area: (
+            ":nth-child(1)": house,
+            ":nth-child(2)": casa,
+            ":nth-child(3)": nostra,
+            ".logo": gerb,
+            ".bookbtn": bookbutton,
+            "nav": lang-ham,
+            ".line": linie
+      );
+@include grid-area($header-index-grid-area);
+
+//  ------------------------------header-index-mobile-left
+span {
+      @include font(1.7rem, $gold, n);
+
+      &.casanostra {
+            font-weight: bold;
+            letter-spacing: 3px;
+      }
+}
+
+
+.logo {
+      @include size(4rem, auto, image);
+      align-self: end;
+}
+
+
+// ----------------------------------header-index-mobile-right
+// ---------------------------------nav = language + hamburger
+nav {
+      @include flex-row(2rem, end);
+
+      select {
+            @include size(6rem, 1rem, $green);
+            @include font(1rem, $gold, n);
+            border-radius: 0.5rem;
+
+            &:hover {
+                  transform: scale(1.2);
+            }
+
+            &:active {
+                  box-shadow: inset 0px 0px 4px $green;
+            }
+      }
+
+      // ---------------------------hamburger and close button
+      .hamburger .fa-bars {
+            @include font(1.5rem, $gold, n);
+      }
+
+      label.ham-lines:hover .fa-bars {
+            scale: 1.2;
+      }
+
+}
+
+.bookbtn {
+      place-self: end;
+}
+
+.line {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      align-self: self-end;
+}
+}
+
+@media (min-width: $tablet) {
+      header.index {
+            grid-template-columns: 17ch 6rem 1fr 1fr;
+            grid-template-rows: 3rem 2rem repeat(2, 3rem) 2rem;
+            grid-template-areas:
+                  "house house house lang-ham"
+                  ". gerb . ."
+                  "casa gerb . ."
+                  "nostra gerb . bookbutton"
+                  "linie linie linie linie";
+
+            span.casanostra {
+                  font-size: 3rem;
+            }
+
+            span:nth-child(1) {
+                  font-size: 2.5rem;
+            }
+
+            .logo {
+                  @include size(6rem, auto, image);
+            }
+
+            nav {
+                  gap: 1rem;
+
+                  select.language {
+                        display: none;
+                  }
+
+                  button.language {
+                        display: block;
+                  }
+
+                  .hamburger .fa-bars {
+                        font-size: 3rem;
+                  }
+            }
+      }
+}
+
+@media (min-width: $desktop) {
+      header.index {
+            grid-template-columns: repeat(2, 1fr) 9rem repeat(2, 1fr);
+            grid-template-rows: repeat(3, 4rem) 2rem;
+            grid-template-areas:
+                  ".  house house house lang-ham"
+                  ". . gerb . ."
+                  ". casa gerb nostra ."
+                  "linie linie linie linie linie";
+
+            .logo {
+                  justify-self: center;
+            }
+
+            span:nth-child(1) {
+                  font-size: 4rem;
+                  margin-left: 1em;
+                  justify-self: center;
+            }
+
+            span:nth-child(2) {
+                  justify-self: end;
+            }
+
+            nav {
+                  justify-self: end;
+            }
+
+            .bookbtn,
+            .ham-lines {
+                  display: none;
+            }
+      }
+}

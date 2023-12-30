@@ -1,0 +1,46 @@
+// -----------first image mit animation
+
+
+.shader {
+      position: relative;
+      overflow: hidden;
+      @include size(90vw, 30vh, image);
+      margin: auto;
+      z-index: -1;
+}
+
+.shader_layer {
+      @include position(absolute, 0, 0, 0, 0);
+      background-size: 100%;
+
+
+      &.gradient {
+            @include size(100%, 100%, image);
+            background-attachment: fixed;
+            mix-blend-mode: screen;
+            background-image: linear-gradient(180deg,
+                        black 5%,
+                        #f3735c 35%,
+                        #f58308,
+                        yellow 80%,
+                        black);
+      }
+
+      &.mask {
+            mix-blend-mode: multiply;
+      }
+}
+
+
+
+@media (min-width: $tablet) {
+      .shader {
+            height: 73vh;
+      }
+}
+
+@media (min-width: $desktop) {
+      .shader {
+            height: 90vh;
+      }
+}

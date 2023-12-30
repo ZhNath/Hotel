@@ -1,0 +1,85 @@
+// Header BOOKING
+// ------------------------------header-bookig-page
+header.p-b {
+      @extend %header;
+      @include size(100%, 9rem, inherit);
+      @include font(1rem, $green, bold);
+      grid-template-columns: 1fr 6rem 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      align-items: start;
+      row-gap: 1rem;
+      z-index: 30;
+
+      .p-b-naming {
+            @include grid-area-num(1, 4, 1, 2);
+
+            span {
+                  font-size: 1.3rem;
+
+                  &.casanostra {
+                        font-size: 1.7rem;
+                  }
+            }
+      }
+
+      .p-b-data {
+            @include grid-area-num(2, 4, 3, 4);
+            display: inline;
+            align-self: end;
+            text-align: end
+      }
+
+      .p-b-langnav {
+            @include grid-area-num(1, 2, 3, 4);
+            justify-self: end;
+            @include flex-row(5px, center, start);
+      }
+
+      button.language {
+            display: block;
+            border: none;
+            align-self: center;
+      }
+
+      .homelink {
+            @include grid-area-num(1, 2, 3, 4);
+            width: fit-content;
+            font-size: 2em;
+            margin-right: 1em;
+      }
+
+      .logo {
+            @include grid-area-num(1, 4, 2, 3);
+            @include size(5rem, auto, image);
+            align-self: center;
+            margin-right: auto;
+      }
+}
+
+@media (min-width: $tablet) {
+
+      header.p-b {
+            grid-template-columns: auto 6rem 1fr;
+
+            .p-b-naming span.casanostra {
+                  font-size: 2.5rem;
+            }
+
+            .p-b-naming span.house {
+                  font-size: 2rem;
+            }
+      }
+}
+
+@media (min-width: $desktop) {
+
+      header.p-b .p-b-data {
+            @include grid-area-num(2, 4, 3, 4);
+            justify-self: end;
+            @include flex-row(1rem, end, start);
+
+            a {
+                  font-size: 1.5rem;
+            }
+      }
+}

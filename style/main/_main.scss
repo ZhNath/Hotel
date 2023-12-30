@@ -1,0 +1,29 @@
+// -----------------MAIN-------------------------
+main {
+      width: 90%;
+      margin: auto;
+}
+
+@import 'main_index';
+@import 'main_gallery';
+
+// --------------------responsive main
+@media (min-width: $tablet) {
+
+      main.index,
+      main.gallery {
+            margin-top: 18rem;
+      }
+
+}
+
+@media (min-width: $desktop) {
+
+      main.index,
+      main.gallery {
+            margin-top: 20rem;
+      }
+
+}
+
+@import './main_booking/main_booking';

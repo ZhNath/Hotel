@@ -1,0 +1,119 @@
+// ----------------------first container. Guests, checkout */
+
+// ------------------------- controller booking guest-panel */
+#gpanel {
+      display: none;
+}
+
+// -------------------------------- ------closed panel */
+.container.checkout {
+
+      @include flex-col();
+      @include font (1.4rem, $darkgold, bold);
+      padding: 5%;
+
+      .guest {
+            position: relative;
+            @include size(100%, 100%, image);
+
+            form.guestwrapper {
+                  @include position(absolute, 0, 0, 0, -60vh);
+                  padding: 5%;
+                  padding-right: 30px;
+                  margin-bottom: 15vh;
+                  background-color: $lightfield;
+
+                  clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
+                  transition: all 0.5s;
+            }
+      }
+}
+
+// -------------------------------------opened panel */
+.guest .close {
+      display: none;
+      font-size: 2rem;
+      justify-self: end;
+      @include position(absolute, n, 15px, -25px, n);
+}
+
+#gpanel:checked+.guestwrapper {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      border: 1px solid $darkgold;
+}
+
+#gpanel:checked+.guestwrapper>.inputwrapper>.close {
+      display: block;
+}
+
+.inputwrapper {
+      margin-bottom: $topbottom;
+      @include flex-row(1.5rem, center, baseline);
+
+      .fa-user-check {
+            position: relative;
+            left: 10px;
+      }
+
+      label[for="gpanel"]:hover {
+            cursor: pointer;
+      }
+
+      input[type="number"] {
+            @include size(20px, 20px, $darkfield);
+      }
+
+}
+
+.buttonswrapper {
+      @include flex-row(1rem);
+
+      input[name="bigaguest"],
+      input[name="bigchguest"] {
+            @include size(30px, 30px, $darkfield);
+      }
+
+      button {
+            @include size(30px, 30px, $darkgold);
+            color: $lightfield;
+            position: relative;
+
+            &.plus {
+                  left: -10px;
+            }
+
+            &.minus {
+                  left: 10px;
+            }
+
+            &.cancel,
+            &.submit {
+                  width: 80px;
+                  letter-spacing: 2px;
+            }
+      }
+
+      &.plus-minus {
+            margin-bottom: $topbottom;
+      }
+}
+
+
+
+
+.datawrapper {
+      @include flex-row($leftright);
+      margin-top: 8vh;
+}
+
+label[for="in"],
+label[for="out"] {
+      text-align: center;
+      display: block;
+      margin-bottom: $topbottom / 2;
+}
+
+.leftdatawrapper,
+.rightdatawrapper {
+      @include flex-col();
+}
