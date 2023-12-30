@@ -1,7 +1,3 @@
-@import 'variables';
-@import 'settings';
-@import 'buttons';
-
 /* 1 */
 /*bookbutton dialog bar */
 .dialog {
@@ -11,10 +7,7 @@
       min-height: 190px;
       max-height: 70vh;
       background: $darkfield;
-
-      position: fixed;
-      left: 50%;
-      top: 50%;
+      @include position(fixed, 50%, 50%, n, n);
       transform: translate(-50%, -50%);
 
       display: none;
@@ -45,12 +38,8 @@
       place-self: center;
       padding: 5vw;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: end;
+      @include flex-col(10px, space-evenly, end);
       text-align: end;
-      gap: 10px;
       position: relative;
 }
 
@@ -96,7 +85,7 @@
 }
 
 .dialog-sharing .dialogbar span {
-      grid-area: 1/1/2/4;
+      @include grid-area-num(1, 2, 1, 4);
 }
 
 /* 3 */
@@ -104,9 +93,8 @@
 .slide-bar-background {
       height: 60vh;
       width: 100vw;
-      position: fixed;
-      top: 15vh;
-      right: -100vw;
+      @include position(fixed, n, 15vh, -100vw, n);
+
       background: $darkfield;
       z-index: 4;
       transition: all 0.5s;
@@ -125,14 +113,9 @@
 }
 
 .slide-bar-background .slide-bar {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      right: 2rem;
-      bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
+      @include position(absolute, 2rem, 2rem, 2rem, 2rem);
+      @include flex-col(0, space-evenly);
+
       background-color: $lightfield;
 }
 
@@ -151,6 +134,10 @@
       right: 3rem;
       top: 3rem;
       z-index: 5;
+}
+
+label.close:hover .fa-xmark {
+      scale: 1.2;
 }
 
 /*--------------------------------------------------------- email */
@@ -242,10 +229,7 @@ legend {
       height: 5rem;
 
       line-height: 5rem;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-
+      @include flex-row(0, center, flex-start);
       margin-bottom: 2rem;
 
       label.arrow {
@@ -266,8 +250,8 @@ legend {
       margin-bottom: 2rem;
 
       .false-placeholder {
-            position: absolute;
-            left: 1rem;
+            @include position (absolute, 1rem, n, n, n);
+
             transform: translateY(1rem);
             line-height: 3rem;
             background-color: $darkgold;
@@ -307,7 +291,7 @@ legend {
       }
 
       .write-us-bar legend {
-            grid-area: 1/1/2/6;
+            @include grid-area-num(1, 2, 1, 6);
       }
 
       .write-us-bar button {
@@ -357,10 +341,7 @@ form.p-f {
 
 .pay-card-bild {
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      @include flex-row(1rem);
       margin-bottom: $topbottom;
 }
 
