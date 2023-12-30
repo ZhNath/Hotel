@@ -877,7 +877,7 @@ table.kalender {
   font-size: 1.4rem;
   color: #6c592f;
   font-weight: bold;
-  padding: 5%; }
+  padding: 3%; }
   .container.checkout .guest {
     position: relative;
     width: 100%;
@@ -888,8 +888,7 @@ table.kalender {
       top: 0;
       right: 0;
       bottom: -60vh;
-      padding: 5%;
-      padding-right: 30px;
+      padding: 2rem;
       margin-bottom: 15vh;
       background-color: #fefae7;
       clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
@@ -901,7 +900,7 @@ table.kalender {
   justify-self: end;
   position: absolute;
   top: 15px;
-  right: -25px; }
+  right: 0px; }
 
 #gpanel:checked + .guestwrapper {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -960,23 +959,110 @@ table.kalender {
   align-items: center;
   flex-wrap: nowrap;
   gap: 5vw;
-  margin-top: 8vh; }
+  margin-top: 12vh; }
+  .datawrapper .leftdatawrapper,
+  .datawrapper .rightdatawrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0; }
+  .datawrapper label[for="in"],
+  .datawrapper label[for="out"] {
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem; }
+  @media (min-width: 769px) {
+    .datawrapper table.kalender {
+      margin-top: 4rem;
+      display: contents; }
+    .datawrapper table.kalender,
+    .datawrapper .kalender th,
+    .datawrapper .kalender td {
+      border: 1px solid #514716; }
+    .datawrapper .kalender th,
+    .datawrapper .kalender td {
+      width: 3rem;
+      height: 3rem; } }
 
-label[for="in"],
-label[for="out"] {
-  text-align: center;
-  display: block;
-  margin-bottom: 1rem; }
-
-.leftdatawrapper,
-.rightdatawrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.container.status {
+  padding: 2vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr repeat(3, 2fr);
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 0; }
+  text-align: center; }
+  .container.status span {
+    font-size: 1.6rem; }
+  .container.status h2 {
+    font-size: 2.2rem;
+    color: #ceb33b;
+    font-weight: bold;
+    grid-area: 1/1/2/3; }
+  .container.status span:nth-child(2) {
+    grid-area: 2/1/3/2;
+    text-decoration: underline; }
+  .container.status span:nth-child(3) {
+    grid-area: 2/2/3/3;
+    text-decoration: underline; }
+  .container.status span:nth-child(4) {
+    grid-area: 3/1/4/2; }
+  .container.status span:nth-child(5) {
+    grid-area: 3/2/4/3; }
+  .container.status span:nth-child(6) {
+    grid-area: 4/1/5/3; }
+  .container.status span:nth-child(7) {
+    grid-area: 5/1/6/2; }
+  .container.status span:nth-child(8) {
+    grid-area: 5/2/6/3;
+    width: 13rem;
+    height: 3rem;
+    background-color: #6c592f;
+    font-size: 1.6rem;
+    color: #fefae7;
+    font-weight: bold;
+    line-height: 3rem;
+    justify-self: center; }
 
+.container.room {
+  display: grid;
+  grid-template-columns: 50% 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  column-gap: 2rem;
+  row-gap: 1rem;
+  padding: 2vw;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  .container.room picture {
+    grid-area: 1/1/5/2; }
+  .container.room h3 {
+    grid-area: 1/2/2/5; }
+  .container.room h2 {
+    grid-area: 2/2/3/5; }
+  .container.room p:nth-child(4) {
+    grid-area: 3/2/4/5; }
+  .container.room p:nth-child(5) {
+    grid-area: 5/3/6/5;
+    letter-spacing: 1px;
+    justify-self: end;
+    text-transform: none;
+    letter-spacing: initial; }
+  .container.room .bookbtn {
+    grid-area: 6/4/7/5;
+    justify-self: end; }
+
+@media (min-width: 481px) {
+  .container.room {
+    font-size: 1.3rem; } }
+@media (min-width: 769px) {
+  main.p-b {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.6666666667vw;
+    grid-template-areas: "checkout status" "hause r1" "jakov r2" "ruza .";
+    margin-bottom: 7rem; } }
 /* ----------------------slider carousel----- */
 aside.carousel {
   width: 100vw;
@@ -1371,111 +1457,6 @@ aside.p-b img {
   object-fit: cover;
   margin-bottom: 2rem; }
 
-/*------------------------------------------ booking page main */
-/* --
-
-/* ----------------------------------------booking seite-container status */
-.container.status {
-  padding: 2vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 1fr repeat(3, 2fr);
-  align-items: center;
-  text-align: center; }
-
-.status span {
-  font-size: 1.6rem; }
-
-.status h2 {
-  grid-area: 1/1/2/3; }
-
-.status span:nth-child(2) {
-  grid-area: 2/1/3/2; }
-
-.status span:nth-child(3) {
-  grid-area: 2/2/3/3; }
-
-.status span:nth-child(4) {
-  grid-area: 3/1/4/2; }
-
-.status span:nth-child(5) {
-  grid-area: 3/2/4/3; }
-
-.status span:nth-child(6) {
-  grid-area: 4/1/5/3; }
-
-.status span:nth-child(7) {
-  grid-area: 5/1/6/2; }
-
-.status span:nth-child(8) {
-  grid-area: 5/2/6/3;
-  color: #fefae7;
-  width: 13rem;
-  height: 3rem;
-  line-height: 3rem;
-  background-color: #6c592f;
-  justify-self: center; }
-
-/* ----------------------------------------------booking seite-room-card  */
-.container.room {
-  display: grid;
-  grid-template-columns: 50% 1fr 1fr;
-  grid-template-rows: repeat(6, auto);
-  padding: 2vw;
-  column-gap: 2rem;
-  row-gap: 1rem;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px; }
-
-.room picture {
-  grid-area: 1/1/5/2; }
-
-.room h3 {
-  grid-area: 1/2/2/5; }
-
-.room h2 {
-  grid-area: 2/2/3/5; }
-
-.room p:nth-child(4) {
-  grid-area: 3/2/4/5; }
-
-.room p:nth-child(5) {
-  grid-area: 5/3/6/5;
-  letter-spacing: 1px;
-  justify-self: end;
-  text-transform: none;
-  letter-spacing: initial; }
-
-.room .bookbtn {
-  grid-area: 6/4/7/5;
-  justify-self: end; }
-
-/* -----------------------------------------------responsiv booking seite */
-@media (min-width: 480px) {
-  .container.room {
-    font-size: 1.3rem; } }
-@media (min-width: 800px) {
-  main.p-b {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 1.6666666667vw;
-    grid-template-areas: "checkout status" "hause r1" "jakov r2" "ruza .";
-    margin-bottom: 7rem; }
-
-  table.kalender {
-    margin-top: 2rem;
-    display: contents; }
-
-  table.kalender,
-  .kalender th,
-  .kalender td {
-    border: 1px solid #514716; }
-
-  .kalender th,
-  .kalender td {
-    width: 3rem;
-    height: 3rem; } }
 /* ************************************************booking spring button */
 .room picture:hover ~ .bookbtn {
   animation: buttonexplosion 1s forwards; }

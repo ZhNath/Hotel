@@ -10,7 +10,7 @@
 
       @include flex-col();
       @include font (1.4rem, $darkgold, bold);
-      padding: 5%;
+      padding: 3%;
 
       .guest {
             position: relative;
@@ -18,8 +18,7 @@
 
             form.guestwrapper {
                   @include position(absolute, 0, 0, 0, -60vh);
-                  padding: 5%;
-                  padding-right: 30px;
+                  padding: 2rem;
                   margin-bottom: 15vh;
                   background-color: $lightfield;
 
@@ -34,7 +33,7 @@
       display: none;
       font-size: 2rem;
       justify-self: end;
-      @include position(absolute, n, 15px, -25px, n);
+      @include position(absolute, n, 15px, 0px, n);
 }
 
 #gpanel:checked+.guestwrapper {
@@ -103,17 +102,35 @@
 
 .datawrapper {
       @include flex-row($leftright);
-      margin-top: 8vh;
-}
+      margin-top: 12vh;
 
-label[for="in"],
-label[for="out"] {
-      text-align: center;
-      display: block;
-      margin-bottom: $topbottom / 2;
-}
+      .leftdatawrapper,
+      .rightdatawrapper {
+            @include flex-col();
+      }
 
-.leftdatawrapper,
-.rightdatawrapper {
-      @include flex-col();
+      label[for="in"],
+      label[for="out"] {
+            text-align: center;
+            display: block;
+            margin-bottom: $topbottom / 2;
+      }
+
+      @media (min-width: $desktop) {
+            table.kalender {
+                  margin-top: 4rem;
+                  display: contents;
+            }
+
+            table.kalender,
+            .kalender th,
+            .kalender td {
+                  border: 1px solid $altgold;
+            }
+
+            .kalender th,
+            .kalender td {
+                  @include size(3rem, 3rem, image);
+            }
+      }
 }
