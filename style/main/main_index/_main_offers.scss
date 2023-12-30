@@ -1,0 +1,42 @@
+.offers {
+      @include size(70vw, auto, $darkfield);
+      @include font(1.5rem, $violet, n);
+      margin: auto;
+      padding: $leftright;
+}
+
+.offers-board {
+      @include size(100%, 100%, $lightfield);
+
+      padding: $leftright;
+      border: 1px solid $gold;
+
+      display: grid;
+      grid-template-columns: 4rem auto;
+      gap: $topbottom;
+      align-items: center;
+
+      .material-symbols-outlined {
+            font-family: "Material Symbols Outlined";
+            font-size: 3rem;
+      }
+}
+
+// ----------------------responsiv offers-board */
+@media (min-width: $tablet) {
+      .offers {
+            font-size: 2rem;
+      }
+}
+
+@media (min-width: $desktop) {
+      .offers {
+            padding: 40px;
+      }
+}
+
+@media (min-width: $bigdesktop) {
+      .offers-board {
+            grid-template-columns: 4rem 1fr 4rem 1fr;
+      }
+}

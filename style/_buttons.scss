@@ -1,6 +1,6 @@
 button.language {
       display: none;
-      @include size(1rem, 1rem, image);
+      @include size(1rem, 1rem, none);
       border-radius: 50%;
       background-size: cover;
       background-position: center;
@@ -35,7 +35,7 @@ $langbuttons: eng url(../images/eng.png),
 
 /* ----------------------------------------------------goldene linie */
 .line {
-      @include size(70%, 2px, image);
+      @include size(70%, 2px, none);
       display: flex;
       background-image: linear-gradient(to left,
                   $gold,
@@ -74,7 +74,7 @@ $langbuttons: eng url(../images/eng.png),
 
       &::after {
             content: "";
-            @include size(8em, 5em, image);
+            @include size(8em, 5em, none);
             @include position (absolute, n, -1rem, -6em, n);
             background: linear-gradient(to left, transparent, #efd045, transparent);
             background-size: cover;

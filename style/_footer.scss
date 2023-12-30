@@ -1,0 +1,25 @@
+footer.navigation {
+      display: none;
+}
+
+@media (min-width: $desktop) {
+      footer.navigation {
+            @include position(fixed, 0, n, 0, 0);
+            @include size(100%, 8rem, $green);
+            @include flex-row(2vw);
+            @include font(1.5rem, $gold, bold);
+
+            a {
+                  letter-spacing: 3px;
+                  width: fit-content;
+                  padding: 10px;
+
+                  &:active {
+                        box-shadow: inset 0px 0px 5px $gold;
+                        border-radius: 1rem;
+                  }
+            }
+      }
+
+
+}

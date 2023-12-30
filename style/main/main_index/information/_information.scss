@@ -1,0 +1,192 @@
+footer.information {
+      @include size (100vw, auto, $green);
+}
+
+.informat-wrapper {
+      @include size (100%, auto, $darkfield);
+      @include font (1.7rem, inherit, bold);
+
+      .signup {
+            position: relative;
+            height: 5rem;
+            margin-bottom: 3rem;
+            transition: margin-bottom 1s;
+            // drop-down form
+      }
+
+      .info-bar {
+            @include flex-col(1rem, space-between);
+      }
+
+      .autors {
+            @include size (100%, 5rem, $darkgold);
+            @include font (1.5rem, $lightfield, bold);
+            @include flex-row(0, space-evenly);
+      }
+}
+
+
+.info-bar {
+      .contact-us {
+            @include flex-col(1rem, space-between);
+            padding-bottom: $leftrightklein;
+
+            &.naming {
+                  span:nth-child(1) {
+                        @include font(2.3rem, $altgold, bold);
+                        text-transform: uppercase;
+                  }
+
+                  span:nth-child(2) {
+                        @include font(2.5rem, $altgold, bold);
+                  }
+
+                  img {
+                        @include size(8rem, auto, none);
+                  }
+            }
+
+            &.linkswrapper a {
+                  @include font(1.5rem, $altgold, bold);
+                  text-transform: uppercase;
+            }
+
+            &.adress {
+                  a[href="#map"] {
+                        text-transform: initial;
+                        text-align: center;
+                        padding: $leftrightklein;
+                  }
+
+                  label[for="bookbutton"] {
+                        margin-bottom: $topbottom;
+                  }
+
+                  .icons {
+                        margin-top: $topbottom;
+                        @include flex-row(1rem);
+
+                        i {
+                              @include font(2rem, $altgold, bold);
+                        }
+                  }
+            }
+      }
+}
+
+// -----controller down-drop formular */
+#down-arrow {
+      display: none;
+}
+
+#down-arrow:checked+.signup>.write-us-bar {
+      clip-path: polygon(0% 0%, 100% 0%, 100%35rem, 0%35rem);
+}
+
+#down-arrow:checked+.signup {
+      margin-bottom: 33rem;
+}
+
+#down-arrow:checked+.signup>.write-us-bar>legend>.up-arrow {
+      display: block;
+}
+
+#down-arrow:checked+.signup>.write-us-bar>legend>.down-arrow {
+      display: none;
+}
+
+@media (min-width: $desktop) {
+      .informat-wrapper {
+            margin-bottom: 8rem;
+      }
+
+      #down-arrow:checked+.signup>.write-us-bar {
+            clip-path: polygon(0% 0%, 100% 0%, 100%15rem, 0%15rem);
+      }
+
+      #down-arrow:checked+.signup {
+            margin-bottom: 12rem;
+      }
+}
+
+// ---------------sign up------ */
+@import 'drop-down';
+
+
+
+
+@media (min-width: $tablet) {
+      .info-bar {
+            .contact-us {
+                  span {
+                        font-size: 2rem;
+                  }
+
+                  &.linkswrapper {
+                        width: 70%;
+                        display: grid;
+                        grid-template-columns: auto fit-content auto;
+                        grid-template-rows: repeat(3, 1fr);
+                        grid-auto-flow: column;
+                        justify-items: start;
+                  }
+            }
+      }
+}
+
+@media (min-width: $desktop) {
+      .informat-wrapper .info-bar {
+            display: grid;
+            grid-template-columns: max-content 2fr 1fr;
+            padding-left: $leftrightklein;
+            padding-right: $leftrightklein;
+
+            .contact-us {
+                  &.naming {
+                        @include flex-col(0, space-between);
+
+                        img {
+                              @include size(15rem, auto);
+                        }
+                  }
+
+                  &.linkswrapper {
+                        width: 100%;
+                        height: 12rem;
+                  }
+
+                  &.adress {
+                        justify-content: space-between;
+
+                        span {
+                              font-size: 2rem;
+                        }
+                  }
+            }
+      }
+
+
+}
+
+@media (min-width: $bigdesktop) {
+      footer.information .informat-wrapper {
+            width: 70vw;
+            margin: auto;
+            margin-bottom: 8rem;
+      }
+
+      .contact-us {
+            &.linkswrapper {
+                  width: 70%;
+                  margin: auto;
+            }
+
+            &.autors {
+                  width: 70vw;
+            }
+      }
+
+      .page-booking .autors {
+            width: 100vw;
+      }
+}

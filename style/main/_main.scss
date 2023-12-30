@@ -4,8 +4,9 @@ main {
       margin: auto;
 }
 
-@import 'main_index';
+@import './main_index/main_index';
 @import 'main_gallery';
+
 
 // --------------------responsive main
 @media (min-width: $tablet) {

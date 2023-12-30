@@ -1,0 +1,22 @@
+main.index {
+      margin-top: 13rem;
+}
+
+@import 'shader(img)';
+
+// ----------apartament cards
+
+@import 'main_roomCard';
+
+
+// ----------offers-index-seite--------------
+@import 'main_offers';
+
+// --------
+@import 'carousel';
+
+// ------
+@import 'map';
+
+// ---
+@import './information/information';

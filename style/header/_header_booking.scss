@@ -50,7 +50,7 @@ header.p-b {
 
       .logo {
             @include grid-area-num(1, 4, 2, 3);
-            @include size(5rem, auto, image);
+            @include size(5rem, auto, none);
             align-self: center;
             margin-right: auto;
       }

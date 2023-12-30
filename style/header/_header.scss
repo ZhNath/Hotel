@@ -16,6 +16,6 @@
 
 @media (min-width: $bigdesktop) {
       header button.language {
-            @include size(1.5rem, 1.5rem, image);
+            @include size(1.5rem, 1.5rem, none);
       }
 }

@@ -1,0 +1,163 @@
+// ----------------------slider carousel----- */
+aside.carousel {
+      width: 100vw;
+      @include font(1.5rem, $darkgold, bold);
+      text-align: left;
+
+      //      -------------radio-buttons for slide-control */
+      input {
+            display: none;
+      }
+
+      //  ----------------------bounding box for photo-slides*/
+      .overflow {
+            width: 100%;
+            overflow: hidden;
+      }
+
+      // ------------------------unlimited slide box*/
+      .photo-box {
+            @include size(400%, 40vh, none);
+            transition: margin-left 1s linear;
+
+            .slide {
+                  @include size(60vw, 100%, $lightfield);
+                  float: left;
+                  padding: 1rem;
+                  margin: 0.2rem;
+
+                  // ----------------transition: scale, box-shadow*/
+                  img {
+                        height: 80%;
+                        object-fit: cover;
+                        object-position: bottom;
+                        transition: all 0.5s;
+                        transition-delay: 0.3s;
+
+                        &:hover {
+                              scale: 1.2;
+                              box-shadow: $panelshadow;
+                        }
+
+                        &:active {
+                              scale: 0.8;
+                              border: 3px solid $gold;
+                              box-shadow: $panelshadow;
+                              cursor: wait;
+                        }
+                  }
+            }
+      }
+
+      // --------------------alle slides nach checked */
+      $margins: 1 -40%,
+            2 -100%,
+            3 -160%,
+            4 -220%;
+
+      @each $num, $margin in $margins {
+            #slider#{$num}:checked~.overflow .photo-box {
+                  margin-left: $margin;
+            }
+      }
+
+      // ---------------------------arrows left-right*/
+      .controls-arrows {
+            position: relative;
+            margin: -20vh 0 0 0;
+            @include size(100%, 6rem, none);
+            z-index: 0;
+
+            label {
+                  @include size(5rem, 5rem, none);
+                  transition: opacity 0.25s;
+                  opacity: 0.4;
+
+                  &:hover {
+                        opacity: 1;
+                  }
+            }
+      }
+
+      #slider1:checked~.controls-arrows label:nth-child(2),
+      #slider2:checked~.controls-arrows label:nth-child(3),
+      #slider3:checked~.controls-arrows label:nth-child(4),
+      #slider4:checked~.controls-arrows label:nth-child(1) {
+            background: url(./icons/chevron-right-solid.svg) no-repeat;
+            background-size: contain;
+            background-position: right;
+            margin: 0 $leftrightklein 0 0;
+            float: right;
+            display: block;
+      }
+
+      #slider1:checked~.controls-arrows label:nth-last-child(1),
+      #slider2:checked~.controls-arrows label:nth-last-child(4),
+      #slider3:checked~.controls-arrows label:nth-last-child(3),
+      #slider4:checked~.controls-arrows label:nth-last-child(2) {
+            background: url(./icons/chevron-left-solid.svg) no-repeat;
+            background-size: contain;
+            float: left;
+            margin: 0 0 0 $leftrightklein;
+            display: block;
+      }
+
+      .bullets {
+            margin: 17vh 0 0;
+            text-align: center;
+
+            label {
+                  display: inline-block;
+                  @include size(1rem, 1rem, $darkgold);
+                  border-radius: 50%;
+                  margin: 0 10px;
+            }
+      }
+
+      #slider1:checked~.bullets label:nth-child(1),
+      #slider2:checked~.bullets label:nth-child(2),
+      #slider3:checked~.bullets label:nth-child(3),
+      #slider4:checked~.bullets label:nth-child(4) {
+            background-color: $gold;
+      }
+}
+
+// ---------------------------responsiv carousel */
+@media (min-width: $tablet) {
+      aside.carousel .photo-box .slide {
+            p {
+                  font-size: 2rem;
+                  padding: 0 $leftright;
+            }
+
+            img {
+                  height: 90%;
+                  object-position: 100% 80%;
+            }
+
+
+      }
+
+      .bullets label {
+            @include size(1.2rem, 1.2rem, none);
+      }
+}
+
+@media (min-width:$desktop) {
+      aside.carousel .photo-box .slide {
+            p {
+                  font-size: 2.3rem;
+            }
+      }
+}
+
+@media (min-width: $bigdesktop) {
+      aside.carousel .photo-box {
+            @include size(400%, 60vh, none);
+
+            .slide p {
+                  font-size: 2.3rem;
+
+            }
+      }
+}

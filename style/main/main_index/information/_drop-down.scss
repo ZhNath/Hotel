@@ -1,0 +1,84 @@
+.signup {
+      .write-us-bar {
+            position: absolute;
+            @include size (100%, fit-content, $darkgold);
+            @include font (inherit, $lightfield, bold);
+            padding: $leftright;
+            padding-top: 0;
+
+            clip-path: polygon(0% 0%, 100% 0%, 100%5rem, 0%5rem);
+            transition: clip-path 1s;
+
+            legend {
+                  @include flex-row(0, center, flex-start);
+                  height: 5rem;
+                  line-height: 5rem;
+                  margin-bottom: 2rem;
+
+                  label.arrow {
+                        margin-left: $leftrightklein;
+                  }
+
+                  label.up-arrow {
+                        display: none;
+                  }
+
+                  label.down-arrow {
+                        display: block;
+                  }
+            }
+
+            .input-group {
+                  position: relative;
+                  margin-bottom: 2rem;
+
+                  .false-placeholder {
+                        @include position (absolute, 1rem, n, n, n);
+
+                        transform: translateY(1rem);
+                        line-height: 3rem;
+                        background-color: $darkgold;
+                  }
+
+                  input {
+                        @include size(100%, 5rem, none);
+                        @include font(2rem, $lightfield, bold);
+                        padding: 1rem;
+                        border: 1px solid $lightfield;
+                        position: relative;
+
+                        &:focus~label.false-placeholder,
+                        &:valid~label.false-placeholder {
+                              transform: translateY(-1.5rem);
+                        }
+                  }
+
+            }
+      }
+}
+
+
+
+@media (min-width: $tablet) {
+      .signup .write-us-bar {
+            font-size: 2rem;
+      }
+}
+
+@media (min-width: $desktop) {
+      .signup .write-us-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 6rem 7rem;
+            gap: 1rem;
+      }
+
+      .write-us-bar legend {
+            @include grid-area-num(1, 2, 1, 6);
+      }
+
+      .write-us-bar button {
+            @include size(100%, 5rem, none);
+            margin: 0;
+      }
+}

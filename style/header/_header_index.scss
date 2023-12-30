@@ -36,7 +36,7 @@ span {
 
 
 .logo {
-      @include size(4rem, auto, image);
+      @include size(4rem, auto, none);
       align-self: end;
 }
 
@@ -103,7 +103,7 @@ nav {
             }
 
             .logo {
-                  @include size(6rem, auto, image);
+                  @include size(6rem, auto, none);
             }
 
             nav {

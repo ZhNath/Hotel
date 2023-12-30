@@ -1,0 +1,132 @@
+@import 'keyframes';
+
+// --------------------------------sheep
+.animation {
+      position: relative;
+      @include size (100%, 100%, none);
+      overflow: hidden;
+
+      img {
+            @include size(20%, 30%, none);
+            object-fit: contain;
+      }
+}
+
+.wave {
+      @include position(absolute, -50%, 80%, n, n);
+      width: 200%;
+      aspect-ratio: 1;
+      border-radius: 40%;
+      opacity: 0.9;
+
+      $waves: 1 $facebook 2 13s 3s,
+            2 $telegram 3 10s 0s,
+            3 #5bccd9 4 13s 3s,
+            4 #5b7dd9 5 11s 1s,
+            5 $twitter 6 9s 2s,
+            6 $facebook 7 10s 0,
+            7 #5bccd9 8 12s 2s,
+            8 $telegram 9 9s 0;
+
+
+      @each $num, $color, $z-index, $duration, $delay in $waves {
+            &:nth-child(#{$num}) {
+                  background-color: $color;
+                  z-index: $z-index;
+                  animation: rotate #{$duration} infinite;
+                  animation-delay: #{$delay};
+            }
+      }
+}
+
+
+.himmel {
+      @include position(absolute, 0, 0, 0, 0);
+      background-image: linear-gradient(rgb(0, 213, 255), transparent);
+}
+
+.sun {
+      @include position(absolute, 0, -50px, 0, -50px);
+      background: radial-gradient(circle at 50% 0px,
+
+                  rgba(255, 229, 38, 1) 3%,
+                  rgba(255, 251, 173, 0.34077380952380953) 20%,
+                  transparent);
+}
+
+
+
+.sunray {
+      background: radial-gradient(circle at 50% 0px,
+                  rgba(255, 229, 38, 1) 1%,
+                  rgba(255, 251, 173, 0.34077380952380953) 50%,
+                  transparent);
+      animation: sunshine 5s infinite ease-in-out;
+}
+
+
+.ship-circle {
+      @include size(300px, 300px, none);
+      @include position(absolute, n, 90%, n, n);
+      z-index: 5;
+
+      animation: ship-in-wave 15s ease-in-out infinite;
+}
+
+.ship-circle-1 {
+      left: -25%;
+}
+
+.ship-circle-2 {
+      left: 15%;
+      transform: rotate(-180deg);
+      animation-delay: 5s;
+}
+
+.ship-circle-3 {
+      left: 50%;
+      transform: rotate(-180deg);
+      animation-delay: 10s;
+}
+
+.circle {
+      @include size(300px, 300px, none);
+      @include position(absolute, 0, 0, n, n);
+      border-radius: 50%;
+}
+
+.ship {
+      @include size(70px, 80px, none);
+      position: relative;
+      left: 40%;
+      top: -60px;
+      opacity: 0.7;
+
+      .s {
+            @include size(60px, 60px, white);
+
+            &.ls {
+                  @include position (absolute, 0, 15px, n, n);
+                  clip-path: polygon(50% 0%, 0% 100%, 50% 100%);
+            }
+
+            &.rs {
+                  @include position (absolute, 3px, 15px, n, n);
+                  clip-path: polygon(51% 15%, 100% 100%, 50% 100%);
+            }
+      }
+}
+
+
+
+.fl {
+      @include size(30px, 15px, rgb(244, 143, 143));
+      @include position(absolute, 33px, 5px, n, n);
+      clip-path: polygon(0 0, 100% 0, 63% 47%, 100% 100%, 0 100%);
+}
+
+.g {
+      @include size(100px, 60px, rgb(93, 8, 8));
+      @include position(absolute, -10px, 40px, n, n);
+      clip-path: polygon(30% 62%, 63% 62%, 100% 34%, 75% 100%, 25% 100%, 1% 58%);
+}
