@@ -105,3 +105,26 @@ $langbuttons: eng url(../images/eng.png),
             }
       }
 }
+
+// 
+.email button,
+.write-us-bar button {
+      @include size(32%, 3rem, $darkgold);
+      border: 1px solid $lightfield;
+      @include font(2rem, $lightfield, bold);
+      letter-spacing: 3px;
+
+      margin-left: 12%;
+      margin-bottom: $topbottom;
+      margin-top: $topbottom;
+}
+
+@media (min-width: $tablet) {
+      .email legend {
+            font-size: 3rem;
+      }
+
+      .email .border button {
+            @include size(30%, 4rem, inherit)
+      }
+}

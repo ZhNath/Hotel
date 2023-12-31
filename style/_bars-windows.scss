@@ -1,10 +1,8 @@
 .dialog {
-      width: 80vw;
-      aspect-ratio: 4/3;
+      @include size (80vw, aspect-ratio 4/3, $darkfield);
       min-width: 250px;
       min-height: 190px;
       max-height: 70vh;
-      background: $darkfield;
       @include position(fixed, 50%, 50%, n, n);
       transform: translate(-50%, -50%);
 
@@ -14,7 +12,7 @@
             inset 5px 5px 15px 0 rgba(66, 68, 17, 0.429);
 }
 
-@media (min-width: 768px) {
+@media (min-width: $desktop) {
       .dialog {
             width: 60vw;
             box-shadow: 10px 10px 20px 7px #031d17, 0 0 0 50vmax $panelshadow,
@@ -22,17 +20,15 @@
       }
 }
 
-@media (min-width: 1280px) {
+@media (min-width:$bigdesktop) {
       .dialog {
             width: 50vw;
       }
 }
 
 .dialogbar {
-      background: $lightfield;
+      @include size(90%, 90%, $lightfield);
       border: 3px solid $gold;
-      width: 90%;
-      height: 90%;
       place-self: center;
       padding: 5vw;
 
@@ -56,18 +52,16 @@
 }
 
 .dialogbar span {
-      color: $green;
-      font-size: 1.5rem;
-      font-weight: bold;
+      @include font(1.5rem, $green, bold);
 }
 
-@media (min-width: 481px) {
+@media (min-width: $tablet) {
       .dialogbar span {
             font-size: 1.7rem;
       }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $desktop) {
       .dialogbar span {
             font-size: 2rem;
       }
@@ -134,23 +128,15 @@
 
 /*--------------------------------------------------------- email */
 .email form {
-      width: 100%;
-      height: fit-content;
-
-      background-color: $darkgold;
+      @include size(100%, fit-content, $dardgold);
       box-shadow: $imgshadow;
 
-      color: $lightfield;
-      font-family: "PoiretOne";
-      font-weight: bold;
-      font-size: 1.5rem;
+      @include font(1.5rem, $lightfield, bold);
       text-align: start;
 }
 
 .email legend {
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
+      @include font(2rem, inherit, bold);
       margin-top: $topbottom;
 }
 
@@ -175,35 +161,6 @@
 .email textarea::placeholder {
       padding: 5px;
 }
-
-.email button,
-.write-us-bar button {
-      width: 32%;
-      height: 3rem;
-      background-color: $darkgold;
-      border: 1px solid $lightfield;
-
-      color: $lightfield;
-      font-size: 2rem;
-      letter-spacing: 3px;
-
-      margin-left: 12%;
-      margin-bottom: $topbottom;
-      margin-top: $topbottom;
-}
-
-@media (min-width: 481px) {
-      .email legend {
-            font-size: 3rem;
-      }
-
-      .email .border button {
-            width: 30%;
-            height: 4rem;
-      }
-}
-
-
 
 
 /* ------------------------------------formular seite */
