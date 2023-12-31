@@ -88,7 +88,7 @@ main.gallery {
 
 .gallery .p-f-button {
       @include size(12rem, auto, $darkgold);
-      @include hcentr(relative);
+      @include hcenter(relative);
       @include font(1.5rem, $lightfield, bold);
 
       line-height: 2rem;
@@ -246,7 +246,7 @@ main.gallery {
       border: 2px solid $darkgold;
       box-shadow: $boxshadow;
 
-      @include hcentr(relative);
+      @include hcenter(relative);
       @include font(1.6rem, $green, bold);
       text-align: center;
 
@@ -294,3 +294,5 @@ main.gallery {
             font-size: 1.5em;
       }
 }
+
+@import '../../autors';

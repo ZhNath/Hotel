@@ -18,11 +18,8 @@ footer.information {
             @include flex-col(1rem, space-between);
       }
 
-      .autors {
-            @include size (100%, 5rem, $darkgold);
-            @include font (1.5rem, $lightfield, bold);
-            @include flex-row(0, space-evenly);
-      }
+      @import '../../../autors';
+
 }
 
 

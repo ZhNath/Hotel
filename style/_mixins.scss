@@ -76,3 +76,22 @@
             font-weight: bold;
       }
 }
+
+@mixin hcenter($position) {
+      position: $position;
+      left: 50%;
+      transform: translate(-50%, 0);
+}
+
+@mixin vcenter($position) {
+      position: $position;
+      top: 50%;
+      transform: translate(0, -50%);
+}
+
+@mixin hvcenter($position) {
+      position: $position;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+}

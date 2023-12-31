@@ -130,7 +130,7 @@
 // ----------------------------------- email */
 .email {
       form {
-            @include size(100%, fit-content, $dardgold);
+            @include size(100%, fit-content, $darkgold);
             box-shadow: $imgshadow;
 
             @include font(1.5rem, $lightfield, bold);
