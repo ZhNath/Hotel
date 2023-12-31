@@ -189,7 +189,7 @@ main.gallery {
 }
 
 
-/* -------------------------------------------------photogallery */
+// ------------------------------photogallery */
 .gallery .photos {
       display: grid;
       grid-template-columns: repeat(3, auto);
@@ -200,8 +200,7 @@ main.gallery {
 }
 
 .gallery picture img {
-      width: 100%;
-      height: auto;
+      @include size(100%, auto, none);
       box-shadow: $smallimgshadow;
 }
 
@@ -240,7 +239,7 @@ main.gallery {
 
 
 
-// ------------------------------------gallery-contact */
+// -------------------------gallery-contact */
 .contact {
       @include size(70vw, fit-content, inherit);
       max-width: 500px;

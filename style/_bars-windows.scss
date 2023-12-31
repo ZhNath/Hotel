@@ -35,25 +35,26 @@
       @include flex-col(10px, space-evenly, end);
       text-align: end;
       position: relative;
+
+      &.back {
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+            transition: 1s;
+      }
+
+      .close {
+            @include closebutton;
+            right: 1vw;
+            top: 1vw;
+      }
+
+      span {
+            @include font(1.5rem, $green, bold);
+      }
 }
 
-.dialogbar.back {
-      position: absolute;
-      width: 100%;
-      height: fit-content;
-      clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
-      transition: 1s;
-}
-
-.dialogbar .close {
-      @include closebutton;
-      right: 1vw;
-      top: 1vw;
-}
-
-.dialogbar span {
-      @include font(1.5rem, $green, bold);
-}
 
 @media (min-width: $tablet) {
       .dialogbar span {
@@ -67,17 +68,17 @@
       }
 }
 
-/* 2 */
+// 2 */
 .dialog-sharing .dialogbar {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       padding: 2vw;
       justify-items: center;
       align-items: start;
-}
 
-.dialog-sharing .dialogbar span {
-      @include grid-area-num(1, 2, 1, 4);
+      span {
+            @include grid-area-num(1, 2, 1, 4);
+      }
 }
 
 
@@ -117,7 +118,7 @@
       }
 }
 
-/* responsiv slide-bar */
+// responsiv slide-bar */
 @media (min-width: $tablet) {
       .slide-bar-background {
             @include position(fixed, n, 10vh, -45vw, n);
@@ -126,100 +127,41 @@
 
 
 
-/*--------------------------------------------------------- email */
-.email form {
-      @include size(100%, fit-content, $dardgold);
-      box-shadow: $imgshadow;
+// ----------------------------------- email */
+.email {
+      form {
+            @include size(100%, fit-content, $dardgold);
+            box-shadow: $imgshadow;
 
-      @include font(1.5rem, $lightfield, bold);
-      text-align: start;
-}
+            @include font(1.5rem, $lightfield, bold);
+            text-align: start;
+      }
 
-.email legend {
-      @include font(2rem, inherit, bold);
-      margin-top: $topbottom;
-}
+      legend {
+            @include font(2rem, inherit, bold);
+            margin-top: $topbottom;
+      }
 
-.email label {
-      margin-left: 5%;
-}
+      label {
+            margin-left: 5%;
+      }
 
-.email input,
-.email textarea {
-      width: 90%;
-      display: block;
-      margin: auto;
-      border-bottom: 1px solid $lightfield;
-      padding-top: 40px;
-      padding-left: 10px;
-}
+      input,
+      textarea {
+            width: 90%;
+            display: block;
+            margin: auto;
+            border-bottom: 1px solid $lightfield;
+            padding-top: 40px;
+            padding-left: 10px;
+      }
 
-.email textarea {
-      padding: 5px;
-}
+      textarea {
+            padding: 5px;
+      }
 
-.email textarea::placeholder {
-      padding: 5px;
-}
+      textarea::placeholder {
+            padding: 5px;
+      }
 
-
-/* ------------------------------------formular seite */
-
-form.p-f {
-      width: 90%;
-      height: fit-content;
-      margin-top: 4vh;
-      margin: auto;
-      margin-bottom: $topbottom;
-
-      background-color: $darkgold;
-      padding: $leftrightklein;
-
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: $lightfield;
-
-      box-shadow: $boxshadow;
-}
-
-.p-f legend {
-      letter-spacing: 1px;
-      margin-bottom: 0.7em;
-}
-
-.p-f input {
-      width: 100%;
-      border-bottom: 1px solid $lightfield;
-      height: 4em;
-      padding: 1em;
-      padding-bottom: 0;
-      text-transform: capitalize;
-}
-
-.pay-card-bild i {
-      font-size: 40px;
-      color: $darkgold;
-}
-
-.pay-card-bild {
-      width: 100%;
-      @include flex-row(1rem);
-      margin-bottom: $topbottom;
-}
-
-.p-f-button {
-      width: 10rem;
-      height: 3rem;
-      border: 2px solid $darkgold;
-      background-color: $lightfield;
-      margin-top: $topbottom;
-      font-size: 2rem;
-      font-weight: bold;
-      line-height: 2rem;
-      color: $darkgold;
-}
-
-.p-f-button[type="submit"] {
-      display: block;
-      margin: auto;
 }

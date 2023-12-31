@@ -1,9 +1,8 @@
 .page-formular .container.animation {
-      height: 9rem;
-      background-color: $darkfield;
+      @include size(inhrit, 9rem, $darkfield);
 }
 
-@media (min-width: 768px) {
+@media (min-width: $desktop) {
       form.p-f {
             max-width: 50%;
       }
@@ -15,4 +14,52 @@
       .page-formular .container.animation {
             height: 24rem;
       }
+}
+
+form.p-f {
+      @include size (90%, fit-content, $darkgold);
+      margin-top: 4vh;
+      margin: auto;
+      margin-bottom: $topbottom;
+
+      padding: $leftrightklein;
+      @include font(1.5rem, $lightfield, bold);
+
+      box-shadow: $boxshadow;
+
+      legend {
+            letter-spacing: 1px;
+            margin-bottom: 0.7em;
+      }
+
+      input {
+            @include size (100%, 4em, inherit);
+            border-bottom: 1px solid $lightfield;
+            padding: 1em;
+            padding-bottom: 0;
+            text-transform: capitalize;
+      }
+}
+
+.pay-card-bild {
+      width: 100%;
+      @include flex-row(1rem);
+      margin-bottom: $topbottom;
+
+      i {
+            @include font(40px, $darkgold, normal);
+      }
+}
+
+.p-f-button {
+      @include size(10rem, 3rem, $lightfield);
+      border: 2px solid $darkgold;
+      margin-top: $topbottom;
+      @include font(2rem, $darkgold, bold);
+      line-height: 2rem;
+}
+
+.p-f-button[type="submit"] {
+      display: block;
+      margin: auto;
 }
