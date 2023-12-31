@@ -72,20 +72,17 @@ h2.caption {
 }
 
 
-/* _______________________________________________controller booknow */
+// ----------------------controller booknow */
 #book-button {
       display: none;
 }
-
-/* ---------------------------------------------------1) mod window*/
 
 #book-button:checked+.dialog-booking {
       display: grid;
       box-shadow: $panelshadow;
 }
 
-/* ***************************************************************** */
-/* ------------------------------------------controller share-button */
+// -------------------controller share-button */
 #share-button {
       display: none;
 }
@@ -94,7 +91,7 @@ h2.caption {
       display: grid;
 }
 
-/*--------------------------------------------------- 2) mod window*/
+// ---------------- 
 .dialog-sharing .fa-brands,
 .dialog-sharing .fa-copy {
       font-size: 6vw;
@@ -125,7 +122,7 @@ h2.caption {
       color: $viber;
 }
 
-/* ***********************************************controller link-copy */
+// ********************************controller link-copy */
 
 #link-copy {
       width: 30px;
@@ -136,357 +133,11 @@ h2.caption {
       background-color: $lightfield;
 }
 
-/* ***********************************************reverse-controller */
+// *********************************reverse-controller */
 #email-button {
       display: none;
 }
 
 #email-button:checked~.dialog>.dialogbar.back {
       clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-
-
-
-
-
-
-
-/* *******************************Formular seite********************************** */
-/* ******************************************************************************* */
-.page-formular .container.animation {
-      height: 9rem;
-      background-color: $darkfield;
-}
-
-@media (min-width: 768px) {
-      form.p-f {
-            max-width: 50%;
-      }
-
-      .p-f-button {
-            height: 4rem;
-      }
-
-      .page-formular .container.animation {
-            height: 24rem;
-      }
-}
-
-/* ********************************Gallery seite**********************************/
-/* ****************************************************************************** */
-.gallery h2.caption {
-      color: $darkgold;
-}
-
-/* -------------------------------------------------gallery-text */
-.text-green-field {
-      display: block;
-
-      width: 100%;
-      max-width: 950px;
-
-      background-color: $green;
-      box-shadow: $boxshadow;
-
-      color: $lightfield;
-      font-family: "Arial";
-      font-size: 1.4rem;
-      line-height: 1.5;
-      text-align: justify;
-
-      padding: $topbottom;
-      margin: auto;
-      margin-bottom: $topbottom;
-}
-
-.text-green-field p {
-      margin-bottom: 1rem;
-}
-
-/* --------------------------------------------------gallery--sleep */
-.bed-wrapper {
-      width: 100%;
-      height: fit-content;
-      @include flex-row(1rem, center, center, wrap);
-      font-family: "Arial";
-      font-size: 1.3rem;
-      margin-bottom: $topbottom;
-}
-
-/* .bed-wrapper.ruza {
-      grid-template-columns: repeat(2, 1fr);
-    } */
-
-.bed {
-      border: 1px solid $gold;
-      border-radius: 10px;
-      padding: 0.5em;
-      width: 20%;
-      min-width: 100px;
-      max-width: 150px;
-}
-
-.bed h3 {
-      margin-bottom: 1em;
-}
-
-.bed .material-symbols-outlined {
-      font-family: "Material Symbols Outlined";
-      font-size: 2.5rem;
-}
-
-/* --------------------------------------------------gallery-offers */
-.gallery-offers {
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
-
-      background-color: $darkgold;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: fit-content fit-content;
-      gap: 1rem;
-      padding: 1rem;
-      box-shadow: $boxshadow;
-      margin-bottom: $topbottom;
-}
-
-.gallery-offers>div {
-      background-color: $lightfield;
-      padding: 1rem;
-      box-shadow: $boxshadow;
-}
-
-.gallery-offers .left {
-      @include grid-area-num(1, 2, 1, 2);
-}
-
-.gallery-offers .right {
-      @include grid-area-num(1, 2, 2, 3);
-}
-
-.gallery-offers .down {
-      @include grid-area-num(2, 3, 1, 3);
-}
-
-.left li,
-.right li {
-      padding-left: 2rem;
-}
-
-.left ul,
-.right ul {
-      margin-bottom: $topbottom;
-}
-
-/*-------------------------------------------------gallery-house rules */
-.gallery-offers .checking {
-      display: grid;
-      grid-template-columns: 10rem auto;
-      grid-template-rows: 1fr 2fr;
-}
-
-.gallery-offers .checking:nth-child(2) {
-      gap: 0.7rem;
-      margin-bottom: $topbottom;
-}
-
-.gallery-offers .checking h3 {
-      @include grid-area-num(1, 2, 1, 2);
-}
-
-.gallery-offers .checking p:nth-child(2) {
-      @include grid-area-num(1, 2, 2, 3);
-      font-weight: bold;
-}
-
-.gallery-offers .checking p:nth-child(3) {
-      @include grid-area-num(2, 3, 2, 3);
-}
-
-/* -------------------------------------------------photogallery */
-.gallery .photos {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      grid-auto-rows: auto;
-      grid-auto-flow: row;
-      gap: 1rem;
-      margin-bottom: $topbottombig;
-}
-
-.gallery picture img {
-      width: 100%;
-      height: auto;
-      box-shadow: $smallimgshadow;
-}
-
-.gallery .photos-house picture:nth-child(2) {
-      @include grid-area-num(1, 3, 3, 4);
-      align-self: end;
-}
-
-.gallery .photos-house picture:nth-child(3) {
-      @include grid-area-num(2, 4, 1, 2);
-}
-
-.gallery .photos-house picture:nth-child(20) {
-      @include grid-area-num(7, 9, 1, 2);
-}
-
-.gallery .photos-house picture:nth-child(30) {
-      @include grid-area-num(11, 13, 3, 4);
-}
-
-.gallery .photos-jakov picture:nth-child(16) {
-      @include grid-area-num(5, 7, 2, 3);
-}
-
-.gallery .photos-ruza picture:nth-child(8) {
-      @include grid-area-num(3, 5, 2, 3);
-}
-
-.gallery .photos-house picture:nth-child(3) img,
-.gallery .photos-house picture:nth-child(20) img,
-.gallery .photos-house picture:nth-child(30) img,
-.gallery .photos-jakov picture:nth-child(16) img,
-.gallery .photos-ruza picture:nth-child(8) img {
-      height: 100%;
-}
-
-/*-----------------------------------------------gallery-tabelle */
-
-.gallery-tbl {
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      box-shadow: $imgshadow;
-      margin-bottom: $topbottom / 2;
-}
-
-.gallery thead {
-      font-family: Arial, Helvetica, sans-serif;
-}
-
-.gallery-tbl td,
-.gallery-tbl th {
-      border: 2px solid $darkgold;
-      padding: 0.7rem;
-}
-
-.gallery-tbl th {
-      font-size: 1rem;
-      color: $green;
-}
-
-.gallery-tbl td {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: $darkfield;
-      background-color: $darkgold;
-}
-
-.gallery .p-f-button {
-      width: 12rem;
-      display: block;
-      margin: auto;
-      background-color: $darkgold;
-      font-size: 1.5rem;
-      font-weight: bold;
-      line-height: 2rem;
-      color: $lightfield;
-      margin-bottom: $topbottombig;
-}
-
-/*-----------------------------------------------gallery--attraction */
-.attraction {
-      width: 80vw;
-      max-width: 700px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: $topbottom;
-      align-items: start;
-}
-
-.attraction i {
-      margin-bottom: 1rem;
-}
-
-.attraction ul {
-      display: grid;
-      grid-template-columns: auto 5rem;
-      gap: 1rem;
-}
-
-/* -------------------------------------------------gallery-contact */
-.contact {
-      width: 70vw;
-      max-width: 500px;
-      margin: auto;
-      height: fit-content;
-      border: 2px solid $darkgold;
-      color: $green;
-      box-shadow: $boxshadow;
-      margin-bottom: $topbottom;
-      text-align: center;
-      padding: 1rem;
-      font-size: 1.6rem;
-      font-weight: bold;
-}
-
-.contact address,
-.contact p:nth-child(2) {
-      margin-bottom: 1rem;
-}
-
-.inputcheck {
-      width: 5px;
-      height: 5px;
-      background-color: $lightfield;
-      border: 1px solid $darkgold;
-}
-
-/* ****************************************************anchors */
-.anchor-margin {
-      scroll-margin-top: 13rem;
-}
-
-/* --------------------gallery responsivitaet */
-@media (min-width: 480px) {
-
-      .gallery-offers,
-      .gallery .attraction,
-      .gallery-tbl th {
-            font-size: 1.3em;
-      }
-
-      .gallery-tbl td {
-            font-size: 1.5rem;
-      }
-
-      .anchor-margin {
-            scroll-margin-top: 17rem;
-      }
-}
-
-@media (min-width: 768px) {
-      .anchor-margin {
-            scroll-margin-top: 19rem;
-      }
-
-      .gallery-offers,
-      .gallery .attraction,
-      .gallery-tbl th {
-            font-size: 1.5em;
-      }
-}
-
-@media (min-width: $bigdesktop) {
-
-      .page-booking .autors {
-            width: 100vw;
-      }
 }

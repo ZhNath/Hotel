@@ -5,7 +5,7 @@ main {
 }
 
 @import './main_index/main_index';
-@import 'main_gallery';
+@import './main_gallery/main_gallery';
 
 
 // --------------------responsive main
@@ -28,3 +28,4 @@ main {
 }
 
 @import './main_booking/main_booking';
+@import './main_formular/main_formular';

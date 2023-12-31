@@ -175,3 +175,9 @@ aside.p-b img {
 }
 
 @import '../../animation/animation';
+
+@media (min-width: $bigdesktop) {
+      .page-booking .autors {
+            width: 100vw;
+      }
+}

@@ -1,0 +1,297 @@
+@import '../../bars-windows';
+
+main.gallery {
+      margin-top: 13rem;
+}
+
+.gallery h2.caption {
+      color: $darkgold;
+}
+
+// ----------------------------------------gallery-text */
+.text-green-field {
+      @include size(100%, fit-content, $green);
+      max-width: 950px;
+      box-shadow: $boxshadow;
+
+      @include font(1.4rem, $lightfield, normal);
+      font-family: "Arial";
+      line-height: 1.5;
+      text-align: justify;
+      padding: $topbottom;
+      margin: auto;
+      margin-bottom: $topbottom;
+
+      p {
+            margin-bottom: 1rem;
+      }
+}
+
+// --------------------------gallery--sleep */
+.bed-wrapper {
+      @include size(100%, fit-content, inherit);
+      @include flex-row(1rem, center, center, wrap);
+      @include font (1.3rem, $darkgold, normal);
+      font-family: "Arial";
+      margin-bottom: $topbottom;
+
+      .bed {
+            width: 20%;
+            min-width: 100px;
+            max-width: 150px;
+            border: 1px solid $gold;
+            border-radius: 10px;
+            padding: 0.5em;
+
+            h3 {
+                  margin-bottom: 1em;
+            }
+
+            .material-symbols-outlined {
+                  font-family: "Material Symbols Outlined";
+                  font-size: 2.5rem;
+            }
+      }
+}
+
+// -------------gallery-price */
+
+.gallery-tbl {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      box-shadow: $imgshadow;
+      margin-bottom: $topbottom / 2;
+
+      thead {
+            font-family: Arial, Helvetica, sans-serif;
+      }
+
+      td,
+      th {
+            border: 2px solid $darkgold;
+            padding: 0.7rem;
+      }
+
+      th {
+            @include font(1rem, $green, bold);
+      }
+
+      td {
+            @include font(1.2rem, $darkfield, bold);
+            background-color: $darkgold;
+      }
+}
+
+
+
+.gallery .p-f-button {
+      @include size(12rem, auto, $darkgold);
+      @include hcentr(relative);
+      @include font(1.5rem, $lightfield, bold);
+
+      line-height: 2rem;
+      margin-bottom: $topbottombig;
+}
+
+// -----------------gallery-offers */
+.gallery-offers {
+      @include size(100%, auto, $darkgold);
+      max-width: 700px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: fit-content fit-content;
+      gap: 1rem;
+
+      padding: 1rem;
+      box-shadow: $boxshadow;
+      margin-bottom: $topbottom;
+
+      .left,
+      .right,
+      .down {
+            background-color: $lightfield;
+            padding: 1rem;
+            box-shadow: $boxshadow;
+      }
+
+      .left {
+            @include grid-area-num(1, 2, 1, 2);
+      }
+
+      .right {
+            @include grid-area-num(1, 2, 2, 3);
+      }
+
+      .down {
+            @include grid-area-num(2, 3, 1, 3);
+      }
+
+      .left li,
+      .right li {
+            padding-left: 2rem;
+      }
+
+      .left ul,
+      .right ul {
+            margin-bottom: $topbottom;
+      }
+}
+
+// ------------------------gallery-house rules */
+.gallery-offers .checking {
+      display: grid;
+      grid-template-columns: 10rem auto;
+      grid-template-rows: 1fr 2fr;
+
+      &:nth-child(2) {
+            gap: 0.7rem;
+            margin-bottom: $topbottom;
+      }
+
+      h3 {
+            @include grid-area-num(1, 2, 1, 2);
+      }
+
+      p:nth-child(2) {
+            @include grid-area-num(1, 2, 2, 3);
+            font-weight: bold;
+      }
+
+      p:nth-child(3) {
+            @include grid-area-num(2, 3, 2, 3);
+      }
+}
+
+// ------------------------gallery--attraction */
+.attraction {
+      width: 80vw;
+      max-width: 700px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: $topbottom;
+      align-items: start;
+
+      i {
+            margin-bottom: 1rem;
+      }
+
+      ul {
+            display: grid;
+            grid-template-columns: auto 5rem;
+            gap: 1rem;
+      }
+}
+
+
+/* -------------------------------------------------photogallery */
+.gallery .photos {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-auto-rows: auto;
+      grid-auto-flow: row;
+      gap: 1rem;
+      margin-bottom: $topbottombig;
+}
+
+.gallery picture img {
+      width: 100%;
+      height: auto;
+      box-shadow: $smallimgshadow;
+}
+
+.gallery .photos-house picture:nth-child(2) {
+      @include grid-area-num(1, 3, 3, 4);
+      align-self: end;
+}
+
+.gallery .photos-house picture:nth-child(3) {
+      @include grid-area-num(2, 4, 1, 2);
+}
+
+.gallery .photos-house picture:nth-child(20) {
+      @include grid-area-num(7, 9, 1, 2);
+}
+
+.gallery .photos-house picture:nth-child(30) {
+      @include grid-area-num(11, 13, 3, 4);
+}
+
+.gallery .photos-jakov picture:nth-child(16) {
+      @include grid-area-num(5, 7, 2, 3);
+}
+
+.gallery .photos-ruza picture:nth-child(8) {
+      @include grid-area-num(3, 5, 2, 3);
+}
+
+.gallery .photos-house picture:nth-child(3) img,
+.gallery .photos-house picture:nth-child(20) img,
+.gallery .photos-house picture:nth-child(30) img,
+.gallery .photos-jakov picture:nth-child(16) img,
+.gallery .photos-ruza picture:nth-child(8) img {
+      height: 100%;
+}
+
+
+
+// ------------------------------------gallery-contact */
+.contact {
+      @include size(70vw, fit-content, inherit);
+      max-width: 500px;
+      border: 2px solid $darkgold;
+      box-shadow: $boxshadow;
+
+      @include hcentr(relative);
+      @include font(1.6rem, $green, bold);
+      text-align: center;
+
+      margin-bottom: $topbottom;
+      padding: 1rem;
+
+      address,
+      p:nth-child(2) {
+            margin-bottom: 1rem;
+      }
+}
+
+
+// ***********************************anchors */
+.anchor-margin {
+      scroll-margin-top: 13rem;
+}
+
+// -------------------gallery responsivitaet */
+@media (min-width: $tablet) {
+
+      .gallery-offers,
+      .gallery .attraction,
+      .gallery-tbl th {
+            font-size: 1.3em;
+      }
+
+      .gallery-tbl td {
+            font-size: 1.5rem;
+      }
+
+      .anchor-margin {
+            scroll-margin-top: 17rem;
+      }
+}
+
+@media (min-width: $desktop) {
+      .anchor-margin {
+            scroll-margin-top: 19rem;
+      }
+
+      .gallery-offers,
+      .gallery .attraction,
+      .gallery-tbl th {
+            font-size: 1.5em;
+      }
+}
