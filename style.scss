@@ -57,12 +57,11 @@ h2.caption {
 @import 'style/footer';
 
 
-/* ----------------------------------------controller right slide-bar */
+// --------------controller right slide-bar */
 #control-slide-bar {
       display: none;
 }
 
-/* ----------------------------------------------------3) mod window*/
 #control-slide-bar:checked+.slide-bar-background {
       right: 0;
       box-shadow: $panelshadow;

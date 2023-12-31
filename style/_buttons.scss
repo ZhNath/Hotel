@@ -27,13 +27,12 @@ $langbuttons: eng url(../images/eng.png),
 
 
 @mixin closebutton {
-      .close {
-            @include font(1.5rem, $darkgold, n);
-            position: absolute;
-      }
+      @include font(1.5rem, $darkgold, n);
+      @include position(absolute, n, 3rem, 3rem, n);
 }
 
-/* ----------------------------------------------------goldene linie */
+
+// -----------------------------goldene linie */
 .line {
       @include size(70%, 2px, none);
       display: flex;
@@ -47,7 +46,7 @@ $langbuttons: eng url(../images/eng.png),
 
 }
 
-@media (min-width: 481px) {
+@media (min-width: $tablet) {
       .line {
             height: 3px;
             margin-top: $topbottombig;
@@ -60,7 +59,7 @@ $langbuttons: eng url(../images/eng.png),
       @include size(90%, 1px, $gold);
 }
 
-/*------------------------------------------------------ bookbutton */
+// -------------------------- bookbutton */
 .bookbtn {
       display: block;
       background-color: $gold;

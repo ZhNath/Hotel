@@ -88,57 +88,51 @@
       @include grid-area-num(1, 2, 1, 4);
 }
 
-/* 3 */
-/* right slide-bar */
-.slide-bar-background {
-      height: 60vh;
-      width: 100vw;
-      @include position(fixed, n, 15vh, -100vw, n);
 
-      background: $darkfield;
+// ****************************
+.slide-bar-background {
+      @include size (100vw, 60vh, $darkfield);
+      @include position(fixed, n, 15vh, -100vw, n);
+      @include font (2em, $altgold, normal);
       z-index: 4;
       transition: all 0.5s;
 
-      color: $altgold;
-      font-size: 2em;
-}
+      .slide-bar {
+            @include position(absolute, 2rem, 2rem, 2rem, 2rem);
+            @include flex-col(0, space-evenly);
 
-/* responsiv slide-bar */
-@media (min-width: 481px) {
-      .slide-bar-background {
-            width: 45vw;
-            top: 10vh;
-            right: -45vw;
+            background-color: $lightfield;
+
+            a,
+            a:visited {
+                  margin-left: $leftright;
+                  width: fit-content;
+            }
+
+            a:active {
+                  box-shadow: inset 0px 0px 5px $darkgold;
+            }
+
+      }
+
+      .close .fa-xmark {
+            @include closebutton;
+            z-index: 5;
+      }
+
+      label.close:hover .fa-xmark {
+            scale: 1.2;
       }
 }
 
-.slide-bar-background .slide-bar {
-      @include position(absolute, 2rem, 2rem, 2rem, 2rem);
-      @include flex-col(0, space-evenly);
-
-      background-color: $lightfield;
+/* responsiv slide-bar */
+@media (min-width: $tablet) {
+      .slide-bar-background {
+            @include position(fixed, n, 10vh, -45vw, n);
+      }
 }
 
-.slide-bar a,
-.slide-bar a:visited {
-      margin-left: $leftright;
-      width: fit-content;
-}
 
-.slide-bar a:active {
-      box-shadow: inset 0px 0px 5px $darkgold;
-}
-
-.slide-bar-background .fa-xmark {
-      @include closebutton;
-      right: 3rem;
-      top: 3rem;
-      z-index: 5;
-}
-
-label.close:hover .fa-xmark {
-      scale: 1.2;
-}
 
 /*--------------------------------------------------------- email */
 .email form {
