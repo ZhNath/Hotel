@@ -60,7 +60,7 @@ aside.p-b img {
       }
 
       h2 {
-            @include font (2.2rem, $gold, bold);
+            @include font (2.2rem, $altgold, bold);
             @include grid-area-num(1, 2, 1, 3);
       }
 

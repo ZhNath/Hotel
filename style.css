@@ -169,7 +169,7 @@ button.language {
     background-color: inherit; } }
 .dialog {
   width: 80vw;
-  height: aspect-ratio 4/3;
+  height: 60vw;
   background-color: #f3f0e3;
   min-width: 250px;
   min-height: 190px;
@@ -303,6 +303,7 @@ button.language {
 
 @media (min-width: 481px) {
   .slide-bar-background {
+    width: 45vw;
     position: fixed;
     top: 10vh;
     right: -45vw; } }
@@ -1234,7 +1235,7 @@ footer.information {
     width: 70vw; } }
 .dialog {
   width: 80vw;
-  height: aspect-ratio 4/3;
+  height: 60vw;
   background-color: #f3f0e3;
   min-width: 250px;
   min-height: 190px;
@@ -1368,6 +1369,7 @@ footer.information {
 
 @media (min-width: 481px) {
   .slide-bar-background {
+    width: 45vw;
     position: fixed;
     top: 10vh;
     right: -45vw; } }
@@ -1560,6 +1562,15 @@ main.gallery {
   width: 100%;
   height: auto;
   box-shadow: rgba(58, 31, 3, 0.1) 0px 2px 1px, rgba(58, 31, 3, 0.1) 0px 4px 2px, rgba(58, 31, 3, 0.1) 0px 8px 4px, rgba(58, 31, 3, 0.1) 0px 16px 8px; }
+  .gallery picture img:active {
+    border: 5px solid #514716;
+    width: 70vw;
+    height: auto;
+    position: fixed;
+    left: 50vw;
+    top: calc(50vh + 7rem);
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 0px 25vw #fefae7; }
 
 .gallery .photos-house picture:nth-child(2) {
   grid-area: 1/3/3/4;
@@ -1729,6 +1740,10 @@ aside.p-b img {
       background-color: #fefae7;
       clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
       transition: all 0.5s; }
+      .container.checkout .guest form.guestwrapper h2 {
+        font-size: 2.5rem;
+        color: #6c592f;
+        font-weight: bold; }
 
 .guest .close {
   display: none;
@@ -1833,7 +1848,7 @@ aside.p-b img {
     font-size: 1.2rem; }
   .container.status h2 {
     font-size: 2.2rem;
-    color: #ceb33b;
+    color: #514716;
     font-weight: bold;
     grid-area: 1/1/2/3; }
   .container.status span:nth-child(2) {

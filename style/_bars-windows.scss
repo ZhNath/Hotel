@@ -1,5 +1,5 @@
 .dialog {
-      @include size (80vw, aspect-ratio 4/3, $darkfield);
+      @include size (80vw, 60vw, $darkfield);
       min-width: 250px;
       min-height: 190px;
       max-height: 70vh;
@@ -151,6 +151,7 @@
 // responsiv slide-bar */
 @media (min-width: $tablet) {
       .slide-bar-background {
+            width: 45vw;
             @include position(fixed, n, 10vh, -45vw, n);
       }
 }

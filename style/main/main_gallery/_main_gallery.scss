@@ -199,9 +199,23 @@ main.gallery {
       margin-bottom: $topbottombig;
 }
 
+
+
 .gallery picture img {
       @include size(100%, auto, none);
       box-shadow: $smallimgshadow;
+
+      &:active {
+            border: 5px solid $altgold;
+            @include size(70vw, auto, none);
+
+            @include position(fixed, 50vw, calc(50vh + 7rem), n, n);
+            transform: translate(-50%, -50%);
+
+            box-shadow:
+                  0px 0px 0px 25vw $lightfield;
+
+      }
 }
 
 .gallery .photos-house picture:nth-child(2) {
@@ -229,12 +243,14 @@ main.gallery {
       @include grid-area-num(3, 5, 2, 3);
 }
 
+
 .gallery .photos-house picture:nth-child(3) img,
 .gallery .photos-house picture:nth-child(20) img,
 .gallery .photos-house picture:nth-child(30) img,
 .gallery .photos-jakov picture:nth-child(16) img,
 .gallery .photos-ruza picture:nth-child(8) img {
       height: 100%;
+
 }
 
 
@@ -258,6 +274,8 @@ main.gallery {
             margin-bottom: 1rem;
       }
 }
+
+
 
 
 // ***********************************anchors */

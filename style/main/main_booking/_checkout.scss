@@ -24,6 +24,10 @@
 
                   clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 0% 15%);
                   transition: all 0.5s;
+
+                  h2 {
+                        @include font(2.5rem, $darkgold, bold);
+                  }
             }
       }
 }
@@ -46,6 +50,7 @@
 }
 
 .inputwrapper {
+
       margin-bottom: $topbottom;
       @include flex-row(1.5rem, center, baseline);
 
@@ -61,6 +66,7 @@
       input[type="number"] {
             @include size(20px, 20px, $darkfield);
       }
+
 
 }
 
