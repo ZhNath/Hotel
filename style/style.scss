@@ -1,11 +1,11 @@
-@import "style/variables";
-@import "style/settings";
-@import "style/mixins";
+@import "variables";
+@import "settings";
+@import "mixins";
 
 
-@import "style/buttons";
-@import "style/bars-windows.scss";
-@import 'style/animation/animation.scss';
+@import "buttons";
+@import "bars-windows.scss";
+@import 'animation/animation.scss';
 
 html {
       font-size: 62.5%;
@@ -48,13 +48,13 @@ h2.caption {
       }
 }
 
-@import "style/header/header.scss";
+@import "header/header.scss";
 
 
-@import "style/main/main";
+@import "main/main";
 
 
-@import 'style/footer';
+@import 'footer';
 
 
 // --------------controller right slide-bar */
