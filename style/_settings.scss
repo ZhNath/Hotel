@@ -69,7 +69,32 @@ ul li {
       list-style-type: none;
 }
 
+.shader img,
+.card-room img,
+.carousel img,
+.room img {
+      @include size(100%, 100%, image);
+      object-fit: cover;
+      box-shadow: $imgshadow;
+}
 
+h2.caption {
+      @include font(2rem, $gold, bold);
+      margin-bottom: $topbottom;
+      text-align: center;
+}
+
+@media (min-width: $tablet) {
+      h2.caption {
+            font-size: 2.5rem;
+      }
+}
+
+@media (min-width: $desktop) {
+      h2.caption {
+            font-size: 3rem;
+      }
+}
 
 // перенести куда-нибудь
 

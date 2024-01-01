@@ -1,0 +1,55 @@
+// --------------controller right slide-bar */
+#control-slide-bar {
+      display: none;
+}
+
+#control-slide-bar:checked+.slide-bar-background {
+      right: 0;
+      box-shadow: $panelshadow;
+}
+
+#control-slide-bar:checked+.slide-bar-background+.slide-button .fa-bars {
+      display: none;
+}
+
+
+// ----------------------controller booknow */
+#book-button {
+      display: none;
+}
+
+#book-button:checked+.dialog-booking {
+      display: grid;
+      box-shadow: $panelshadow;
+}
+
+// -------------------controller share-button */
+#share-button {
+      display: none;
+}
+
+#share-button:checked+.dialog-sharing {
+      display: grid;
+}
+
+
+
+// ********************************controller link-copy */
+
+#link-copy {
+      width: 30px;
+      opacity: 0;
+}
+
+.btn {
+      background-color: $lightfield;
+}
+
+// *********************************reverse-controller */
+#email-button {
+      display: none;
+}
+
+#email-button:checked~.dialog>.dialogbar.back {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

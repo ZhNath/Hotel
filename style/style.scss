@@ -21,32 +21,7 @@ body {
 
 }
 
-.shader img,
-.card-room img,
-.carousel img,
-.room img {
-      @include size(100%, 100%, image);
-      object-fit: cover;
-      box-shadow: $imgshadow;
-}
 
-h2.caption {
-      @include font(2rem, $gold, bold);
-      margin-bottom: $topbottom;
-      text-align: center;
-}
-
-@media (min-width: $tablet) {
-      h2.caption {
-            font-size: 2.5rem;
-      }
-}
-
-@media (min-width: $desktop) {
-      h2.caption {
-            font-size: 3rem;
-      }
-}
 
 @import "header/header.scss";
 
@@ -55,60 +30,4 @@ h2.caption {
 
 
 @import 'footer';
-
-
-// --------------controller right slide-bar */
-#control-slide-bar {
-      display: none;
-}
-
-#control-slide-bar:checked+.slide-bar-background {
-      right: 0;
-      box-shadow: $panelshadow;
-}
-
-#control-slide-bar:checked+.slide-bar-background+.slide-button .fa-bars {
-      display: none;
-}
-
-
-// ----------------------controller booknow */
-#book-button {
-      display: none;
-}
-
-#book-button:checked+.dialog-booking {
-      display: grid;
-      box-shadow: $panelshadow;
-}
-
-// -------------------controller share-button */
-#share-button {
-      display: none;
-}
-
-#share-button:checked+.dialog-sharing {
-      display: grid;
-}
-
-
-
-// ********************************controller link-copy */
-
-#link-copy {
-      width: 30px;
-      opacity: 0;
-}
-
-.btn {
-      background-color: $lightfield;
-}
-
-// *********************************reverse-controller */
-#email-button {
-      display: none;
-}
-
-#email-button:checked~.dialog>.dialogbar.back {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
+@import 'controller';
