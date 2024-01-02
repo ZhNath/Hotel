@@ -957,7 +957,7 @@ aside.carousel {
   aside.carousel #slider2:checked ~ .controls-arrows label:nth-child(3),
   aside.carousel #slider3:checked ~ .controls-arrows label:nth-child(4),
   aside.carousel #slider4:checked ~ .controls-arrows label:nth-child(1) {
-    background: url(./icons/chevron-right-solid.svg) no-repeat;
+    background: url(../../../icons/chevron-right-solid.svg) no-repeat;
     background-size: contain;
     background-position: right;
     margin: 0 2vw 0 0;
@@ -967,7 +967,7 @@ aside.carousel {
   aside.carousel #slider2:checked ~ .controls-arrows label:nth-last-child(4),
   aside.carousel #slider3:checked ~ .controls-arrows label:nth-last-child(3),
   aside.carousel #slider4:checked ~ .controls-arrows label:nth-last-child(2) {
-    background: url(./icons/chevron-left-solid.svg) no-repeat;
+    background: url(../../../icons/chevron-left-solid.svg) no-repeat;
     background-size: contain;
     float: left;
     margin: 0 0 0 2vw;
