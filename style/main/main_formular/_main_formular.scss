@@ -17,29 +17,36 @@
 }
 
 form.p-f {
-      @include size (90%, fit-content, $darkgold);
-      margin-top: 4vh;
+      @include size (90%, fit-content, inherit);
       margin: auto;
-      margin-bottom: $topbottom;
+      padding: 0;
 
-      padding: $leftrightklein;
-      @include font(1.5rem, $lightfield, bold);
+      fieldset {
+            @include size (100%, fit-content, $darkgold);
+            margin-bottom: $topbottom;
 
-      box-shadow: $boxshadow;
+            padding: $leftrightklein;
+            @include font(1.5rem, $lightfield, bold);
 
-      legend {
-            letter-spacing: 1px;
-            margin-bottom: 0.7em;
-      }
+            box-shadow: $boxshadow;
 
-      input {
-            @include size (100%, 4em, inherit);
-            border-bottom: 1px solid $lightfield;
-            padding: 1em;
-            padding-bottom: 0;
-            text-transform: capitalize;
+            legend {
+                  @include size (100%, fit-content, $darkgold);
+                  letter-spacing: 1px;
+                  padding: $leftrightklein;
+                  float: left;
+            }
+
+            input {
+                  @include size (100%, 4em, inherit);
+                  border-bottom: 1px solid $lightfield;
+                  padding: 1em;
+                  padding-bottom: 0;
+                  text-transform: capitalize;
+            }
       }
 }
+
 
 .pay-card-bild {
       width: 100%;
@@ -62,6 +69,7 @@ form.p-f {
 .p-f-button[type="submit"] {
       display: block;
       margin: auto;
+      margin-bottom: $topbottom;
 }
 
 @import '../../autors';

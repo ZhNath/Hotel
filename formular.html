@@ -76,110 +76,118 @@
 
     <main class="page-booking">
       <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
-        <legend>GUEST INFORMATION</legend>
-        <input
-          type="text"
-          name="vorname"
-          placeholder="first name"
-          id="vorname-id"
-          required
-        />
-        <input
-          type="text"
-          name="nachname"
-          placeholder="last name"
-          id="nachname-id"
-          required
-        />
+        <fieldset>
+          <legend>GUEST INFORMATION</legend>
+          <input
+            type="text"
+            name="vorname"
+            placeholder="first name"
+            id="vorname-id"
+            required
+          />
+          <input
+            type="text"
+            name="nachname"
+            placeholder="last name"
+            id="nachname-id"
+            required
+          />
 
-        <input
-          type="tel"
-          name="tel"
-          id="tel-id"
-          required
-          placeholder="Mobile phone"
-        />
+          <input
+            type="tel"
+            name="tel"
+            id="tel-id"
+            required
+            placeholder="Mobile phone"
+          />
 
-        <input
-          type="email"
-          name="email"
-          id="email-id"
-          placeholder="Email adress"
-          required
-        />
-        <button class="p-f-button" type="reset">Reset</button>
-      </form>
+          <input
+            type="email"
+            name="email"
+            id="email-id"
+            placeholder="Email adress"
+            required
+          />
+          <button class="p-f-button" type="reset">Reset</button>
+        </fieldset>
 
-      <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
-        <legend>ADRESS</legend>
-        <input
-          type="text"
-          name="country"
-          placeholder="Country"
-          id="country-id"
-          required
-        />
-        <input
-          type="text"
-          name="post"
-          placeholder="Zip/Post Code"
-          id="post-id"
-          required
-        />
-        <input
-          type="tel"
-          name="city"
-          placeholder="City"
-          id="city-id"
-          required
-        />
-        <button class="p-f-button" type="reset">Reset</button>
-      </form>
+        <fieldset action="https://formspree.io/f/xqkrzezr" method="post">
+          <legend>ADRESS</legend>
+          <input
+            type="text"
+            name="country"
+            placeholder="Country"
+            id="country-id"
+            required
+          />
+          <input
+            type="text"
+            name="post"
+            placeholder="Zip/Post Code"
+            id="post-id"
+            required
+          />
+          <input
+            type="tel"
+            name="city"
+            placeholder="City"
+            id="city-id"
+            required
+          />
+          <button class="p-f-button" type="reset">Reset</button>
+        </fieldset>
 
-      <form class="p-f" action="https://formspree.io/f/xqkrzezr" method="post">
-        <legend>ADDITIONAL DETAILS</legend>
-        <input
-          type="text"
-          name="country"
-          placeholder="Please note your requests or special needs"
-          required
-        />
-      </form>
+        <fieldset action="https://formspree.io/f/xqkrzezr" method="post">
+          <legend>ADDITIONAL DETAILS</legend>
+          <input
+            type="text"
+            name="country"
+            placeholder="Please note your requests or special needs"
+            required
+          />
+        </fieldset>
 
-      <form
-        class="p-f"
-        class="payment"
-        action="https://formspree.io/f/xqkrzezr"
-        method="post"
-      >
-        <legend>PAYMENT INFORMATION</legend>
-        <input
-          type="text"
-          name="card"
-          placeholder="Card Number"
-          id="cardnum"
-          required
-        />
-        <input
-          type="text"
-          name="date"
-          placeholder="Date(MM/YY)"
-          required
-          onfocus="(this.type='date')"
-          onblur="(this.type='text')"
-          min="2024-01-01"
-          id="datum-id"
-          required
-        />
-        <input type="text" name="cvv" placeholder="CVV" id="cvv-id" required />
-        <input
-          type="text"
-          name="card"
-          placeholder="Name of card"
-          id="cardname"
-          required
-        />
-        <button class="p-f-button" type="reset">Reset</button>
+        <fieldset
+          class="payment"
+          action="https://formspree.io/f/xqkrzezr"
+          method="post"
+        >
+          <legend>PAYMENT INFORMATION</legend>
+          <input
+            type="text"
+            name="card"
+            placeholder="Card Number"
+            id="cardnum"
+            required
+          />
+          <input
+            type="text"
+            name="date"
+            placeholder="Date(MM/YY)"
+            required
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            min="2024-01-01"
+            id="datum-id"
+            required
+          />
+          <input
+            type="text"
+            name="cvv"
+            placeholder="CVV"
+            id="cvv-id"
+            required
+          />
+          <input
+            type="text"
+            name="card"
+            placeholder="Name of card"
+            id="cardname"
+            required
+          />
+          <button class="p-f-button" type="reset">Reset</button>
+        </fieldset>
+        <button class="p-f-button" type="submit">Submit</button>
       </form>
 
       <div class="pay-card-bild">
@@ -187,8 +195,6 @@
         <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
         <i class="fa-brands fa-cc-paypal"></i>
       </div>
-
-      <button class="p-f-button" type="submit">Submit</button>
     </main>
 
     <!-- ***** -->

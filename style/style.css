@@ -1573,6 +1573,10 @@ main.gallery {
     transform: translate(-50%, -50%);
     box-shadow: 0px 0px 0px 25vw #fefae7; }
 
+@media (min-width: 769px) {
+  .gallery picture img:active {
+    width: 50vw;
+    height: auto; } }
 .gallery .photos-house picture:nth-child(2) {
   grid-area: 1/3/3/4;
   align-self: end; }
@@ -2140,26 +2144,34 @@ aside.p-b img {
 form.p-f {
   width: 90%;
   height: fit-content;
-  background-color: #6c592f;
-  margin-top: 4vh;
+  background-color: inherit;
   margin: auto;
-  margin-bottom: 2rem;
-  padding: 2vw;
-  font-size: 1.5rem;
-  color: #fefae7;
-  font-weight: bold;
-  box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px, rgba(58, 31, 3, 0.1) 0px 2px 4px -1px; }
-  form.p-f legend {
-    letter-spacing: 1px;
-    margin-bottom: 0.7em; }
-  form.p-f input {
+  padding: 0; }
+  form.p-f fieldset {
     width: 100%;
-    height: 4em;
-    background-color: inherit;
-    border-bottom: 1px solid #fefae7;
-    padding: 1em;
-    padding-bottom: 0;
-    text-transform: capitalize; }
+    height: fit-content;
+    background-color: #6c592f;
+    margin-bottom: 2rem;
+    padding: 2vw;
+    font-size: 1.5rem;
+    color: #fefae7;
+    font-weight: bold;
+    box-shadow: rgba(58, 31, 3, 0.1) 0px 4px 6px -1px, rgba(58, 31, 3, 0.1) 0px 2px 4px -1px; }
+    form.p-f fieldset legend {
+      width: 100%;
+      height: fit-content;
+      background-color: #6c592f;
+      letter-spacing: 1px;
+      padding: 2vw;
+      float: left; }
+    form.p-f fieldset input {
+      width: 100%;
+      height: 4em;
+      background-color: inherit;
+      border-bottom: 1px solid #fefae7;
+      padding: 1em;
+      padding-bottom: 0;
+      text-transform: capitalize; }
 
 .pay-card-bild {
   width: 100%;
@@ -2186,7 +2198,8 @@ form.p-f {
 
 .p-f-button[type="submit"] {
   display: block;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 2rem; }
 
 .autors {
   width: 100%;
