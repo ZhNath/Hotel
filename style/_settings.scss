@@ -1,3 +1,6 @@
+@import 'mixins';
+@import 'variables';
+
 @font-face {
       font-family: "PoiretOne";
       src: url(../fonts/PoiretOne-Regular.ttf);
@@ -73,7 +76,7 @@ ul li {
 .card-room img,
 .carousel img,
 .room img {
-      @include size(100%, 100%, image);
+      @include size(100%, 100%, none);
       object-fit: cover;
       box-shadow: $imgshadow;
 }

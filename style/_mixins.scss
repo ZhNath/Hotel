@@ -15,7 +15,7 @@
       gap: $gap
 }
 
-@mixin grid-area-num($rowstart, $rowend, $colstart, $colend) {
+@mixin grid-area-num($rowstart, $rowend , $colstart, $colend) {
       grid-area: #{$rowstart}/#{$colstart}/#{$rowend}/#{$colend};
 }
 

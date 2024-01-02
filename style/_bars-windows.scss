@@ -171,6 +171,7 @@
       legend {
             @include font(2rem, inherit, bold);
             margin-top: $topbottom;
+            text-align: center;
       }
 
       label {
