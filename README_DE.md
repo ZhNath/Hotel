@@ -19,6 +19,6 @@ Dieses Projekt wurde im Rahmen meines Lernprozesses erstellt und zeigt meine Fä
 - CSS3  
 
 ## 📸 Vorschau
-<img src="screenshot.png" alt="Projekt Screenshot" width="500">
+<img src="Screenshot 2025-10-01 092106.png" alt="Projekt Screenshot" width="500">
 
 
