@@ -1,4 +1,4 @@
-![Project Banner](screenshot.png)
+![Project Banner](banner.png)
 
 # UI Projekt
 
