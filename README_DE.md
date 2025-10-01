@@ -1,4 +1,5 @@
-![Project Banner](banner.png)
+
+<img src="banner.png" alt="Project Banner" width="600">
 
 # UI Projekt
 
@@ -6,7 +7,7 @@ Ein einfaches **UI-Projekt** mit **HTML** und **CSS**.
 Dieses Projekt wurde im Rahmen meines Lernprozesses erstellt und zeigt meine Fähigkeiten in sauberem Layout und responsivem Design.  
 
 ## 🚀 Live Demo
-👉hotel-three-dun.vercel.app
+👉 [Projekt auf Vercel ansehen](https://hotel-three-dun.vercel.app)
 
 ## ✨ Features
 - Responsives Design  
@@ -18,4 +19,6 @@ Dieses Projekt wurde im Rahmen meines Lernprozesses erstellt und zeigt meine Fä
 - CSS3  
 
 ## 📸 Vorschau
-![Projekt Screenshot](screenshot.png)
+<img src="screenshot.png" alt="Projekt Screenshot" width="500">
+
+
