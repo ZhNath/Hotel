@@ -1,5 +1,5 @@
 
-<img src="banner.png" alt="Project Banner" width="600">
+<img src="Screenshot 2025-10-01 092106.png" alt="Project Banner" width="600">
 
 # UI Projekt
 
